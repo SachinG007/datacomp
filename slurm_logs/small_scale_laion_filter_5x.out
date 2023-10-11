@@ -1,0 +1,30 @@
+go 1
+locus-1-29
+no change     /home/sachingo/miniconda3/condabin/conda
+no change     /home/sachingo/miniconda3/bin/conda
+no change     /home/sachingo/miniconda3/bin/conda-env
+no change     /home/sachingo/miniconda3/bin/activate
+no change     /home/sachingo/miniconda3/bin/deactivate
+no change     /home/sachingo/miniconda3/etc/profile.d/conda.sh
+no change     /home/sachingo/miniconda3/etc/fish/conf.d/conda.fish
+no change     /home/sachingo/miniconda3/shell/condabin/Conda.psm1
+no change     /home/sachingo/miniconda3/shell/condabin/conda-hook.ps1
+no change     /home/sachingo/miniconda3/lib/python3.9/site-packages/xontrib/conda.xsh
+no change     /home/sachingo/miniconda3/etc/profile.d/conda.csh
+no change     /home/sachingo/.bashrc
+No action taken.
+no change     /home/sachingo/miniconda3/condabin/conda
+no change     /home/sachingo/miniconda3/bin/conda
+no change     /home/sachingo/miniconda3/bin/conda-env
+no change     /home/sachingo/miniconda3/bin/activate
+no change     /home/sachingo/miniconda3/bin/deactivate
+no change     /home/sachingo/miniconda3/etc/profile.d/conda.sh
+no change     /home/sachingo/miniconda3/etc/fish/conf.d/conda.fish
+no change     /home/sachingo/miniconda3/shell/condabin/Conda.psm1
+no change     /home/sachingo/miniconda3/shell/condabin/conda-hook.ps1
+no change     /home/sachingo/miniconda3/lib/python3.9/site-packages/xontrib/conda.xsh
+no change     /home/sachingo/miniconda3/etc/profile.d/conda.csh
+no change     /home/sachingo/.bashrc
+No action taken.
+Running training on scale small_5x
+World size is 2.

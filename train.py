@@ -10,6 +10,7 @@ from pathlib import Path
 import torch
 from cloudpathlib import CloudPath
 from training.distributed import world_info_from_env
+
 from training.main import main
 
 from scale_configs import available_scales, get_scale_config
@@ -214,7 +215,7 @@ if __name__ == "__main__":
         help="Name of the field in the webdataset json files with bounding boxes to blur.",
     )
     parser.add_argument("--grad_clip_norm", type=float, default=None)
-    parser.add_argument("--save_frequency", type=int, default=0)
+    parser.add_argument("--save_frequency", type=int, default=1)
 
     args = parser.parse_args()
     data_dir = args.data_dir
@@ -275,7 +276,6 @@ if __name__ == "__main__":
         f"{args.accum_freq}",
         "--log-every-n-steps",
         f"{args.log_every_n_steps}",
-        "--save-most-recent",
         "--resume",
         f"{args.resume}",
     ]

@@ -1,0 +1,688 @@
+/var/spool/slurmd/job183655/slurm_script: line 23: module: command not found
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+2023-10-04,01:28:31 | INFO | No latest resume checkpoint found in /project_data2/projects/sachingo/datacomp_checkpoints/logs/smallscale_tmars_5x_20231004_012645/checkpoints.
+2023-10-04,01:28:33 | INFO | Running in distributed mode with multiple processes. Device: cuda:0.Process (global: 0, local 0), total 2.
+2023-10-04,01:28:33 | INFO | Loaded ViT-B-32 model config.
+2023-10-04,01:28:33 | INFO | Running in distributed mode with multiple processes. Device: cuda:1.Process (global: 1, local 1), total 2.
+2023-10-04,01:28:33 | INFO | Loaded ViT-B-32 model config.
+2023-10-04,01:28:34 | INFO | Model:
+2023-10-04,01:28:34 | INFO | CLIP(
+  (visual): VisionTransformer(
+    (patchnorm_pre_ln): Identity()
+    (conv1): Conv2d(3, 768, kernel_size=(32, 32), stride=(32, 32), bias=False)
+    (patch_dropout): Identity()
+    (ln_pre): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (transformer): Transformer(
+      (resblocks): ModuleList(
+        (0): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (1): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (2): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (3): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (4): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (5): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (6): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (7): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (8): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (9): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (10): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+        (11): ResidualAttentionBlock(
+          (ln_1): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=768, out_features=768, bias=True)
+          )
+          (ls_1): Identity()
+          (ln_2): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+          (mlp): Sequential(
+            (c_fc): Linear(in_features=768, out_features=3072, bias=True)
+            (gelu): GELU(approximate='none')
+            (c_proj): Linear(in_features=3072, out_features=768, bias=True)
+          )
+          (ls_2): Identity()
+        )
+      )
+    )
+    (ln_post): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+  )
+  (transformer): Transformer(
+    (resblocks): ModuleList(
+      (0): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (1): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (2): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (3): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (4): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (5): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (6): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (7): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (8): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (9): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (10): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+      (11): ResidualAttentionBlock(
+        (ln_1): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (attn): MultiheadAttention(
+          (out_proj): NonDynamicallyQuantizableLinear(in_features=512, out_features=512, bias=True)
+        )
+        (ls_1): Identity()
+        (ln_2): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+        (mlp): Sequential(
+          (c_fc): Linear(in_features=512, out_features=2048, bias=True)
+          (gelu): GELU(approximate='none')
+          (c_proj): Linear(in_features=2048, out_features=512, bias=True)
+        )
+        (ls_2): Identity()
+      )
+    )
+  )
+  (token_embedding): Embedding(49408, 512)
+  (ln_final): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
+)
+2023-10-04,01:28:34 | INFO | Params:
+2023-10-04,01:28:34 | INFO |   accum_freq: 1
+2023-10-04,01:28:34 | INFO |   aug_cfg: {}
+2023-10-04,01:28:34 | INFO |   batch_size: 2048
+2023-10-04,01:28:34 | INFO |   beta1: 0.9
+2023-10-04,01:28:34 | INFO |   beta2: 0.98
+2023-10-04,01:28:34 | INFO |   checkpoint_path: /project_data2/projects/sachingo/datacomp_checkpoints/logs/smallscale_tmars_5x_20231004_012645/checkpoints
+2023-10-04,01:28:34 | INFO |   coca_caption_loss_weight: 2.0
+2023-10-04,01:28:34 | INFO |   coca_contrastive_loss_weight: 1.0
+2023-10-04,01:28:34 | INFO |   copy_codebase: False
+2023-10-04,01:28:34 | INFO |   csv_caption_key: title
+2023-10-04,01:28:34 | INFO |   csv_img_key: filepath
+2023-10-04,01:28:34 | INFO |   csv_separator: 	
+2023-10-04,01:28:34 | INFO |   dataset_resampled: True
+2023-10-04,01:28:34 | INFO |   dataset_type: webdataset
+2023-10-04,01:28:34 | INFO |   ddp_static_graph: True
+2023-10-04,01:28:34 | INFO |   debug: False
+2023-10-04,01:28:34 | INFO |   delete_previous_checkpoint: False
+2023-10-04,01:28:34 | INFO |   device: cuda:0
+2023-10-04,01:28:34 | INFO |   dist_backend: nccl
+2023-10-04,01:28:34 | INFO |   dist_url: env://
+2023-10-04,01:28:34 | INFO |   distill: False
+2023-10-04,01:28:34 | INFO |   distill_model: None
+2023-10-04,01:28:34 | INFO |   distill_pretrained: None
+2023-10-04,01:28:34 | INFO |   distributed: True
+2023-10-04,01:28:34 | INFO |   epochs: 5
+2023-10-04,01:28:34 | INFO |   epochs_cooldown: None
+2023-10-04,01:28:34 | INFO |   eps: 1e-06
+2023-10-04,01:28:34 | INFO |   force_custom_text: False
+2023-10-04,01:28:34 | INFO |   force_image_size: None
+2023-10-04,01:28:34 | INFO |   force_patch_dropout: None
+2023-10-04,01:28:34 | INFO |   force_quick_gelu: False
+2023-10-04,01:28:34 | INFO |   gather_with_grad: True
+2023-10-04,01:28:34 | INFO |   grad_checkpointing: True
+2023-10-04,01:28:34 | INFO |   grad_clip_norm: None
+2023-10-04,01:28:34 | INFO |   horovod: False
+2023-10-04,01:28:34 | INFO |   image_mean: None
+2023-10-04,01:28:34 | INFO |   image_std: None
+2023-10-04,01:28:34 | INFO |   imagenet_v2: None
+2023-10-04,01:28:34 | INFO |   imagenet_val: None
+2023-10-04,01:28:34 | INFO |   local_loss: True
+2023-10-04,01:28:34 | INFO |   local_rank: 0
+2023-10-04,01:28:34 | INFO |   lock_image: False
+2023-10-04,01:28:34 | INFO |   lock_image_freeze_bn_stats: False
+2023-10-04,01:28:34 | INFO |   lock_image_unlocked_groups: 0
+2023-10-04,01:28:34 | INFO |   lock_text: False
+2023-10-04,01:28:34 | INFO |   lock_text_freeze_layer_norm: False
+2023-10-04,01:28:34 | INFO |   lock_text_unlocked_layers: 0
+2023-10-04,01:28:34 | INFO |   log_every_n_steps: 100
+2023-10-04,01:28:34 | INFO |   log_level: 20
+2023-10-04,01:28:34 | INFO |   log_local: False
+2023-10-04,01:28:34 | INFO |   log_path: /project_data2/projects/sachingo/datacomp_checkpoints/logs/smallscale_tmars_5x_20231004_012645/out.log
+2023-10-04,01:28:34 | INFO |   logs: /project_data2/projects/sachingo/datacomp_checkpoints/logs
+2023-10-04,01:28:34 | INFO |   lr: 0.0005
+2023-10-04,01:28:34 | INFO |   lr_cooldown_end: 0.0
+2023-10-04,01:28:34 | INFO |   lr_cooldown_power: 1.0
+2023-10-04,01:28:34 | INFO |   lr_scheduler: cosine
+2023-10-04,01:28:34 | INFO |   model: ViT-B-32
+2023-10-04,01:28:34 | INFO |   name: smallscale_tmars_5x_20231004_012645
+2023-10-04,01:28:34 | INFO |   no_set_device_rank: False
+2023-10-04,01:28:34 | INFO |   precision: amp
+2023-10-04,01:28:34 | INFO |   pretrained: 
+2023-10-04,01:28:34 | INFO |   pretrained_image: False
+2023-10-04,01:28:34 | INFO |   rank: 0
+2023-10-04,01:28:34 | INFO |   remote_sync: None
+2023-10-04,01:28:34 | INFO |   remote_sync_frequency: 300
+2023-10-04,01:28:34 | INFO |   remote_sync_protocol: s3
+2023-10-04,01:28:34 | INFO |   report_to: wandb
+2023-10-04,01:28:34 | INFO |   resume: None
+2023-10-04,01:28:34 | INFO |   save_frequency: 1
+2023-10-04,01:28:34 | INFO |   save_most_recent: False
+2023-10-04,01:28:34 | INFO |   seed: 0
+2023-10-04,01:28:34 | INFO |   skip_scheduler: False
+2023-10-04,01:28:34 | INFO |   tensorboard: False
+2023-10-04,01:28:34 | INFO |   tensorboard_path: 
+2023-10-04,01:28:34 | INFO |   torchscript: False
+2023-10-04,01:28:34 | INFO |   trace: False
+2023-10-04,01:28:34 | INFO |   train_data: /project_data/datasets/datanet/small_scale_tmars/shards/{00000000..00000260}.tar
+2023-10-04,01:28:34 | INFO |   train_data_upsampling_factors: None
+2023-10-04,01:28:34 | INFO |   train_num_samples: 12800000
+2023-10-04,01:28:34 | INFO |   use_bn_sync: False
+2023-10-04,01:28:34 | INFO |   val_data: None
+2023-10-04,01:28:34 | INFO |   val_frequency: 1
+2023-10-04,01:28:34 | INFO |   val_num_samples: None
+2023-10-04,01:28:34 | INFO |   wandb: True
+2023-10-04,01:28:34 | INFO |   wandb_notes: 
+2023-10-04,01:28:34 | INFO |   wandb_project_name: datanet
+2023-10-04,01:28:34 | INFO |   warmup: 500
+2023-10-04,01:28:34 | INFO |   wd: 0.2
+2023-10-04,01:28:34 | INFO |   workers: 4
+2023-10-04,01:28:34 | INFO |   world_size: 2
+2023-10-04,01:28:34 | INFO |   zeroshot_frequency: 2
+wandb: Currently logged in as: saching007. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.15.11 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.21
+wandb: Run data is saved locally in /home/sachingo/datacomp/wandb/run-20231004_012836-smallscale_tmars_5x_20231004_012645
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run smallscale_tmars_5x_20231004_012645
+wandb: ⭐️ View project at https://wandb.ai/saching007/datanet
+wandb: 🚀 View run at https://wandb.ai/saching007/datanet/runs/smallscale_tmars_5x_20231004_012645
+[34m[1mwandb[0m: [33mWARNING[0m Saving files without folders. If you want to preserve sub directories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
+2023-10-04,01:29:01 | INFO | Start epoch 0
+2023-10-04,01:29:26 | INFO | Train Epoch: 0 [    4096/12812288 (0%)] Data (t): 18.010 Batch (t): 24.841, 164.886/s, 82.4431/s/gpu LR: 0.000001 Logit Scale: 14.286 Contrastive_loss: 8.3774 (8.3774) Loss: 8.3774 (8.3774)
+2023-10-04,01:29:30 | INFO | Reducer buckets have been rebuilt in this iteration.
+2023-10-04,01:29:30 | INFO | Reducer buckets have been rebuilt in this iteration.
+2023-10-04,01:35:27 | INFO | Train Epoch: 0 [  413696/12812288 (3%)] Data (t): 0.827 Batch (t): 3.605, 1110.74/s, 555.371/s/gpu LR: 0.000101 Logit Scale: 14.270 Contrastive_loss: 7.9428 (8.1601) Loss: 7.9428 (8.1601)
+2023-10-04,01:41:38 | INFO | Train Epoch: 0 [  823296/12812288 (6%)] Data (t): 0.938 Batch (t): 3.709, 1083.38/s, 541.688/s/gpu LR: 0.000201 Logit Scale: 14.244 Contrastive_loss: 7.6420 (7.9874) Loss: 7.6420 (7.9874)
+2023-10-04,01:47:48 | INFO | Train Epoch: 0 [ 1232896/12812288 (10%)] Data (t): 0.931 Batch (t): 3.699, 1113.86/s, 556.930/s/gpu LR: 0.000301 Logit Scale: 14.226 Contrastive_loss: 7.2665 (7.8072) Loss: 7.2665 (7.8072)
+2023-10-04,01:53:57 | INFO | Train Epoch: 0 [ 1642496/12812288 (13%)] Data (t): 0.921 Batch (t): 3.689, 1112.95/s, 556.473/s/gpu LR: 0.000401 Logit Scale: 14.233 Contrastive_loss: 7.1000 (7.6657) Loss: 7.1000 (7.6657)
+2023-10-04,02:00:09 | INFO | Train Epoch: 0 [ 2052096/12812288 (16%)] Data (t): 0.955 Batch (t): 3.722, 1118.69/s, 559.343/s/gpu LR: 0.000500 Logit Scale: 14.266 Contrastive_loss: 6.8564 (7.5308) Loss: 6.8564 (7.5308)
+2023-10-04,02:06:16 | INFO | Train Epoch: 0 [ 2461696/12812288 (19%)] Data (t): 0.899 Batch (t): 3.668, 1094.11/s, 547.056/s/gpu LR: 0.000500 Logit Scale: 14.368 Contrastive_loss: 6.5246 (7.3871) Loss: 6.5246 (7.3871)
+2023-10-04,02:12:25 | INFO | Train Epoch: 0 [ 2871296/12812288 (22%)] Data (t): 0.914 Batch (t): 3.693, 1178.56/s, 589.280/s/gpu LR: 0.000500 Logit Scale: 14.591 Contrastive_loss: 6.4370 (7.2683) Loss: 6.4370 (7.2683)
+2023-10-04,02:18:34 | INFO | Train Epoch: 0 [ 3280896/12812288 (26%)] Data (t): 0.926 Batch (t): 3.694, 1129.39/s, 564.694/s/gpu LR: 0.000500 Logit Scale: 14.931 Contrastive_loss: 5.7734 (7.1022) Loss: 5.7734 (7.1022)
+2023-10-04,02:24:40 | INFO | Train Epoch: 0 [ 3690496/12812288 (29%)] Data (t): 0.878 Batch (t): 3.655, 1130.09/s, 565.044/s/gpu LR: 0.000499 Logit Scale: 15.312 Contrastive_loss: 5.9167 (6.9837) Loss: 5.9167 (6.9837)
+2023-10-04,02:30:50 | INFO | Train Epoch: 0 [ 4100096/12812288 (32%)] Data (t): 0.930 Batch (t): 3.700, 1100.90/s, 550.448/s/gpu LR: 0.000499 Logit Scale: 15.749 Contrastive_loss: 5.7228 (6.8690) Loss: 5.7228 (6.8690)
+2023-10-04,02:37:02 | INFO | Train Epoch: 0 [ 4509696/12812288 (35%)] Data (t): 0.955 Batch (t): 3.721, 1116.47/s, 558.236/s/gpu LR: 0.000498 Logit Scale: 16.091 Contrastive_loss: 4.9765 (6.7113) Loss: 4.9765 (6.7113)
+2023-10-04,02:43:12 | INFO | Train Epoch: 0 [ 4919296/12812288 (38%)] Data (t): 0.930 Batch (t): 3.699, 1128.16/s, 564.079/s/gpu LR: 0.000497 Logit Scale: 16.494 Contrastive_loss: 4.8467 (6.5679) Loss: 4.8467 (6.5679)
+2023-10-04,02:49:25 | INFO | Train Epoch: 0 [ 5328896/12812288 (42%)] Data (t): 0.965 Batch (t): 3.735, 1133.08/s, 566.542/s/gpu LR: 0.000497 Logit Scale: 16.847 Contrastive_loss: 5.0018 (6.4560) Loss: 5.0018 (6.4560)
+2023-10-04,02:55:38 | INFO | Train Epoch: 0 [ 5738496/12812288 (45%)] Data (t): 0.959 Batch (t): 3.732, 1145.80/s, 572.900/s/gpu LR: 0.000496 Logit Scale: 17.360 Contrastive_loss: 4.1421 (6.3018) Loss: 4.1421 (6.3018)
+2023-10-04,03:01:51 | INFO | Train Epoch: 0 [ 6148096/12812288 (48%)] Data (t): 0.955 Batch (t): 3.724, 1144.38/s, 572.189/s/gpu LR: 0.000495 Logit Scale: 17.796 Contrastive_loss: 5.1955 (6.2326) Loss: 5.1955 (6.2326)
+2023-10-04,03:08:01 | INFO | Train Epoch: 0 [ 6557696/12812288 (51%)] Data (t): 0.936 Batch (t): 3.704, 1064.29/s, 532.144/s/gpu LR: 0.000494 Logit Scale: 18.325 Contrastive_loss: 5.0839 (6.1651) Loss: 5.0839 (6.1651)
+2023-10-04,03:14:12 | INFO | Train Epoch: 0 [ 6967296/12812288 (54%)] Data (t): 0.935 Batch (t): 3.708, 1037.36/s, 518.680/s/gpu LR: 0.000492 Logit Scale: 18.877 Contrastive_loss: 4.7865 (6.0885) Loss: 4.7865 (6.0885)
+2023-10-04,03:20:23 | INFO | Train Epoch: 0 [ 7376896/12812288 (58%)] Data (t): 0.943 Batch (t): 3.712, 1040.77/s, 520.387/s/gpu LR: 0.000491 Logit Scale: 19.430 Contrastive_loss: 4.5556 (6.0078) Loss: 4.5556 (6.0078)
+2023-10-04,03:26:32 | INFO | Train Epoch: 0 [ 7786496/12812288 (61%)] Data (t): 0.923 Batch (t): 3.687, 1151.22/s, 575.610/s/gpu LR: 0.000490 Logit Scale: 19.923 Contrastive_loss: 4.0452 (5.9097) Loss: 4.0452 (5.9097)
+2023-10-04,03:32:49 | INFO | Train Epoch: 0 [ 8196096/12812288 (64%)] Data (t): 1.001 Batch (t): 3.772, 1135.09/s, 567.544/s/gpu LR: 0.000488 Logit Scale: 20.372 Contrastive_loss: 4.6433 (5.8494) Loss: 4.6433 (5.8494)
+2023-10-04,03:39:03 | INFO | Train Epoch: 0 [ 8605696/12812288 (67%)] Data (t): 0.975 Batch (t): 3.743, 967.267/s, 483.634/s/gpu LR: 0.000486 Logit Scale: 20.847 Contrastive_loss: 3.0583 (5.7225) Loss: 3.0583 (5.7225)
+2023-10-04,03:45:16 | INFO | Train Epoch: 0 [ 9015296/12812288 (70%)] Data (t): 0.952 Batch (t): 3.721, 1078.86/s, 539.428/s/gpu LR: 0.000485 Logit Scale: 21.308 Contrastive_loss: 4.0128 (5.6482) Loss: 4.0128 (5.6482)
+2023-10-04,03:51:29 | INFO | Train Epoch: 0 [ 9424896/12812288 (74%)] Data (t): 0.969 Batch (t): 3.739, 1095.10/s, 547.550/s/gpu LR: 0.000483 Logit Scale: 21.881 Contrastive_loss: 3.3843 (5.5538) Loss: 3.3843 (5.5538)
+2023-10-04,03:57:43 | INFO | Train Epoch: 0 [ 9834496/12812288 (77%)] Data (t): 0.966 Batch (t): 3.732, 1099.66/s, 549.832/s/gpu LR: 0.000481 Logit Scale: 22.290 Contrastive_loss: 3.6103 (5.4761) Loss: 3.6103 (5.4761)
+2023-10-04,04:03:54 | INFO | Train Epoch: 0 [10244096/12812288 (80%)] Data (t): 0.946 Batch (t): 3.718, 1076.58/s, 538.289/s/gpu LR: 0.000479 Logit Scale: 22.662 Contrastive_loss: 3.9053 (5.4157) Loss: 3.9053 (5.4157)
+2023-10-04,04:10:10 | INFO | Train Epoch: 0 [10653696/12812288 (83%)] Data (t): 0.989 Batch (t): 3.758, 1123.18/s, 561.591/s/gpu LR: 0.000477 Logit Scale: 23.131 Contrastive_loss: 4.1012 (5.3670) Loss: 4.1012 (5.3670)
+2023-10-04,04:16:27 | INFO | Train Epoch: 0 [11063296/12812288 (86%)] Data (t): 0.997 Batch (t): 3.764, 1034.12/s, 517.061/s/gpu LR: 0.000474 Logit Scale: 23.422 Contrastive_loss: 3.7039 (5.3076) Loss: 3.7039 (5.3076)
+2023-10-04,04:22:42 | INFO | Train Epoch: 0 [11472896/12812288 (90%)] Data (t): 0.981 Batch (t): 3.751, 1064.21/s, 532.104/s/gpu LR: 0.000472 Logit Scale: 23.912 Contrastive_loss: 2.8256 (5.2220) Loss: 2.8256 (5.2220)
+2023-10-04,04:28:57 | INFO | Train Epoch: 0 [11882496/12812288 (93%)] Data (t): 0.991 Batch (t): 3.756, 1082.45/s, 541.224/s/gpu LR: 0.000470 Logit Scale: 24.469 Contrastive_loss: 2.9715 (5.1470) Loss: 2.9715 (5.1470)
+2023-10-04,04:35:15 | INFO | Train Epoch: 0 [12292096/12812288 (96%)] Data (t): 1.006 Batch (t): 3.773, 1105.79/s, 552.895/s/gpu LR: 0.000467 Logit Scale: 24.902 Contrastive_loss: 2.8713 (5.0736) Loss: 2.8713 (5.0736)
+2023-10-04,04:41:31 | INFO | Train Epoch: 0 [12701696/12812288 (99%)] Data (t): 0.992 Batch (t): 3.760, 1109.13/s, 554.564/s/gpu LR: 0.000464 Logit Scale: 25.400 Contrastive_loss: 3.3486 (5.0197) Loss: 3.3486 (5.0197)
+2023-10-04,04:43:11 | INFO | Train Epoch: 0 [12812288/12812288 (100%)] Data (t): 0.944 Batch (t): 3.704, 1158.48/s, 579.242/s/gpu LR: 0.000464 Logit Scale: 25.498 Contrastive_loss: 4.2124 (4.9952) Loss: 4.2124 (4.9952)
+2023-10-04,04:43:33 | INFO | Start epoch 1
+2023-10-04,04:43:49 | INFO | Train Epoch: 1 [    4096/12812288 (0%)] Data (t): 13.638 Batch (t): 16.342, 250.644/s, 125.322/s/gpu LR: 0.000464 Logit Scale: 25.501 Contrastive_loss: 2.8952 (2.8952) Loss: 2.8952 (2.8952)
+2023-10-04,04:50:06 | INFO | Train Epoch: 1 [  413696/12812288 (3%)] Data (t): 0.989 Batch (t): 3.767, 1095.12/s, 547.562/s/gpu LR: 0.000461 Logit Scale: 25.817 Contrastive_loss: 3.1268 (3.0110) Loss: 3.1268 (3.0110)
+2023-10-04,04:56:19 | INFO | Train Epoch: 1 [  823296/12812288 (6%)] Data (t): 0.966 Batch (t): 3.735, 1101.74/s, 550.869/s/gpu LR: 0.000458 Logit Scale: 26.122 Contrastive_loss: 3.3413 (3.1211) Loss: 3.3413 (3.1211)
+2023-10-04,05:02:32 | INFO | Train Epoch: 1 [ 1232896/12812288 (10%)] Data (t): 0.961 Batch (t): 3.729, 1069.84/s, 534.919/s/gpu LR: 0.000455 Logit Scale: 26.476 Contrastive_loss: 3.7508 (3.2785) Loss: 3.7508 (3.2785)
+2023-10-04,05:08:49 | INFO | Train Epoch: 1 [ 1642496/12812288 (13%)] Data (t): 0.996 Batch (t): 3.768, 1085.95/s, 542.975/s/gpu LR: 0.000452 Logit Scale: 26.945 Contrastive_loss: 2.6487 (3.1526) Loss: 2.6487 (3.1526)
+2023-10-04,05:15:07 | INFO | Train Epoch: 1 [ 2052096/12812288 (16%)] Data (t): 1.015 Batch (t): 3.783, 1103.69/s, 551.847/s/gpu LR: 0.000449 Logit Scale: 27.331 Contrastive_loss: 1.8772 (2.9400) Loss: 1.8772 (2.9400)
+2023-10-04,05:21:23 | INFO | Train Epoch: 1 [ 2461696/12812288 (19%)] Data (t): 0.994 Batch (t): 3.759, 1089.24/s, 544.621/s/gpu LR: 0.000446 Logit Scale: 27.441 Contrastive_loss: 2.9422 (2.9403) Loss: 2.9422 (2.9403)
+2023-10-04,05:27:38 | INFO | Train Epoch: 1 [ 2871296/12812288 (22%)] Data (t): 0.983 Batch (t): 3.749, 1070.67/s, 535.336/s/gpu LR: 0.000443 Logit Scale: 28.095 Contrastive_loss: 2.3931 (2.8719) Loss: 2.3931 (2.8719)
+2023-10-04,05:33:54 | INFO | Train Epoch: 1 [ 3280896/12812288 (26%)] Data (t): 0.991 Batch (t): 3.761, 1090.52/s, 545.261/s/gpu LR: 0.000439 Logit Scale: 28.499 Contrastive_loss: 3.1893 (2.9072) Loss: 3.1893 (2.9072)
+2023-10-04,05:40:10 | INFO | Train Epoch: 1 [ 3690496/12812288 (29%)] Data (t): 0.995 Batch (t): 3.761, 1087.44/s, 543.720/s/gpu LR: 0.000436 Logit Scale: 28.868 Contrastive_loss: 1.3835 (2.7548) Loss: 1.3835 (2.7548)
+2023-10-04,05:46:24 | INFO | Train Epoch: 1 [ 4100096/12812288 (32%)] Data (t): 0.976 Batch (t): 3.739, 1112.82/s, 556.411/s/gpu LR: 0.000432 Logit Scale: 29.295 Contrastive_loss: 2.5595 (2.7371) Loss: 2.5595 (2.7371)
+2023-10-04,05:52:42 | INFO | Train Epoch: 1 [ 4509696/12812288 (35%)] Data (t): 1.006 Batch (t): 3.774, 1060.45/s, 530.227/s/gpu LR: 0.000429 Logit Scale: 29.714 Contrastive_loss: 2.9738 (2.7568) Loss: 2.9738 (2.7568)
+2023-10-04,05:58:59 | INFO | Train Epoch: 1 [ 4919296/12812288 (38%)] Data (t): 1.006 Batch (t): 3.768, 1099.58/s, 549.789/s/gpu LR: 0.000425 Logit Scale: 30.032 Contrastive_loss: 3.2196 (2.7924) Loss: 3.2196 (2.7924)
+2023-10-04,06:05:17 | INFO | Train Epoch: 1 [ 5328896/12812288 (42%)] Data (t): 1.016 Batch (t): 3.783, 1112.98/s, 556.489/s/gpu LR: 0.000421 Logit Scale: 30.505 Contrastive_loss: 2.2611 (2.7544) Loss: 2.2611 (2.7544)
+2023-10-04,06:11:32 | INFO | Train Epoch: 1 [ 5738496/12812288 (45%)] Data (t): 0.989 Batch (t): 3.755, 1077.89/s, 538.946/s/gpu LR: 0.000418 Logit Scale: 30.688 Contrastive_loss: 3.2727 (2.7890) Loss: 3.2727 (2.7890)
+2023-10-04,06:17:48 | INFO | Train Epoch: 1 [ 6148096/12812288 (48%)] Data (t): 0.992 Batch (t): 3.760, 1070.84/s, 535.421/s/gpu LR: 0.000414 Logit Scale: 31.027 Contrastive_loss: 1.5864 (2.7138) Loss: 1.5864 (2.7138)
+2023-10-04,06:24:04 | INFO | Train Epoch: 1 [ 6557696/12812288 (51%)] Data (t): 0.989 Batch (t): 3.754, 1091.64/s, 545.822/s/gpu LR: 0.000410 Logit Scale: 31.884 Contrastive_loss: 2.3231 (2.6908) Loss: 2.3231 (2.6908)
+2023-10-04,06:30:21 | INFO | Train Epoch: 1 [ 6967296/12812288 (54%)] Data (t): 1.001 Batch (t): 3.770, 1094.51/s, 547.253/s/gpu LR: 0.000406 Logit Scale: 32.031 Contrastive_loss: 1.2861 (2.6128) Loss: 1.2861 (2.6128)
+2023-10-04,06:36:37 | INFO | Train Epoch: 1 [ 7376896/12812288 (58%)] Data (t): 0.997 Batch (t): 3.763, 1098.16/s, 549.081/s/gpu LR: 0.000402 Logit Scale: 32.472 Contrastive_loss: 3.2022 (2.6438) Loss: 3.2022 (2.6438)
+2023-10-04,06:42:54 | INFO | Train Epoch: 1 [ 7786496/12812288 (61%)] Data (t): 0.997 Batch (t): 3.769, 1062.88/s, 531.440/s/gpu LR: 0.000398 Logit Scale: 32.972 Contrastive_loss: 1.2242 (2.5728) Loss: 1.2242 (2.5728)
+2023-10-04,06:49:10 | INFO | Train Epoch: 1 [ 8196096/12812288 (64%)] Data (t): 1.001 Batch (t): 3.766, 1065.11/s, 532.557/s/gpu LR: 0.000393 Logit Scale: 33.069 Contrastive_loss: 2.6194 (2.5750) Loss: 2.6194 (2.5750)
+2023-10-04,06:55:28 | INFO | Train Epoch: 1 [ 8605696/12812288 (67%)] Data (t): 1.013 Batch (t): 3.780, 1070.58/s, 535.289/s/gpu LR: 0.000389 Logit Scale: 33.433 Contrastive_loss: 1.5232 (2.5272) Loss: 1.5232 (2.5272)
+2023-10-04,07:01:43 | INFO | Train Epoch: 1 [ 9015296/12812288 (70%)] Data (t): 0.987 Batch (t): 3.748, 1144.91/s, 572.456/s/gpu LR: 0.000385 Logit Scale: 33.597 Contrastive_loss: 1.1009 (2.4652) Loss: 1.1009 (2.4652)
+2023-10-04,07:08:01 | INFO | Train Epoch: 1 [ 9424896/12812288 (74%)] Data (t): 1.012 Batch (t): 3.776, 1092.21/s, 546.106/s/gpu LR: 0.000380 Logit Scale: 33.923 Contrastive_loss: 0.94132 (2.4017) Loss: 0.94132 (2.4017)
+2023-10-04,07:14:19 | INFO | Train Epoch: 1 [ 9834496/12812288 (77%)] Data (t): 1.012 Batch (t): 3.777, 1072.47/s, 536.237/s/gpu LR: 0.000376 Logit Scale: 34.285 Contrastive_loss: 1.6312 (2.3709) Loss: 1.6312 (2.3709)
+2023-10-04,07:20:33 | INFO | Train Epoch: 1 [10244096/12812288 (80%)] Data (t): 0.985 Batch (t): 3.748, 1097.87/s, 548.934/s/gpu LR: 0.000371 Logit Scale: 35.129 Contrastive_loss: 1.6135 (2.3418) Loss: 1.6135 (2.3418)
+2023-10-04,07:26:49 | INFO | Train Epoch: 1 [10653696/12812288 (83%)] Data (t): 0.995 Batch (t): 3.759, 1134.59/s, 567.294/s/gpu LR: 0.000367 Logit Scale: 35.608 Contrastive_loss: 0.92903 (2.2894) Loss: 0.92903 (2.2894)
+2023-10-04,07:33:05 | INFO | Train Epoch: 1 [11063296/12812288 (86%)] Data (t): 0.998 Batch (t): 3.759, 1001.41/s, 500.705/s/gpu LR: 0.000362 Logit Scale: 36.380 Contrastive_loss: 2.9127 (2.3117) Loss: 2.9127 (2.3117)
+2023-10-04,07:39:21 | INFO | Train Epoch: 1 [11472896/12812288 (90%)] Data (t): 0.998 Batch (t): 3.760, 1105.52/s, 552.760/s/gpu LR: 0.000357 Logit Scale: 36.531 Contrastive_loss: 0.90378 (2.2632) Loss: 0.90378 (2.2632)
+2023-10-04,07:45:36 | INFO | Train Epoch: 1 [11882496/12812288 (93%)] Data (t): 0.986 Batch (t): 3.750, 1138.47/s, 569.233/s/gpu LR: 0.000353 Logit Scale: 36.644 Contrastive_loss: 0.94866 (2.2193) Loss: 0.94866 (2.2193)
+2023-10-04,07:51:52 | INFO | Train Epoch: 1 [12292096/12812288 (96%)] Data (t): 0.997 Batch (t): 3.757, 1087.67/s, 543.833/s/gpu LR: 0.000348 Logit Scale: 37.476 Contrastive_loss: 2.2438 (2.2201) Loss: 2.2438 (2.2201)
+2023-10-04,07:58:10 | INFO | Train Epoch: 1 [12701696/12812288 (99%)] Data (t): 1.011 Batch (t): 3.778, 1068.80/s, 534.400/s/gpu LR: 0.000343 Logit Scale: 37.769 Contrastive_loss: 2.1312 (2.2174) Loss: 2.1312 (2.2174)
+2023-10-04,07:59:49 | INFO | Train Epoch: 1 [12812288/12812288 (100%)] Data (t): 0.930 Batch (t): 3.688, 1150.00/s, 575.002/s/gpu LR: 0.000342 Logit Scale: 37.873 Contrastive_loss: 0.96875 (2.1795) Loss: 0.96875 (2.1795)
+2023-10-04,08:00:10 | INFO | Start epoch 2
+2023-10-04,08:00:29 | INFO | Train Epoch: 2 [    4096/12812288 (0%)] Data (t): 16.553 Batch (t): 19.234, 212.955/s, 106.478/s/gpu LR: 0.000342 Logit Scale: 37.874 Contrastive_loss: 0.40384 (0.40384) Loss: 0.40384 (0.40384)
+2023-10-04,08:06:43 | INFO | Train Epoch: 2 [  413696/12812288 (3%)] Data (t): 0.975 Batch (t): 3.746, 1061.48/s, 530.738/s/gpu LR: 0.000337 Logit Scale: 38.130 Contrastive_loss: 1.4803 (0.94206) Loss: 1.4803 (0.94206)
+2023-10-04,08:13:00 | INFO | Train Epoch: 2 [  823296/12812288 (6%)] Data (t): 1.004 Batch (t): 3.766, 1106.18/s, 553.090/s/gpu LR: 0.000332 Logit Scale: 38.459 Contrastive_loss: 1.7183 (1.2008) Loss: 1.7183 (1.2008)
+2023-10-04,08:19:18 | INFO | Train Epoch: 2 [ 1232896/12812288 (10%)] Data (t): 1.017 Batch (t): 3.778, 1076.25/s, 538.127/s/gpu LR: 0.000327 Logit Scale: 38.505 Contrastive_loss: 1.1824 (1.1962) Loss: 1.1824 (1.1962)
+2023-10-04,08:25:35 | INFO | Train Epoch: 2 [ 1642496/12812288 (13%)] Data (t): 1.011 Batch (t): 3.775, 1095.81/s, 547.903/s/gpu LR: 0.000322 Logit Scale: 39.258 Contrastive_loss: 1.3329 (1.2235) Loss: 1.3329 (1.2235)
+2023-10-04,08:31:52 | INFO | Train Epoch: 2 [ 2052096/12812288 (16%)] Data (t): 0.998 Batch (t): 3.766, 1076.69/s, 538.344/s/gpu LR: 0.000317 Logit Scale: 39.681 Contrastive_loss: 1.3954 (1.2522) Loss: 1.3954 (1.2522)
+2023-10-04,08:38:08 | INFO | Train Epoch: 2 [ 2461696/12812288 (19%)] Data (t): 1.000 Batch (t): 3.766, 1082.54/s, 541.270/s/gpu LR: 0.000312 Logit Scale: 40.029 Contrastive_loss: 1.3192 (1.2618) Loss: 1.3192 (1.2618)
+2023-10-04,08:44:25 | INFO | Train Epoch: 2 [ 2871296/12812288 (22%)] Data (t): 0.999 Batch (t): 3.766, 1145.76/s, 572.879/s/gpu LR: 0.000307 Logit Scale: 40.853 Contrastive_loss: 1.2447 (1.2596) Loss: 1.2447 (1.2596)
+2023-10-04,08:50:42 | INFO | Train Epoch: 2 [ 3280896/12812288 (26%)] Data (t): 1.006 Batch (t): 3.773, 1089.06/s, 544.530/s/gpu LR: 0.000302 Logit Scale: 41.012 Contrastive_loss: 0.54596 (1.1803) Loss: 0.54596 (1.1803)
+2023-10-04,08:56:58 | INFO | Train Epoch: 2 [ 3690496/12812288 (29%)] Data (t): 0.994 Batch (t): 3.759, 1093.09/s, 546.546/s/gpu LR: 0.000297 Logit Scale: 41.730 Contrastive_loss: 0.87254 (1.1496) Loss: 0.87254 (1.1496)
+2023-10-04,09:03:15 | INFO | Train Epoch: 2 [ 4100096/12812288 (32%)] Data (t): 1.000 Batch (t): 3.765, 1105.79/s, 552.896/s/gpu LR: 0.000292 Logit Scale: 42.293 Contrastive_loss: 0.63911 (1.1032) Loss: 0.63911 (1.1032)
+2023-10-04,09:09:32 | INFO | Train Epoch: 2 [ 4509696/12812288 (35%)] Data (t): 1.014 Batch (t): 3.776, 1152.01/s, 576.003/s/gpu LR: 0.000287 Logit Scale: 42.748 Contrastive_loss: 0.43884 (1.0478) Loss: 0.43884 (1.0478)
+2023-10-04,09:15:49 | INFO | Train Epoch: 2 [ 4919296/12812288 (38%)] Data (t): 1.002 Batch (t): 3.767, 1092.36/s, 546.181/s/gpu LR: 0.000282 Logit Scale: 43.095 Contrastive_loss: 0.51206 (1.0066) Loss: 0.51206 (1.0066)
+2023-10-04,09:22:06 | INFO | Train Epoch: 2 [ 5328896/12812288 (42%)] Data (t): 1.009 Batch (t): 3.775, 1097.50/s, 548.751/s/gpu LR: 0.000277 Logit Scale: 43.466 Contrastive_loss: 1.1056 (1.0137) Loss: 1.1056 (1.0137)
+2023-10-04,09:28:24 | INFO | Train Epoch: 2 [ 5738496/12812288 (45%)] Data (t): 1.006 Batch (t): 3.772, 1076.22/s, 538.109/s/gpu LR: 0.000271 Logit Scale: 43.968 Contrastive_loss: 0.66190 (0.99020) Loss: 0.66190 (0.99020)
+2023-10-04,09:34:44 | INFO | Train Epoch: 2 [ 6148096/12812288 (48%)] Data (t): 1.039 Batch (t): 3.804, 1073.75/s, 536.875/s/gpu LR: 0.000266 Logit Scale: 44.462 Contrastive_loss: 0.36136 (0.95090) Loss: 0.36136 (0.95090)
+2023-10-04,09:41:03 | INFO | Train Epoch: 2 [ 6557696/12812288 (51%)] Data (t): 1.026 Batch (t): 3.792, 1070.45/s, 535.225/s/gpu LR: 0.000261 Logit Scale: 45.105 Contrastive_loss: 0.58194 (0.92920) Loss: 0.58194 (0.92920)
+2023-10-04,09:47:25 | INFO | Train Epoch: 2 [ 6967296/12812288 (54%)] Data (t): 1.049 Batch (t): 3.813, 1082.27/s, 541.134/s/gpu LR: 0.000256 Logit Scale: 45.661 Contrastive_loss: 0.48648 (0.90460) Loss: 0.48648 (0.90460)
+2023-10-04,09:53:35 | INFO | Train Epoch: 2 [ 7376896/12812288 (58%)] Data (t): 0.916 Batch (t): 3.707, 1105.20/s, 552.599/s/gpu LR: 0.000251 Logit Scale: 45.970 Contrastive_loss: 0.40710 (0.87842) Loss: 0.40710 (0.87842)
+2023-10-04,09:59:51 | INFO | Train Epoch: 2 [ 7786496/12812288 (61%)] Data (t): 0.978 Batch (t): 3.753, 1012.56/s, 506.281/s/gpu LR: 0.000246 Logit Scale: 46.399 Contrastive_loss: 0.35249 (0.85212) Loss: 0.35249 (0.85212)
+2023-10-04,10:06:06 | INFO | Train Epoch: 2 [ 8196096/12812288 (64%)] Data (t): 0.989 Batch (t): 3.756, 1110.84/s, 555.421/s/gpu LR: 0.000240 Logit Scale: 47.034 Contrastive_loss: 0.42090 (0.83159) Loss: 0.42090 (0.83159)
+2023-10-04,10:12:22 | INFO | Train Epoch: 2 [ 8605696/12812288 (67%)] Data (t): 0.988 Batch (t): 3.756, 1091.19/s, 545.596/s/gpu LR: 0.000235 Logit Scale: 47.486 Contrastive_loss: 0.34427 (0.80944) Loss: 0.34427 (0.80944)
+2023-10-04,10:18:37 | INFO | Train Epoch: 2 [ 9015296/12812288 (70%)] Data (t): 0.982 Batch (t): 3.754, 1083.58/s, 541.789/s/gpu LR: 0.000230 Logit Scale: 48.129 Contrastive_loss: 0.34139 (0.78909) Loss: 0.34139 (0.78909)
+2023-10-04,10:24:57 | INFO | Train Epoch: 2 [ 9424896/12812288 (74%)] Data (t): 1.035 Batch (t): 3.801, 1058.26/s, 529.131/s/gpu LR: 0.000225 Logit Scale: 48.585 Contrastive_loss: 0.25917 (0.76701) Loss: 0.25917 (0.76701)
+2023-10-04,10:31:17 | INFO | Train Epoch: 2 [ 9834496/12812288 (77%)] Data (t): 1.030 Batch (t): 3.796, 1086.19/s, 543.097/s/gpu LR: 0.000220 Logit Scale: 49.158 Contrastive_loss: 0.85196 (0.77041) Loss: 0.85196 (0.77041)
+2023-10-04,10:37:38 | INFO | Train Epoch: 2 [10244096/12812288 (80%)] Data (t): 1.045 Batch (t): 3.813, 1032.59/s, 516.293/s/gpu LR: 0.000215 Logit Scale: 49.722 Contrastive_loss: 0.48259 (0.75934) Loss: 0.48259 (0.75934)
+2023-10-04,10:43:49 | INFO | Train Epoch: 2 [10653696/12812288 (83%)] Data (t): 0.916 Batch (t): 3.707, 1095.56/s, 547.778/s/gpu LR: 0.000209 Logit Scale: 50.004 Contrastive_loss: 0.26408 (0.74099) Loss: 0.26408 (0.74099)
+2023-10-04,10:50:01 | INFO | Train Epoch: 2 [11063296/12812288 (86%)] Data (t): 0.929 Batch (t): 3.716, 1138.59/s, 569.297/s/gpu LR: 0.000204 Logit Scale: 50.307 Contrastive_loss: 0.30489 (0.72542) Loss: 0.30489 (0.72542)
+2023-10-04,10:56:19 | INFO | Train Epoch: 2 [11472896/12812288 (90%)] Data (t): 1.012 Batch (t): 3.785, 1086.63/s, 543.317/s/gpu LR: 0.000199 Logit Scale: 51.098 Contrastive_loss: 0.26934 (0.70969) Loss: 0.26934 (0.70969)
+2023-10-04,11:02:38 | INFO | Train Epoch: 2 [11882496/12812288 (93%)] Data (t): 1.022 Batch (t): 3.789, 1030.47/s, 515.236/s/gpu LR: 0.000194 Logit Scale: 51.589 Contrastive_loss: 0.20758 (0.69295) Loss: 0.20758 (0.69295)
+2023-10-04,11:08:59 | INFO | Train Epoch: 2 [12292096/12812288 (96%)] Data (t): 1.038 Batch (t): 3.810, 1086.40/s, 543.202/s/gpu LR: 0.000189 Logit Scale: 52.235 Contrastive_loss: 0.26982 (0.67930) Loss: 0.26982 (0.67930)
+2023-10-04,11:15:21 | INFO | Train Epoch: 2 [12701696/12812288 (99%)] Data (t): 1.054 Batch (t): 3.817, 1031.76/s, 515.879/s/gpu LR: 0.000184 Logit Scale: 52.773 Contrastive_loss: 0.17121 (0.66343) Loss: 0.17121 (0.66343)
+2023-10-04,11:17:01 | INFO | Train Epoch: 2 [12812288/12812288 (100%)] Data (t): 0.957 Batch (t): 3.724, 1166.98/s, 583.491/s/gpu LR: 0.000183 Logit Scale: 52.772 Contrastive_loss: 0.23837 (0.65055) Loss: 0.23837 (0.65055)
+2023-10-04,11:17:23 | INFO | Start epoch 3
+2023-10-04,11:17:44 | INFO | Train Epoch: 3 [    4096/12812288 (0%)] Data (t): 17.611 Batch (t): 20.294, 201.832/s, 100.916/s/gpu LR: 0.000183 Logit Scale: 52.775 Contrastive_loss: 0.10140 (0.10140) Loss: 0.10140 (0.10140)
+2023-10-04,11:23:52 | INFO | Train Epoch: 3 [  413696/12812288 (3%)] Data (t): 0.882 Batch (t): 3.685, 1114.89/s, 557.445/s/gpu LR: 0.000178 Logit Scale: 52.897 Contrastive_loss: 0.29335 (0.19738) Loss: 0.29335 (0.19738)
+2023-10-04,11:30:13 | INFO | Train Epoch: 3 [  823296/12812288 (6%)] Data (t): 1.040 Batch (t): 3.807, 1065.39/s, 532.694/s/gpu LR: 0.000173 Logit Scale: 53.182 Contrastive_loss: 0.22931 (0.20802) Loss: 0.22931 (0.20802)
+2023-10-04,11:36:32 | INFO | Train Epoch: 3 [ 1232896/12812288 (10%)] Data (t): 1.025 Batch (t): 3.793, 1090.09/s, 545.043/s/gpu LR: 0.000168 Logit Scale: 53.537 Contrastive_loss: 0.27467 (0.22468) Loss: 0.27467 (0.22468)
+2023-10-04,11:42:51 | INFO | Train Epoch: 3 [ 1642496/12812288 (13%)] Data (t): 1.024 Batch (t): 3.789, 1111.28/s, 555.640/s/gpu LR: 0.000163 Logit Scale: 53.820 Contrastive_loss: 0.29306 (0.23836) Loss: 0.29306 (0.23836)
+2023-10-04,11:49:07 | INFO | Train Epoch: 3 [ 2052096/12812288 (16%)] Data (t): 0.993 Batch (t): 3.763, 1053.50/s, 526.752/s/gpu LR: 0.000158 Logit Scale: 53.844 Contrastive_loss: 0.16248 (0.22571) Loss: 0.16248 (0.22571)
+2023-10-04,11:55:27 | INFO | Train Epoch: 3 [ 2461696/12812288 (19%)] Data (t): 1.032 Batch (t): 3.800, 1079.14/s, 539.572/s/gpu LR: 0.000153 Logit Scale: 53.918 Contrastive_loss: 0.25414 (0.22977) Loss: 0.25414 (0.22977)
+2023-10-04,12:01:51 | INFO | Train Epoch: 3 [ 2871296/12812288 (22%)] Data (t): 1.066 Batch (t): 3.836, 1102.09/s, 551.046/s/gpu LR: 0.000149 Logit Scale: 54.331 Contrastive_loss: 0.20474 (0.22664) Loss: 0.20474 (0.22664)
+2023-10-04,12:08:14 | INFO | Train Epoch: 3 [ 3280896/12812288 (26%)] Data (t): 1.062 Batch (t): 3.829, 1064.38/s, 532.191/s/gpu LR: 0.000144 Logit Scale: 54.895 Contrastive_loss: 0.20030 (0.22372) Loss: 0.20030 (0.22372)
+2023-10-04,12:14:31 | INFO | Train Epoch: 3 [ 3690496/12812288 (29%)] Data (t): 1.002 Batch (t): 3.769, 1127.74/s, 563.869/s/gpu LR: 0.000139 Logit Scale: 55.256 Contrastive_loss: 0.11393 (0.21274) Loss: 0.11393 (0.21274)
+2023-10-04,12:20:49 | INFO | Train Epoch: 3 [ 4100096/12812288 (32%)] Data (t): 1.016 Batch (t): 3.785, 1081.95/s, 540.976/s/gpu LR: 0.000135 Logit Scale: 55.821 Contrastive_loss: 0.18089 (0.20984) Loss: 0.18089 (0.20984)
+2023-10-04,12:27:10 | INFO | Train Epoch: 3 [ 4509696/12812288 (35%)] Data (t): 1.039 Batch (t): 3.806, 1130.98/s, 565.490/s/gpu LR: 0.000130 Logit Scale: 56.464 Contrastive_loss: 0.40888 (0.22643) Loss: 0.40888 (0.22643)
+2023-10-04,12:33:23 | INFO | Train Epoch: 3 [ 4919296/12812288 (38%)] Data (t): 0.958 Batch (t): 3.734, 1102.50/s, 551.248/s/gpu LR: 0.000125 Logit Scale: 57.135 Contrastive_loss: 0.21110 (0.22525) Loss: 0.21110 (0.22525)
+2023-10-04,12:39:39 | INFO | Train Epoch: 3 [ 5328896/12812288 (42%)] Data (t): 0.996 Batch (t): 3.755, 1092.62/s, 546.311/s/gpu LR: 0.000121 Logit Scale: 57.795 Contrastive_loss: 0.14431 (0.21947) Loss: 0.14431 (0.21947)
+2023-10-04,12:45:59 | INFO | Train Epoch: 3 [ 5738496/12812288 (45%)] Data (t): 1.038 Batch (t): 3.802, 1131.58/s, 565.790/s/gpu LR: 0.000117 Logit Scale: 58.475 Contrastive_loss: 0.19876 (0.21809) Loss: 0.19876 (0.21809)
+2023-10-04,12:52:15 | INFO | Train Epoch: 3 [ 6148096/12812288 (48%)] Data (t): 0.995 Batch (t): 3.760, 1159.95/s, 579.975/s/gpu LR: 0.000112 Logit Scale: 58.972 Contrastive_loss: 0.091400 (0.21017) Loss: 0.091400 (0.21017)
+2023-10-04,12:58:41 | INFO | Train Epoch: 3 [ 6557696/12812288 (51%)] Data (t): 1.083 Batch (t): 3.858, 1109.97/s, 554.985/s/gpu LR: 0.000108 Logit Scale: 59.584 Contrastive_loss: 0.17999 (0.20839) Loss: 0.17999 (0.20839)
+2023-10-04,13:04:56 | INFO | Train Epoch: 3 [ 6967296/12812288 (54%)] Data (t): 0.986 Batch (t): 3.754, 1083.42/s, 541.708/s/gpu LR: 0.000104 Logit Scale: 60.124 Contrastive_loss: 0.10983 (0.20292) Loss: 0.10983 (0.20292)
+2023-10-04,13:11:15 | INFO | Train Epoch: 3 [ 7376896/12812288 (58%)] Data (t): 1.025 Batch (t): 3.793, 1119.96/s, 559.980/s/gpu LR: 0.000099 Logit Scale: 60.713 Contrastive_loss: 0.097309 (0.19736) Loss: 0.097309 (0.19736)
+2023-10-04,13:17:33 | INFO | Train Epoch: 3 [ 7786496/12812288 (61%)] Data (t): 1.008 Batch (t): 3.779, 1055.38/s, 527.692/s/gpu LR: 0.000095 Logit Scale: 61.201 Contrastive_loss: 0.10717 (0.19285) Loss: 0.10717 (0.19285)
+2023-10-04,13:23:49 | INFO | Train Epoch: 3 [ 8196096/12812288 (64%)] Data (t): 0.978 Batch (t): 3.754, 1111.44/s, 555.720/s/gpu LR: 0.000091 Logit Scale: 61.755 Contrastive_loss: 0.092427 (0.18807) Loss: 0.092427 (0.18807)
+2023-10-04,13:30:06 | INFO | Train Epoch: 3 [ 8605696/12812288 (67%)] Data (t): 1.004 Batch (t): 3.776, 1071.94/s, 535.972/s/gpu LR: 0.000087 Logit Scale: 62.054 Contrastive_loss: 0.10386 (0.18424) Loss: 0.10386 (0.18424)
+2023-10-04,13:36:25 | INFO | Train Epoch: 3 [ 9015296/12812288 (70%)] Data (t): 1.014 Batch (t): 3.783, 1074.87/s, 537.436/s/gpu LR: 0.000083 Logit Scale: 62.424 Contrastive_loss: 0.085966 (0.17997) Loss: 0.085966 (0.17997)
+2023-10-04,13:42:37 | INFO | Train Epoch: 3 [ 9424896/12812288 (74%)] Data (t): 0.956 Batch (t): 3.726, 1101.93/s, 550.966/s/gpu LR: 0.000080 Logit Scale: 62.895 Contrastive_loss: 0.061422 (0.17503) Loss: 0.061422 (0.17503)
+2023-10-04,13:48:56 | INFO | Train Epoch: 3 [ 9834496/12812288 (77%)] Data (t): 1.022 Batch (t): 3.792, 1003.68/s, 501.840/s/gpu LR: 0.000076 Logit Scale: 63.020 Contrastive_loss: 0.080419 (0.17124) Loss: 0.080419 (0.17124)
+2023-10-04,13:55:16 | INFO | Train Epoch: 3 [10244096/12812288 (80%)] Data (t): 1.023 Batch (t): 3.797, 1087.67/s, 543.834/s/gpu LR: 0.000072 Logit Scale: 63.331 Contrastive_loss: 0.14631 (0.17029) Loss: 0.14631 (0.17029)
+2023-10-04,14:01:37 | INFO | Train Epoch: 3 [10653696/12812288 (83%)] Data (t): 1.030 Batch (t): 3.806, 1064.27/s, 532.136/s/gpu LR: 0.000069 Logit Scale: 63.721 Contrastive_loss: 0.10974 (0.16804) Loss: 0.10974 (0.16804)
+2023-10-04,14:08:13 | INFO | Train Epoch: 3 [11063296/12812288 (86%)] Data (t): 1.165 Batch (t): 3.963, 967.620/s, 483.810/s/gpu LR: 0.000065 Logit Scale: 64.136 Contrastive_loss: 0.10981 (0.16596) Loss: 0.10981 (0.16596)
+2023-10-04,14:14:52 | INFO | Train Epoch: 3 [11472896/12812288 (90%)] Data (t): 1.205 Batch (t): 3.986, 1061.89/s, 530.947/s/gpu LR: 0.000062 Logit Scale: 64.513 Contrastive_loss: 0.076067 (0.16286) Loss: 0.076067 (0.16286)
+2023-10-04,14:21:29 | INFO | Train Epoch: 3 [11882496/12812288 (93%)] Data (t): 1.188 Batch (t): 3.974, 1068.37/s, 534.187/s/gpu LR: 0.000058 Logit Scale: 64.889 Contrastive_loss: 0.11175 (0.16116) Loss: 0.11175 (0.16116)
+2023-10-04,14:27:52 | INFO | Train Epoch: 3 [12292096/12812288 (96%)] Data (t): 1.039 Batch (t): 3.832, 1061.45/s, 530.724/s/gpu LR: 0.000055 Logit Scale: 65.245 Contrastive_loss: 0.061531 (0.15795) Loss: 0.061531 (0.15795)
+2023-10-04,14:34:10 | INFO | Train Epoch: 3 [12701696/12812288 (99%)] Data (t): 0.978 Batch (t): 3.776, 1080.26/s, 540.131/s/gpu LR: 0.000052 Logit Scale: 65.544 Contrastive_loss: 0.041762 (0.15432) Loss: 0.041762 (0.15432)
+2023-10-04,14:35:54 | INFO | Train Epoch: 3 [12812288/12812288 (100%)] Data (t): 1.076 Batch (t): 3.858, 1141.18/s, 570.588/s/gpu LR: 0.000051 Logit Scale: 65.633 Contrastive_loss: 0.059545 (0.15144) Loss: 0.059545 (0.15144)
+2023-10-04,14:36:09 | INFO | Start epoch 4
+2023-10-04,14:36:30 | INFO | Train Epoch: 4 [    4096/12812288 (0%)] Data (t): 17.891 Batch (t): 20.599, 198.842/s, 99.4210/s/gpu LR: 0.000051 Logit Scale: 65.637 Contrastive_loss: 0.044595 (0.044595) Loss: 0.044595 (0.044595)
+2023-10-04,14:43:04 | INFO | Train Epoch: 4 [  413696/12812288 (3%)] Data (t): 1.123 Batch (t): 3.938, 1044.76/s, 522.382/s/gpu LR: 0.000048 Logit Scale: 65.969 Contrastive_loss: 0.060853 (0.052724) Loss: 0.060853 (0.052724)
+2023-10-04,14:49:22 | INFO | Train Epoch: 4 [  823296/12812288 (6%)] Data (t): 0.963 Batch (t): 3.785, 1060.93/s, 530.463/s/gpu LR: 0.000045 Logit Scale: 66.253 Contrastive_loss: 0.065606 (0.057018) Loss: 0.065606 (0.057018)
+2023-10-04,14:55:44 | INFO | Train Epoch: 4 [ 1232896/12812288 (10%)] Data (t): 1.023 Batch (t): 3.821, 1047.09/s, 523.545/s/gpu LR: 0.000042 Logit Scale: 66.534 Contrastive_loss: 0.049157 (0.055053) Loss: 0.049157 (0.055053)
+2023-10-04,15:02:02 | INFO | Train Epoch: 4 [ 1642496/12812288 (13%)] Data (t): 1.005 Batch (t): 3.776, 1080.50/s, 540.249/s/gpu LR: 0.000039 Logit Scale: 66.779 Contrastive_loss: 0.062624 (0.056567) Loss: 0.062624 (0.056567)
+2023-10-04,15:08:15 | INFO | Train Epoch: 4 [ 2052096/12812288 (16%)] Data (t): 0.966 Batch (t): 3.735, 1125.01/s, 562.503/s/gpu LR: 0.000036 Logit Scale: 67.008 Contrastive_loss: 0.048748 (0.055264) Loss: 0.048748 (0.055264)
+2023-10-04,15:14:27 | INFO | Train Epoch: 4 [ 2461696/12812288 (19%)] Data (t): 0.944 Batch (t): 3.716, 1140.94/s, 570.472/s/gpu LR: 0.000034 Logit Scale: 67.238 Contrastive_loss: 0.043947 (0.053647) Loss: 0.043947 (0.053647)
+2023-10-04,15:20:40 | INFO | Train Epoch: 4 [ 2871296/12812288 (22%)] Data (t): 0.959 Batch (t): 3.727, 1079.66/s, 539.828/s/gpu LR: 0.000031 Logit Scale: 67.453 Contrastive_loss: 0.041995 (0.052191) Loss: 0.041995 (0.052191)
+2023-10-04,15:26:53 | INFO | Train Epoch: 4 [ 3280896/12812288 (26%)] Data (t): 0.966 Batch (t): 3.735, 1052.89/s, 526.444/s/gpu LR: 0.000029 Logit Scale: 67.647 Contrastive_loss: 0.078931 (0.055162) Loss: 0.078931 (0.055162)
+2023-10-04,15:33:06 | INFO | Train Epoch: 4 [ 3690496/12812288 (29%)] Data (t): 0.959 Batch (t): 3.729, 1050.85/s, 525.423/s/gpu LR: 0.000026 Logit Scale: 67.830 Contrastive_loss: 0.035612 (0.053207) Loss: 0.035612 (0.053207)
+2023-10-04,15:39:18 | INFO | Train Epoch: 4 [ 4100096/12812288 (32%)] Data (t): 0.952 Batch (t): 3.719, 1080.79/s, 540.394/s/gpu LR: 0.000024 Logit Scale: 67.995 Contrastive_loss: 0.040762 (0.052076) Loss: 0.040762 (0.052076)
+2023-10-04,15:45:30 | INFO | Train Epoch: 4 [ 4509696/12812288 (35%)] Data (t): 0.947 Batch (t): 3.716, 1044.17/s, 522.084/s/gpu LR: 0.000022 Logit Scale: 68.148 Contrastive_loss: 0.065484 (0.053193) Loss: 0.065484 (0.053193)
+2023-10-04,15:51:41 | INFO | Train Epoch: 4 [ 4919296/12812288 (38%)] Data (t): 0.946 Batch (t): 3.717, 1065.65/s, 532.826/s/gpu LR: 0.000020 Logit Scale: 68.276 Contrastive_loss: 0.050610 (0.052994) Loss: 0.050610 (0.052994)
+2023-10-04,15:57:51 | INFO | Train Epoch: 4 [ 5328896/12812288 (42%)] Data (t): 0.930 Batch (t): 3.697, 1062.27/s, 531.133/s/gpu LR: 0.000018 Logit Scale: 68.403 Contrastive_loss: 0.033620 (0.051610) Loss: 0.033620 (0.051610)
+2023-10-04,16:04:05 | INFO | Train Epoch: 4 [ 5738496/12812288 (45%)] Data (t): 0.971 Batch (t): 3.741, 1049.80/s, 524.898/s/gpu LR: 0.000016 Logit Scale: 68.515 Contrastive_loss: 0.050987 (0.051569) Loss: 0.050987 (0.051569)
+2023-10-04,16:10:19 | INFO | Train Epoch: 4 [ 6148096/12812288 (48%)] Data (t): 0.968 Batch (t): 3.738, 1114.09/s, 557.046/s/gpu LR: 0.000014 Logit Scale: 68.618 Contrastive_loss: 0.034083 (0.050476) Loss: 0.034083 (0.050476)
+2023-10-04,16:16:34 | INFO | Train Epoch: 4 [ 6557696/12812288 (51%)] Data (t): 0.979 Batch (t): 3.748, 1142.41/s, 571.204/s/gpu LR: 0.000012 Logit Scale: 68.709 Contrastive_loss: 0.035085 (0.049571) Loss: 0.035085 (0.049571)
+2023-10-04,16:22:49 | INFO | Train Epoch: 4 [ 6967296/12812288 (54%)] Data (t): 0.979 Batch (t): 3.750, 1063.09/s, 531.547/s/gpu LR: 0.000011 Logit Scale: 68.782 Contrastive_loss: 0.030829 (0.048529) Loss: 0.030829 (0.048529)
+2023-10-04,16:29:04 | INFO | Train Epoch: 4 [ 7376896/12812288 (58%)] Data (t): 0.987 Batch (t): 3.757, 1065.61/s, 532.803/s/gpu LR: 0.000009 Logit Scale: 68.847 Contrastive_loss: 0.047845 (0.048493) Loss: 0.047845 (0.048493)
+2023-10-04,16:35:20 | INFO | Train Epoch: 4 [ 7786496/12812288 (61%)] Data (t): 0.984 Batch (t): 3.756, 1058.89/s, 529.444/s/gpu LR: 0.000008 Logit Scale: 68.907 Contrastive_loss: 0.031057 (0.047622) Loss: 0.031057 (0.047622)
+2023-10-04,16:41:32 | INFO | Train Epoch: 4 [ 8196096/12812288 (64%)] Data (t): 0.952 Batch (t): 3.724, 1068.30/s, 534.149/s/gpu LR: 0.000007 Logit Scale: 68.956 Contrastive_loss: 0.073408 (0.048849) Loss: 0.073408 (0.048849)
+2023-10-04,16:47:37 | INFO | Train Epoch: 4 [ 8605696/12812288 (67%)] Data (t): 0.883 Batch (t): 3.650, 1124.76/s, 562.378/s/gpu LR: 0.000006 Logit Scale: 68.999 Contrastive_loss: 0.039093 (0.048406) Loss: 0.039093 (0.048406)
+2023-10-04,16:53:45 | INFO | Train Epoch: 4 [ 9015296/12812288 (70%)] Data (t): 0.924 Batch (t): 3.683, 1135.95/s, 567.974/s/gpu LR: 0.000005 Logit Scale: 69.034 Contrastive_loss: 0.040414 (0.048059) Loss: 0.040414 (0.048059)
+2023-10-04,16:59:53 | INFO | Train Epoch: 4 [ 9424896/12812288 (74%)] Data (t): 0.915 Batch (t): 3.676, 1148.39/s, 574.197/s/gpu LR: 0.000004 Logit Scale: 69.062 Contrastive_loss: 0.025212 (0.047107) Loss: 0.025212 (0.047107)
+2023-10-04,17:05:54 | INFO | Train Epoch: 4 [ 9834496/12812288 (77%)] Data (t): 0.856 Batch (t): 3.611, 1138.96/s, 569.478/s/gpu LR: 0.000003 Logit Scale: 69.083 Contrastive_loss: 0.035661 (0.046649) Loss: 0.035661 (0.046649)
+2023-10-04,17:11:58 | INFO | Train Epoch: 4 [10244096/12812288 (80%)] Data (t): 0.878 Batch (t): 3.638, 1137.87/s, 568.937/s/gpu LR: 0.000002 Logit Scale: 69.100 Contrastive_loss: 0.037829 (0.046310) Loss: 0.037829 (0.046310)
+2023-10-04,17:18:01 | INFO | Train Epoch: 4 [10653696/12812288 (83%)] Data (t): 0.875 Batch (t): 3.635, 1127.93/s, 563.966/s/gpu LR: 0.000001 Logit Scale: 69.112 Contrastive_loss: 0.035342 (0.045903) Loss: 0.035342 (0.045903)
+2023-10-04,17:24:05 | INFO | Train Epoch: 4 [11063296/12812288 (86%)] Data (t): 0.877 Batch (t): 3.635, 1128.07/s, 564.033/s/gpu LR: 0.000001 Logit Scale: 69.120 Contrastive_loss: 0.035486 (0.045531) Loss: 0.035486 (0.045531)
+2023-10-04,17:30:07 | INFO | Train Epoch: 4 [11472896/12812288 (90%)] Data (t): 0.860 Batch (t): 3.616, 1133.37/s, 566.685/s/gpu LR: 0.000001 Logit Scale: 69.125 Contrastive_loss: 0.029829 (0.044990) Loss: 0.029829 (0.044990)
+2023-10-04,17:36:08 | INFO | Train Epoch: 4 [11882496/12812288 (93%)] Data (t): 0.854 Batch (t): 3.612, 1122.86/s, 561.429/s/gpu LR: 0.000000 Logit Scale: 69.129 Contrastive_loss: 0.029653 (0.044479) Loss: 0.029653 (0.044479)
+2023-10-04,17:42:08 | INFO | Train Epoch: 4 [12292096/12812288 (96%)] Data (t): 0.846 Batch (t): 3.602, 1140.13/s, 570.067/s/gpu LR: 0.000000 Logit Scale: 69.129 Contrastive_loss: 0.037619 (0.044257) Loss: 0.037619 (0.044257)
+2023-10-04,17:48:09 | INFO | Train Epoch: 4 [12701696/12812288 (99%)] Data (t): 0.856 Batch (t): 3.613, 1147.32/s, 573.662/s/gpu LR: 0.000000 Logit Scale: 69.129 Contrastive_loss: 0.043219 (0.044225) Loss: 0.043219 (0.044225)
+2023-10-04,17:49:46 | INFO | Train Epoch: 4 [12812288/12812288 (100%)] Data (t): 0.839 Batch (t): 3.592, 1141.44/s, 570.719/s/gpu LR: 0.000000 Logit Scale: 69.129 Contrastive_loss: 0.030468 (0.043808) Loss: 0.030468 (0.043808)
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.003 MB of 0.003 MB uploaded (0.000 MB deduped)wandb: \ 0.003 MB of 0.003 MB uploaded (0.000 MB deduped)wandb: | 0.003 MB of 0.003 MB uploaded (0.000 MB deduped)wandb: / 0.003 MB of 0.015 MB uploaded (0.000 MB deduped)wandb: - 0.003 MB of 0.051 MB uploaded (0.000 MB deduped)wandb: \ 0.003 MB of 0.051 MB uploaded (0.000 MB deduped)wandb: | 0.051 MB of 0.051 MB uploaded (0.000 MB deduped)wandb: / 0.051 MB of 0.051 MB uploaded (0.000 MB deduped)wandb: - 0.051 MB of 0.051 MB uploaded (0.000 MB deduped)wandb: \ 0.051 MB of 0.051 MB uploaded (0.000 MB deduped)wandb: | 0.051 MB of 0.051 MB uploaded (0.000 MB deduped)wandb: / 0.051 MB of 0.051 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run history:
+wandb:                             step ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:                 train/batch_time ▁▁▁▁▁▁▁▁▆▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:           train/contrastive_loss █▇▆▅▅▄▄▄▄▃▄▄▃▂▂▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                  train/data_time ▁▁▁▁▁▁▁▁▆▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                       train/loss █▇▆▅▅▄▄▄▄▃▄▄▃▂▂▃▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                         train/lr ▂███████▇▇▇▇▇▆▆▆▆▅▅▅▅▄▄▄▄▃▃▃▂▂▂▂▂▂▁▁▁▁▁▁
+wandb:         train/samples_per_second ████▇▇▇█▁███████▇▇████▇▇▁████▇▇▇▇█▇▇▇███
+wandb: train/samples_per_second_per_gpu ████▇▇▇█▁███████▇▇████▇▇▁████▇▇▇▇█▇▇▇███
+wandb:                      train/scale ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▆▇▇▇▇█████████
+wandb: 
+wandb: Run summary:
+wandb:                             step 15639
+wandb:                 train/batch_time 3.58846
+wandb:           train/contrastive_loss 0.03047
+wandb:                  train/data_time 0.81706
+wandb:                       train/loss 0.03047
+wandb:                         train/lr 0.0
+wandb:         train/samples_per_second 1141.43794
+wandb: train/samples_per_second_per_gpu 570.71897
+wandb:                      train/scale 69.12913
+wandb: 
+wandb: Synced smallscale_tmars_5x_20231004_012645: https://wandb.ai/saching007/datanet/runs/smallscale_tmars_5x_20231004_012645
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20231004_012836-smallscale_tmars_5x_20231004_012645/logs
+Traceback (most recent call last):
+  File "/home/sachingo/datacomp/train.py", line 310, in <module>
+    assert (
+AssertionError: Did not find the checkpoint at /project_data2/projects/sachingo/datacomp_checkpoints/logs/smallscale_tmars_5x_20231004_012645/checkpoints/epoch_latest.pt
+srun: error: locus-1-29: task 0: Exited with exit code 1

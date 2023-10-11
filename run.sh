@@ -1,0 +1,6 @@
+#!/bin/bash
+python evaluate.py --train_output_dir logs/logs/smallscale_laion_filter_5x_20231004_125107/ --use_model "ViT-B-32 /home/sachingo/datacomp/logs/logs/smallscale_laion_filter_5x_20231004_125107/checkpoints/epoch_1.pt"
+python evaluate.py --train_output_dir logs/logs/smallscale_laion_filter_5x_20231004_125107/ --use_model "ViT-B-32 /home/sachingo/datacomp/logs/logs/smallscale_laion_filter_5x_20231004_125107/checkpoints/epoch_2.pt"
+python evaluate.py --train_output_dir logs/logs/smallscale_laion_filter_5x_20231004_125107/ --use_model "ViT-B-32 /home/sachingo/datacomp/logs/logs/smallscale_laion_filter_5x_20231004_125107/checkpoints/epoch_3.pt"
+python evaluate.py --train_output_dir logs/logs/smallscale_laion_filter_5x_20231004_125107/ --use_model "ViT-B-32 /home/sachingo/datacomp/logs/logs/smallscale_laion_filter_5x_20231004_125107/checkpoints/epoch_4.pt"
+python evaluate.py --train_output_dir logs/logs/smallscale_laion_filter_5x_20231004_125107/ --use_model "ViT-B-32 /home/sachingo/datacomp/logs/logs/smallscale_laion_filter_5x_20231004_125107/checkpoints/epoch_5.pt"

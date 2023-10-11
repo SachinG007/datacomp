@@ -319,7 +319,9 @@ if __name__ == "__main__":
     train_info_filename = args.train_output_dir / "info.pkl"
     train_info = pickle.load(open(train_info_filename, "rb"))
 
-    results_filename = args.output_dir / "eval_results.jsonl"
+    epoch = int(model_checkpoint[-4])
+    print(f"epoch : {epoch}")
+    results_filename = args.output_dir / f"eval_results_epoch_{epoch}.jsonl"
 
     # Get list of datasets
     with open(os.path.join(os.path.dirname(__file__), "tasklist.yml")) as f:
@@ -339,6 +341,7 @@ if __name__ == "__main__":
         assert cached_train_info == train_info, error_message
 
         # Read existing results
+        print(results_filename)
         if results_filename.exists():
             with open(results_filename, "r") as f:
                 lines = [json.loads(s) for s in f.readlines()]
