@@ -419,7 +419,7 @@ def get_wds_dataset(args, preprocess_img, is_train, epoch=0, floor=False, tokeni
         wds.rename(image="jpg;png;jpeg;webp", text="txt", ids = "json"),
         wds.map_dict(image=preprocess_img, text=lambda text: tokenizer(text)[0], ids=lambda ids: int(ids["key"])),
         wds.select(filter_bad_images(args)),
-        wds.to_tuple("image", "text", "ids"),
+        wds.to_tuple("image", "text"),
         wds.batched(args.batch_size, partial=not is_train)
     ])
 
