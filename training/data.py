@@ -25,6 +25,29 @@ try:
 except ImportError:
     hvd = None
 
+def load_valid_file(args):
+    print("Loading valid file from ", args.valid_file)
+    if args.valid_file is None:
+        return None
+    else: 
+        return torch.load(args.valid_file)
+
+def filter_bad_images(args):
+    if args.valid_file is None:
+        args.valid_file = load_valid_file(args)
+    
+    is_valid = args.valid_file
+    
+    def filter_is_valid(sample):
+        return is_valid[sample["ids"]] == 1
+    
+    def no_filter(sample):
+        return 1
+    
+
+    if args.filter == "none": return no_filter
+    if args.filter == "is_valid": return filter_is_valid
+
 
 class CsvDataset(Dataset):
     def __init__(self, input_filename, transforms, img_key, caption_key, sep="\t", tokenizer=None):
@@ -164,7 +187,8 @@ def get_imagenet(args, preprocess_fns, split):
 def count_samples(dataloader):
     os.environ["WDS_EPOCH"] = "0"
     n_elements, n_batches = 0, 0
-    for images, texts in dataloader:
+    for batch in dataloader:
+        images, texts = batch[0], batch[1]
         n_batches += 1
         n_elements += len(images)
         assert len(images) == len(texts)
@@ -326,7 +350,10 @@ class ResampledShards2(IterableDataset):
 
 
 def get_wds_dataset(args, preprocess_img, is_train, epoch=0, floor=False, tokenizer=None):
-    input_shards = args.train_data if is_train else args.val_data
+    print("Filter:", args.filter)
+    if args.filter == "is_valid":
+        input_shards = args.train_data if is_train else args.val_data
+
     assert input_shards is not None
     resampled = getattr(args, 'dataset_resampled', False) and is_train
 
@@ -389,9 +416,10 @@ def get_wds_dataset(args, preprocess_img, is_train, epoch=0, floor=False, tokeni
     pipeline.extend([
         wds.select(filter_no_caption_or_no_image),
         wds.decode("pilrgb", handler=log_and_continue),
-        wds.rename(image="jpg;png;jpeg;webp", text="txt"),
-        wds.map_dict(image=preprocess_img, text=lambda text: tokenizer(text)[0]),
-        wds.to_tuple("image", "text"),
+        wds.rename(image="jpg;png;jpeg;webp", text="txt", ids = "json"),
+        wds.map_dict(image=preprocess_img, text=lambda text: tokenizer(text)[0], ids=lambda ids: int(ids["key"])),
+        wds.select(filter_bad_images(args)),
+        wds.to_tuple("image", "text", "ids"),
         wds.batched(args.batch_size, partial=not is_train)
     ])
 

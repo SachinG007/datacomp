@@ -445,6 +445,20 @@ def parse_args(args):
     parser.add_argument("--only-local-loss", type=int, default=0)
     # num_saves_per_epoch 
     parser.add_argument("--num-saves-per-epoch", type=int, default=5)
+    parser.add_argument(
+        "--filter",
+        type=str,
+        default="none",
+        help="none or is_valid",
+    )
+
+    parser.add_argument(
+        "--valid-file",
+        type=str,
+        default=None,
+        help="Path to valid file",
+    )
+
     args = parser.parse_args(args)
 
     # If some params are not passed, we use the default values based on model name.
