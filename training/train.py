@@ -73,6 +73,7 @@ def train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist
     data['train'].set_epoch(epoch)  # set epoch in process safe manner via sampler or shared_epoch
     dataloader = data['train'].dataloader
     num_batches_per_epoch = dataloader.num_batches // args.accum_freq
+    save_i_accum =  num_batches_per_epoch // args.num_saves_per_epoch 
     sample_digits = math.ceil(math.log(dataloader.num_samples + 1, 10))
 
     if args.accum_freq > 1:
@@ -245,6 +246,23 @@ def train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist
             # resetting batch / data time meters per log window
             batch_time_m.reset()
             data_time_m.reset()
+
+        if is_master(args) and (i_accum % save_i_accum == 0 or batch_count == num_batches_per_epoch):
+            save_path = os.path.join(args.checkpoint_path, f"model_step_{step}_epoch_{epoch}.pt")
+            checkpoint_dict = {
+                "epoch": epoch,
+                "name": args.name,
+                "state_dict": unwrap_model(model).state_dict(),
+                "optimizer": optimizer.state_dict(),
+                "step": step,
+            }
+            if scaler is not None:
+                checkpoint_dict["scaler"] = scaler.state_dict()
+
+            torch.save(
+                checkpoint_dict,
+                os.path.join(args.checkpoint_path, save_path),
+            )
     # end for
 
 

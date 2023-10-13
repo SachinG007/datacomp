@@ -443,6 +443,8 @@ def parse_args(args):
         help='Use SigLip (sigmoid) loss.'
     )
     parser.add_argument("--only-local-loss", type=int, default=0)
+    # num_saves_per_epoch 
+    parser.add_argument("--num-saves-per-epoch", type=int, default=5)
     args = parser.parse_args(args)
 
     # If some params are not passed, we use the default values based on model name.

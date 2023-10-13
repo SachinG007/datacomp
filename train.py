@@ -217,6 +217,7 @@ if __name__ == "__main__":
     parser.add_argument("--grad_clip_norm", type=float, default=None)
     parser.add_argument("--save_frequency", type=int, default=1)
     parser.add_argument("--only_local_loss", type=int, default=0)
+    parser.add_argument("--num_saves_per_epoch", type=int, default=5)
 
     args = parser.parse_args()
     data_dir = args.data_dir
@@ -281,6 +282,8 @@ if __name__ == "__main__":
         f"{args.resume}",
         "--only-local-loss",
         f"{args.only_local_loss}",
+        "--num-saves-per-epoch",
+        f"{args.num_saves_per_epoch}",
     ]
     main_args.append("--dataset-resampled")
     if args.report_to_wandb:
