@@ -1,4 +1,4 @@
-/var/spool/slurmd/job183871/slurm_script: line 23: module: command not found
+/var/spool/slurmd/job184650/slurm_script: line 23: module: command not found
 
 CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
 To initialize your shell, run
@@ -18,17 +18,17 @@ See 'conda init --help' for more information and options.
 IMPORTANT: You may need to close and restart your shell after running 'conda init'.
 
 
-2023-10-05,16:40:54 | INFO | No latest resume checkpoint found in /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_nofilter_5x_20231005_163013/checkpoints.
-2023-10-05,16:40:57 | INFO | Running in distributed mode with multiple processes. Device: cuda:0.Process (global: 0, local 0), total 4.
-2023-10-05,16:40:57 | INFO | Running in distributed mode with multiple processes. Device: cuda:2.Process (global: 2, local 2), total 4.
-2023-10-05,16:40:57 | INFO | Running in distributed mode with multiple processes. Device: cuda:3.Process (global: 3, local 3), total 4.
-2023-10-05,16:40:57 | INFO | Loaded ViT-B-32 model config.
-2023-10-05,16:40:57 | INFO | Loaded ViT-B-32 model config.
-2023-10-05,16:40:57 | INFO | Loaded ViT-B-32 model config.
-2023-10-05,16:40:57 | INFO | Running in distributed mode with multiple processes. Device: cuda:1.Process (global: 1, local 1), total 4.
-2023-10-05,16:40:57 | INFO | Loaded ViT-B-32 model config.
-2023-10-05,16:40:58 | INFO | Model:
-2023-10-05,16:40:58 | INFO | CLIP(
+2023-10-13,14:39:17 | INFO | No latest resume checkpoint found in /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_nofilter_5x_20231013_143911/checkpoints.
+2023-10-13,14:39:19 | INFO | Running in distributed mode with multiple processes. Device: cuda:0.Process (global: 0, local 0), total 4.
+2023-10-13,14:39:19 | INFO | Loaded ViT-B-32 model config.
+2023-10-13,14:39:19 | INFO | Running in distributed mode with multiple processes. Device: cuda:1.Process (global: 1, local 1), total 4.
+2023-10-13,14:39:19 | INFO | Running in distributed mode with multiple processes. Device: cuda:2.Process (global: 2, local 2), total 4.
+2023-10-13,14:39:19 | INFO | Loaded ViT-B-32 model config.
+2023-10-13,14:39:19 | INFO | Loaded ViT-B-32 model config.
+2023-10-13,14:39:19 | INFO | Running in distributed mode with multiple processes. Device: cuda:3.Process (global: 3, local 3), total 4.
+2023-10-13,14:39:19 | INFO | Loaded ViT-B-32 model config.
+2023-10-13,14:39:21 | INFO | Model:
+2023-10-13,14:39:21 | INFO | CLIP(
   (visual): VisionTransformer(
     (patchnorm_pre_ln): Identity()
     (conv1): Conv2d(3, 768, kernel_size=(32, 32), stride=(32, 32), bias=False)
@@ -383,181 +383,119 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   (token_embedding): Embedding(49408, 512)
   (ln_final): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
 )
-2023-10-05,16:40:58 | INFO | Params:
-2023-10-05,16:40:58 | INFO |   accum_freq: 1
-2023-10-05,16:40:58 | INFO |   aug_cfg: {}
-2023-10-05,16:40:58 | INFO |   batch_size: 1024
-2023-10-05,16:40:58 | INFO |   beta1: 0.9
-2023-10-05,16:40:58 | INFO |   beta2: 0.98
-2023-10-05,16:40:58 | INFO |   checkpoint_path: /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_nofilter_5x_20231005_163013/checkpoints
-2023-10-05,16:40:58 | INFO |   coca_caption_loss_weight: 2.0
-2023-10-05,16:40:58 | INFO |   coca_contrastive_loss_weight: 1.0
-2023-10-05,16:40:58 | INFO |   copy_codebase: False
-2023-10-05,16:40:58 | INFO |   csv_caption_key: title
-2023-10-05,16:40:58 | INFO |   csv_img_key: filepath
-2023-10-05,16:40:58 | INFO |   csv_separator: 	
-2023-10-05,16:40:58 | INFO |   dataset_resampled: True
-2023-10-05,16:40:58 | INFO |   dataset_type: webdataset
-2023-10-05,16:40:58 | INFO |   ddp_static_graph: True
-2023-10-05,16:40:58 | INFO |   debug: False
-2023-10-05,16:40:58 | INFO |   delete_previous_checkpoint: False
-2023-10-05,16:40:58 | INFO |   device: cuda:0
-2023-10-05,16:40:58 | INFO |   dist_backend: nccl
-2023-10-05,16:40:58 | INFO |   dist_url: env://
-2023-10-05,16:40:58 | INFO |   distill: False
-2023-10-05,16:40:58 | INFO |   distill_model: None
-2023-10-05,16:40:58 | INFO |   distill_pretrained: None
-2023-10-05,16:40:58 | INFO |   distributed: True
-2023-10-05,16:40:58 | INFO |   epochs: 25
-2023-10-05,16:40:58 | INFO |   epochs_cooldown: None
-2023-10-05,16:40:58 | INFO |   eps: 1e-06
-2023-10-05,16:40:58 | INFO |   force_custom_text: False
-2023-10-05,16:40:58 | INFO |   force_image_size: None
-2023-10-05,16:40:58 | INFO |   force_patch_dropout: None
-2023-10-05,16:40:58 | INFO |   force_quick_gelu: False
-2023-10-05,16:40:58 | INFO |   gather_with_grad: True
-2023-10-05,16:40:58 | INFO |   grad_checkpointing: True
-2023-10-05,16:40:58 | INFO |   grad_clip_norm: None
-2023-10-05,16:40:58 | INFO |   horovod: False
-2023-10-05,16:40:58 | INFO |   image_mean: None
-2023-10-05,16:40:58 | INFO |   image_std: None
-2023-10-05,16:40:58 | INFO |   imagenet_v2: None
-2023-10-05,16:40:58 | INFO |   imagenet_val: None
-2023-10-05,16:40:58 | INFO |   local_loss: True
-2023-10-05,16:40:58 | INFO |   local_rank: 0
-2023-10-05,16:40:58 | INFO |   lock_image: False
-2023-10-05,16:40:58 | INFO |   lock_image_freeze_bn_stats: False
-2023-10-05,16:40:58 | INFO |   lock_image_unlocked_groups: 0
-2023-10-05,16:40:58 | INFO |   lock_text: False
-2023-10-05,16:40:58 | INFO |   lock_text_freeze_layer_norm: False
-2023-10-05,16:40:58 | INFO |   lock_text_unlocked_layers: 0
-2023-10-05,16:40:58 | INFO |   log_every_n_steps: 100
-2023-10-05,16:40:58 | INFO |   log_level: 20
-2023-10-05,16:40:58 | INFO |   log_local: False
-2023-10-05,16:40:58 | INFO |   log_path: /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_nofilter_5x_20231005_163013/out.log
-2023-10-05,16:40:58 | INFO |   logs: /project_data2/projects/sachingo/datacomp_checkpoints/logs
-2023-10-05,16:40:58 | INFO |   lr: 0.0005
-2023-10-05,16:40:58 | INFO |   lr_cooldown_end: 0.0
-2023-10-05,16:40:58 | INFO |   lr_cooldown_power: 1.0
-2023-10-05,16:40:58 | INFO |   lr_scheduler: cosine
-2023-10-05,16:40:58 | INFO |   model: ViT-B-32
-2023-10-05,16:40:58 | INFO |   name: mediumscale_nofilter_5x_20231005_163013
-2023-10-05,16:40:58 | INFO |   no_set_device_rank: False
-2023-10-05,16:40:58 | INFO |   precision: amp
-2023-10-05,16:40:58 | INFO |   pretrained: 
-2023-10-05,16:40:58 | INFO |   pretrained_image: False
-2023-10-05,16:40:58 | INFO |   rank: 0
-2023-10-05,16:40:58 | INFO |   remote_sync: None
-2023-10-05,16:40:58 | INFO |   remote_sync_frequency: 300
-2023-10-05,16:40:58 | INFO |   remote_sync_protocol: s3
-2023-10-05,16:40:58 | INFO |   report_to: 
-2023-10-05,16:40:58 | INFO |   resume: None
-2023-10-05,16:40:58 | INFO |   save_frequency: 1
-2023-10-05,16:40:58 | INFO |   save_most_recent: False
-2023-10-05,16:40:58 | INFO |   seed: 0
-2023-10-05,16:40:58 | INFO |   skip_scheduler: False
-2023-10-05,16:40:58 | INFO |   tensorboard: False
-2023-10-05,16:40:58 | INFO |   tensorboard_path: 
-2023-10-05,16:40:58 | INFO |   torchscript: False
-2023-10-05,16:40:58 | INFO |   trace: False
-2023-10-05,16:40:58 | INFO |   train_data: ::/project_data/datasets/datanet/shards/{00000000..00012895}.tar
-2023-10-05,16:40:58 | INFO |   train_data_upsampling_factors: None
-2023-10-05,16:40:58 | INFO |   train_num_samples: 25600000
-2023-10-05,16:40:58 | INFO |   use_bn_sync: False
-2023-10-05,16:40:58 | INFO |   val_data: None
-2023-10-05,16:40:58 | INFO |   val_frequency: 1
-2023-10-05,16:40:58 | INFO |   val_num_samples: None
-2023-10-05,16:40:58 | INFO |   wandb: False
-2023-10-05,16:40:58 | INFO |   wandb_notes: 
-2023-10-05,16:40:58 | INFO |   wandb_project_name: open-clip
-2023-10-05,16:40:58 | INFO |   warmup: 500
-2023-10-05,16:40:58 | INFO |   wd: 0.2
-2023-10-05,16:40:58 | INFO |   workers: 4
-2023-10-05,16:40:58 | INFO |   world_size: 4
-2023-10-05,16:40:58 | INFO |   zeroshot_frequency: 2
-2023-10-05,16:40:59 | INFO | Start epoch 0
-2023-10-05,16:41:48 | INFO | Train Epoch: 0 [    4096/25608192 (0%)] Data (t): 14.274 Batch (t): 49.560, 82.6475/s, 20.6619/s/gpu LR: 0.000001 Logit Scale: 14.286 Contrastive_loss: 8.3885 (8.3885) Loss: 8.3885 (8.3885)
-2023-10-05,16:41:50 | INFO | Reducer buckets have been rebuilt in this iteration.
-2023-10-05,16:41:50 | INFO | Reducer buckets have been rebuilt in this iteration.
-2023-10-05,16:41:50 | INFO | Reducer buckets have been rebuilt in this iteration.
-2023-10-05,16:41:50 | INFO | Reducer buckets have been rebuilt in this iteration.
-2023-10-05,16:47:59 | INFO | Train Epoch: 0 [  413696/25608192 (2%)] Data (t): 0.853 Batch (t): 3.706, 209.273/s, 52.3182/s/gpu LR: 0.000101 Logit Scale: 14.265 Contrastive_loss: 8.1777 (8.2831) Loss: 8.1777 (8.2831)
-2023-10-05,16:53:32 | INFO | Train Epoch: 0 [  823296/25608192 (3%)] Data (t): 0.905 Batch (t): 3.332, 199.820/s, 49.9549/s/gpu LR: 0.000201 Logit Scale: 14.237 Contrastive_loss: 7.9415 (8.1692) Loss: 7.9415 (8.1692)
-2023-10-05,16:59:14 | INFO | Train Epoch: 0 [ 1232896/25608192 (5%)] Data (t): 0.633 Batch (t): 3.423, 2261.90/s, 565.476/s/gpu LR: 0.000301 Logit Scale: 14.197 Contrastive_loss: 7.8922 (8.1000) Loss: 7.8922 (8.1000)
-2023-10-05,17:05:22 | INFO | Train Epoch: 0 [ 1642496/25608192 (6%)] Data (t): 0.739 Batch (t): 3.675, 2203.34/s, 550.835/s/gpu LR: 0.000401 Logit Scale: 14.172 Contrastive_loss: 7.8141 (8.0428) Loss: 7.8141 (8.0428)
-2023-10-05,17:09:43 | INFO | Train Epoch: 0 [ 2052096/25608192 (8%)] Data (t): 0.517 Batch (t): 2.608, 2251.74/s, 562.935/s/gpu LR: 0.000500 Logit Scale: 14.141 Contrastive_loss: 7.7150 (7.9881) Loss: 7.7150 (7.9881)
-2023-10-05,17:14:23 | INFO | Train Epoch: 0 [ 2461696/25608192 (10%)] Data (t): 0.730 Batch (t): 2.802, 2252.87/s, 563.217/s/gpu LR: 0.000500 Logit Scale: 14.150 Contrastive_loss: 7.6224 (7.9359) Loss: 7.6224 (7.9359)
-2023-10-05,17:18:52 | INFO | Train Epoch: 0 [ 2871296/25608192 (11%)] Data (t): 0.732 Batch (t): 2.693, 2279.16/s, 569.790/s/gpu LR: 0.000500 Logit Scale: 14.181 Contrastive_loss: 7.5965 (7.8935) Loss: 7.5965 (7.8935)
-2023-10-05,17:23:14 | INFO | Train Epoch: 0 [ 3280896/25608192 (13%)] Data (t): 0.540 Batch (t): 2.617, 2218.42/s, 554.605/s/gpu LR: 0.000500 Logit Scale: 14.240 Contrastive_loss: 7.4603 (7.8453) Loss: 7.4603 (7.8453)
-2023-10-05,17:27:38 | INFO | Train Epoch: 0 [ 3690496/25608192 (14%)] Data (t): 0.551 Batch (t): 2.647, 2326.48/s, 581.621/s/gpu LR: 0.000500 Logit Scale: 14.350 Contrastive_loss: 7.4678 (7.8076) Loss: 7.4678 (7.8076)
-2023-10-05,17:32:01 | INFO | Train Epoch: 0 [ 4100096/25608192 (16%)] Data (t): 0.509 Batch (t): 2.630, 2250.29/s, 562.573/s/gpu LR: 0.000500 Logit Scale: 14.483 Contrastive_loss: 7.3665 (7.7675) Loss: 7.3665 (7.7675)
-2023-10-05,17:36:46 | INFO | Train Epoch: 0 [ 4509696/25608192 (18%)] Data (t): 1.098 Batch (t): 2.844, 2258.66/s, 564.666/s/gpu LR: 0.000500 Logit Scale: 14.633 Contrastive_loss: 7.2453 (7.7240) Loss: 7.2453 (7.7240)
-2023-10-05,17:41:14 | INFO | Train Epoch: 0 [ 4919296/25608192 (19%)] Data (t): 0.485 Batch (t): 2.678, 1224.49/s, 306.121/s/gpu LR: 0.000500 Logit Scale: 14.807 Contrastive_loss: 7.1975 (7.6835) Loss: 7.1975 (7.6835)
-2023-10-05,17:45:41 | INFO | Train Epoch: 0 [ 5328896/25608192 (21%)] Data (t): 0.534 Batch (t): 2.673, 2300.65/s, 575.162/s/gpu LR: 0.000500 Logit Scale: 15.004 Contrastive_loss: 7.1998 (7.6489) Loss: 7.1998 (7.6489)
-2023-10-05,17:49:51 | INFO | Train Epoch: 0 [ 5738496/25608192 (22%)] Data (t): 0.544 Batch (t): 2.505, 2274.41/s, 568.602/s/gpu LR: 0.000500 Logit Scale: 15.233 Contrastive_loss: 6.9327 (7.6012) Loss: 6.9327 (7.6012)
-2023-10-05,17:54:07 | INFO | Train Epoch: 0 [ 6148096/25608192 (24%)] Data (t): 0.711 Batch (t): 2.560, 1072.66/s, 268.166/s/gpu LR: 0.000500 Logit Scale: 15.480 Contrastive_loss: 6.8646 (7.5551) Loss: 6.8646 (7.5551)
-2023-10-05,17:58:21 | INFO | Train Epoch: 0 [ 6557696/25608192 (26%)] Data (t): 0.755 Batch (t): 2.533, 2292.45/s, 573.111/s/gpu LR: 0.000500 Logit Scale: 15.749 Contrastive_loss: 7.0522 (7.5256) Loss: 7.0522 (7.5256)
-2023-10-05,18:02:04 | INFO | Train Epoch: 0 [ 6967296/25608192 (27%)] Data (t): 0.658 Batch (t): 2.237, 2279.91/s, 569.978/s/gpu LR: 0.000500 Logit Scale: 16.031 Contrastive_loss: 6.8602 (7.4886) Loss: 6.8602 (7.4886)
-2023-10-05,18:06:09 | INFO | Train Epoch: 0 [ 7376896/25608192 (29%)] Data (t): 0.543 Batch (t): 2.441, 2316.88/s, 579.219/s/gpu LR: 0.000500 Logit Scale: 16.331 Contrastive_loss: 6.8791 (7.4565) Loss: 6.8791 (7.4565)
-2023-10-05,18:10:01 | INFO | Train Epoch: 0 [ 7786496/25608192 (30%)] Data (t): 0.503 Batch (t): 2.321, 2269.31/s, 567.327/s/gpu LR: 0.000500 Logit Scale: 16.638 Contrastive_loss: 6.8705 (7.4272) Loss: 6.8705 (7.4272)
-2023-10-05,18:13:46 | INFO | Train Epoch: 0 [ 8196096/25608192 (32%)] Data (t): 0.610 Batch (t): 2.249, 2331.03/s, 582.758/s/gpu LR: 0.000500 Logit Scale: 16.933 Contrastive_loss: 6.7626 (7.3956) Loss: 6.7626 (7.3956)
-2023-10-05,18:17:40 | INFO | Train Epoch: 0 [ 8605696/25608192 (34%)] Data (t): 0.445 Batch (t): 2.343, 2286.95/s, 571.737/s/gpu LR: 0.000500 Logit Scale: 17.232 Contrastive_loss: 6.7893 (7.3680) Loss: 6.7893 (7.3680)
-2023-10-05,18:21:15 | INFO | Train Epoch: 0 [ 9015296/25608192 (35%)] Data (t): 0.467 Batch (t): 2.154, 2294.65/s, 573.661/s/gpu LR: 0.000500 Logit Scale: 17.537 Contrastive_loss: 6.5819 (7.3338) Loss: 6.5819 (7.3338)
-2023-10-05,18:25:14 | INFO | Train Epoch: 0 [ 9424896/25608192 (37%)] Data (t): 0.771 Batch (t): 2.393, 1345.85/s, 336.464/s/gpu LR: 0.000500 Logit Scale: 17.843 Contrastive_loss: 6.6212 (7.3041) Loss: 6.6212 (7.3041)
-2023-10-05,18:29:17 | INFO | Train Epoch: 0 [ 9834496/25608192 (38%)] Data (t): 0.561 Batch (t): 2.429, 385.432/s, 96.3579/s/gpu LR: 0.000500 Logit Scale: 18.143 Contrastive_loss: 6.6788 (7.2791) Loss: 6.6788 (7.2791)
-2023-10-05,18:33:21 | INFO | Train Epoch: 0 [10244096/25608192 (40%)] Data (t): 0.567 Batch (t): 2.440, 2299.18/s, 574.796/s/gpu LR: 0.000500 Logit Scale: 18.454 Contrastive_loss: 6.6760 (7.2559) Loss: 6.6760 (7.2559)
-2023-10-05,18:37:49 | INFO | Train Epoch: 0 [10653696/25608192 (42%)] Data (t): 0.729 Batch (t): 2.673, 2307.39/s, 576.848/s/gpu LR: 0.000500 Logit Scale: 18.721 Contrastive_loss: 6.5441 (7.2296) Loss: 6.5441 (7.2296)
-2023-10-05,18:41:51 | INFO | Train Epoch: 0 [11063296/25608192 (43%)] Data (t): 0.782 Batch (t): 2.420, 2296.38/s, 574.096/s/gpu LR: 0.000500 Logit Scale: 19.020 Contrastive_loss: 6.5567 (7.2055) Loss: 6.5567 (7.2055)
-2023-10-05,18:45:39 | INFO | Train Epoch: 0 [11472896/25608192 (45%)] Data (t): 0.634 Batch (t): 2.279, 2306.19/s, 576.547/s/gpu LR: 0.000500 Logit Scale: 19.308 Contrastive_loss: 6.3797 (7.1771) Loss: 6.3797 (7.1771)
-2023-10-05,18:50:01 | INFO | Train Epoch: 0 [11882496/25608192 (46%)] Data (t): 0.791 Batch (t): 2.626, 384.534/s, 96.1335/s/gpu LR: 0.000500 Logit Scale: 19.620 Contrastive_loss: 6.5244 (7.1553) Loss: 6.5244 (7.1553)
-2023-10-05,18:54:30 | INFO | Train Epoch: 0 [12292096/25608192 (48%)] Data (t): 0.659 Batch (t): 2.693, 2246.17/s, 561.542/s/gpu LR: 0.000500 Logit Scale: 19.899 Contrastive_loss: 6.3903 (7.1306) Loss: 6.3903 (7.1306)
-2023-10-05,18:58:40 | INFO | Train Epoch: 0 [12701696/25608192 (50%)] Data (t): 0.456 Batch (t): 2.497, 2305.43/s, 576.357/s/gpu LR: 0.000500 Logit Scale: 20.223 Contrastive_loss: 6.3326 (7.1057) Loss: 6.3326 (7.1057)
-2023-10-05,19:03:07 | INFO | Train Epoch: 0 [13111296/25608192 (51%)] Data (t): 0.421 Batch (t): 2.668, 2265.90/s, 566.476/s/gpu LR: 0.000500 Logit Scale: 20.507 Contrastive_loss: 6.3224 (7.0819) Loss: 6.3224 (7.0819)
-2023-10-05,19:07:12 | INFO | Train Epoch: 0 [13520896/25608192 (53%)] Data (t): 0.432 Batch (t): 2.455, 2237.87/s, 559.469/s/gpu LR: 0.000500 Logit Scale: 20.794 Contrastive_loss: 6.5270 (7.0656) Loss: 6.5270 (7.0656)
-2023-10-05,19:11:39 | INFO | Train Epoch: 0 [13930496/25608192 (54%)] Data (t): 0.820 Batch (t): 2.670, 2286.62/s, 571.655/s/gpu LR: 0.000500 Logit Scale: 21.063 Contrastive_loss: 5.9992 (7.0352) Loss: 5.9992 (7.0352)
-2023-10-05,19:15:54 | INFO | Train Epoch: 0 [14340096/25608192 (56%)] Data (t): 0.802 Batch (t): 2.545, 2303.85/s, 575.963/s/gpu LR: 0.000500 Logit Scale: 21.330 Contrastive_loss: 6.1913 (7.0117) Loss: 6.1913 (7.0117)
-2023-10-05,19:20:12 | INFO | Train Epoch: 0 [14749696/25608192 (58%)] Data (t): 0.764 Batch (t): 2.577, 2288.34/s, 572.084/s/gpu LR: 0.000500 Logit Scale: 21.555 Contrastive_loss: 6.2098 (6.9900) Loss: 6.2098 (6.9900)
-2023-10-05,19:24:28 | INFO | Train Epoch: 0 [15159296/25608192 (59%)] Data (t): 0.847 Batch (t): 2.563, 2281.70/s, 570.424/s/gpu LR: 0.000499 Logit Scale: 21.766 Contrastive_loss: 6.1356 (6.9676) Loss: 6.1356 (6.9676)
-2023-10-05,19:28:14 | INFO | Train Epoch: 0 [15568896/25608192 (61%)] Data (t): 0.573 Batch (t): 2.261, 2240.26/s, 560.065/s/gpu LR: 0.000499 Logit Scale: 22.021 Contrastive_loss: 6.2474 (6.9491) Loss: 6.2474 (6.9491)
-2023-10-05,19:32:11 | INFO | Train Epoch: 0 [15978496/25608192 (62%)] Data (t): 0.764 Batch (t): 2.374, 2327.79/s, 581.948/s/gpu LR: 0.000499 Logit Scale: 22.226 Contrastive_loss: 6.0933 (6.9277) Loss: 6.0933 (6.9277)
-2023-10-05,19:36:12 | INFO | Train Epoch: 0 [16388096/25608192 (64%)] Data (t): 0.504 Batch (t): 2.409, 2306.27/s, 576.568/s/gpu LR: 0.000499 Logit Scale: 22.448 Contrastive_loss: 6.3864 (6.9145) Loss: 6.3864 (6.9145)
-2023-10-05,19:39:09 | WARNING | Handling webdataset error (ReadError('invalid header', <_io.BufferedReader name='/project_data/datasets/datanet/shards/00009794.tar'>, '/project_data/datasets/datanet/shards/00009794.tar')). Ignoring.
-2023-10-05,19:40:27 | INFO | Train Epoch: 0 [16797696/25608192 (66%)] Data (t): 0.700 Batch (t): 2.548, 1339.57/s, 334.892/s/gpu LR: 0.000499 Logit Scale: 22.664 Contrastive_loss: 6.0252 (6.8933) Loss: 6.0252 (6.8933)
-2023-10-05,19:44:33 | INFO | Train Epoch: 0 [17207296/25608192 (67%)] Data (t): 0.694 Batch (t): 2.459, 2324.09/s, 581.023/s/gpu LR: 0.000499 Logit Scale: 22.838 Contrastive_loss: 6.1937 (6.8770) Loss: 6.1937 (6.8770)
-2023-10-05,19:48:40 | INFO | Train Epoch: 0 [17616896/25608192 (69%)] Data (t): 0.466 Batch (t): 2.473, 2265.72/s, 566.429/s/gpu LR: 0.000499 Logit Scale: 23.062 Contrastive_loss: 6.2356 (6.8625) Loss: 6.2356 (6.8625)
-2023-10-05,19:52:56 | INFO | Train Epoch: 0 [18026496/25608192 (70%)] Data (t): 0.484 Batch (t): 2.554, 2305.84/s, 576.459/s/gpu LR: 0.000499 Logit Scale: 23.307 Contrastive_loss: 6.0202 (6.8438) Loss: 6.0202 (6.8438)
-2023-10-05,19:57:05 | INFO | Train Epoch: 0 [18436096/25608192 (72%)] Data (t): 0.524 Batch (t): 2.492, 2347.66/s, 586.916/s/gpu LR: 0.000499 Logit Scale: 23.541 Contrastive_loss: 6.0946 (6.8275) Loss: 6.0946 (6.8275)
-2023-10-05,20:00:56 | INFO | Train Epoch: 0 [18845696/25608192 (74%)] Data (t): 0.441 Batch (t): 2.310, 245.904/s, 61.4760/s/gpu LR: 0.000499 Logit Scale: 23.777 Contrastive_loss: 6.0116 (6.8101) Loss: 6.0116 (6.8101)
-2023-10-05,20:03:57 | WARNING | Handling webdataset error (FileNotFoundError(2, 'No such file or directory', '')). Ignoring.
-2023-10-05,20:05:09 | INFO | Train Epoch: 0 [19255296/25608192 (75%)] Data (t): 0.446 Batch (t): 2.529, 2317.20/s, 579.301/s/gpu LR: 0.000499 Logit Scale: 24.021 Contrastive_loss: 6.0196 (6.7936) Loss: 6.0196 (6.7936)
-2023-10-05,20:09:07 | INFO | Train Epoch: 0 [19664896/25608192 (77%)] Data (t): 0.501 Batch (t): 2.388, 778.589/s, 194.647/s/gpu LR: 0.000499 Logit Scale: 24.208 Contrastive_loss: 5.8871 (6.7751) Loss: 5.8871 (6.7751)
-2023-10-05,20:13:29 | INFO | Train Epoch: 0 [20074496/25608192 (78%)] Data (t): 0.474 Batch (t): 2.615, 2279.70/s, 569.925/s/gpu LR: 0.000499 Logit Scale: 24.395 Contrastive_loss: 5.9341 (6.7583) Loss: 5.9341 (6.7583)
-2023-10-05,20:17:32 | INFO | Train Epoch: 0 [20484096/25608192 (80%)] Data (t): 0.698 Batch (t): 2.430, 2282.11/s, 570.528/s/gpu LR: 0.000499 Logit Scale: 24.580 Contrastive_loss: 5.9202 (6.7419) Loss: 5.9202 (6.7419)
-2023-10-05,20:22:04 | INFO | Train Epoch: 0 [20893696/25608192 (82%)] Data (t): 0.752 Batch (t): 2.724, 2213.57/s, 553.392/s/gpu LR: 0.000499 Logit Scale: 24.780 Contrastive_loss: 6.0330 (6.7283) Loss: 6.0330 (6.7283)
-2023-10-05,20:26:02 | INFO | Train Epoch: 0 [21303296/25608192 (83%)] Data (t): 0.711 Batch (t): 2.372, 2324.76/s, 581.190/s/gpu LR: 0.000499 Logit Scale: 25.007 Contrastive_loss: 6.0473 (6.7154) Loss: 6.0473 (6.7154)
-2023-10-05,20:30:15 | INFO | Train Epoch: 0 [21712896/25608192 (85%)] Data (t): 0.671 Batch (t): 2.536, 555.012/s, 138.753/s/gpu LR: 0.000499 Logit Scale: 25.208 Contrastive_loss: 5.8187 (6.6988) Loss: 5.8187 (6.6988)
-2023-10-05,20:34:22 | INFO | Train Epoch: 0 [22122496/25608192 (86%)] Data (t): 0.640 Batch (t): 2.464, 2298.54/s, 574.636/s/gpu LR: 0.000499 Logit Scale: 25.382 Contrastive_loss: 5.6884 (6.6804) Loss: 5.6884 (6.6804)
-2023-10-05,20:38:34 | INFO | Train Epoch: 0 [22532096/25608192 (88%)] Data (t): 0.610 Batch (t): 2.522, 2254.36/s, 563.589/s/gpu LR: 0.000499 Logit Scale: 25.534 Contrastive_loss: 5.8837 (6.6662) Loss: 5.8837 (6.6662)
-2023-10-05,20:42:39 | INFO | Train Epoch: 0 [22941696/25608192 (90%)] Data (t): 0.445 Batch (t): 2.456, 2321.81/s, 580.452/s/gpu LR: 0.000499 Logit Scale: 25.702 Contrastive_loss: 5.7538 (6.6502) Loss: 5.7538 (6.6502)
-2023-10-05,20:47:24 | INFO | Train Epoch: 0 [23351296/25608192 (91%)] Data (t): 0.704 Batch (t): 2.847, 416.429/s, 104.107/s/gpu LR: 0.000499 Logit Scale: 25.887 Contrastive_loss: 5.8163 (6.6358) Loss: 5.8163 (6.6358)
-2023-10-05,20:49:08 | WARNING | Handling webdataset error (ReadError('invalid header', <_io.BufferedReader name='/project_data/datasets/datanet/shards/00009797.tar'>, '/project_data/datasets/datanet/shards/00009797.tar')). Ignoring.
-2023-10-05,20:51:31 | INFO | Train Epoch: 0 [23760896/25608192 (93%)] Data (t): 0.659 Batch (t): 2.473, 2308.44/s, 577.110/s/gpu LR: 0.000499 Logit Scale: 26.042 Contrastive_loss: 5.7910 (6.6215) Loss: 5.7910 (6.6215)
-2023-10-05,20:55:51 | INFO | Train Epoch: 0 [24170496/25608192 (94%)] Data (t): 0.651 Batch (t): 2.596, 2324.81/s, 581.203/s/gpu LR: 0.000499 Logit Scale: 26.218 Contrastive_loss: 5.6864 (6.6059) Loss: 5.6864 (6.6059)
-2023-10-05,20:59:58 | INFO | Train Epoch: 0 [24580096/25608192 (96%)] Data (t): 0.557 Batch (t): 2.473, 725.122/s, 181.281/s/gpu LR: 0.000498 Logit Scale: 26.384 Contrastive_loss: 5.8373 (6.5933) Loss: 5.8373 (6.5933)
-2023-10-05,21:03:43 | INFO | Train Epoch: 0 [24989696/25608192 (98%)] Data (t): 0.455 Batch (t): 2.243, 2298.24/s, 574.561/s/gpu LR: 0.000498 Logit Scale: 26.559 Contrastive_loss: 5.7830 (6.5802) Loss: 5.7830 (6.5802)
-2023-10-05,21:07:48 | INFO | Train Epoch: 0 [25399296/25608192 (99%)] Data (t): 0.606 Batch (t): 2.454, 2281.97/s, 570.491/s/gpu LR: 0.000498 Logit Scale: 26.700 Contrastive_loss: 5.6188 (6.5650) Loss: 5.6188 (6.5650)
-2023-10-05,21:09:41 | INFO | Train Epoch: 0 [25608192/25608192 (100%)] Data (t): 0.422 Batch (t): 2.214, 2299.09/s, 574.772/s/gpu LR: 0.000498 Logit Scale: 26.782 Contrastive_loss: 5.7014 (6.5515) Loss: 5.7014 (6.5515)
-2023-10-05,21:11:12 | INFO | Start epoch 1
-2023-10-05,21:11:26 | INFO | Train Epoch: 1 [    4096/25608192 (0%)] Data (t): 12.061 Batch (t): 13.424, 305.124/s, 76.2809/s/gpu LR: 0.000498 Logit Scale: 26.782 Contrastive_loss: 5.7993 (5.7993) Loss: 5.7993 (5.7993)
-2023-10-05,21:17:01 | INFO | Train Epoch: 1 [  413696/25608192 (2%)] Data (t): 1.311 Batch (t): 3.358, 2301.06/s, 575.265/s/gpu LR: 0.000498 Logit Scale: 26.889 Contrastive_loss: 5.7113 (5.7553) Loss: 5.7113 (5.7553)
-2023-10-05,21:22:03 | INFO | Train Epoch: 1 [  823296/25608192 (3%)] Data (t): 0.591 Batch (t): 3.017, 2258.02/s, 564.506/s/gpu LR: 0.000498 Logit Scale: 27.048 Contrastive_loss: 5.6803 (5.7303) Loss: 5.6803 (5.7303)
-2023-10-05,21:26:04 | INFO | Train Epoch: 1 [ 1232896/25608192 (5%)] Data (t): 0.657 Batch (t): 2.410, 2341.62/s, 585.406/s/gpu LR: 0.000498 Logit Scale: 27.204 Contrastive_loss: 5.5878 (5.6947) Loss: 5.5878 (5.6947)
-2023-10-05,21:30:22 | INFO | Train Epoch: 1 [ 1642496/25608192 (6%)] Data (t): 0.762 Batch (t): 2.579, 2099.58/s, 524.895/s/gpu LR: 0.000498 Logit Scale: 27.366 Contrastive_loss: 5.6166 (5.6790) Loss: 5.6166 (5.6790)
-2023-10-05,21:34:16 | INFO | Train Epoch: 1 [ 2052096/25608192 (8%)] Data (t): 0.641 Batch (t): 2.340, 807.215/s, 201.804/s/gpu LR: 0.000498 Logit Scale: 27.498 Contrastive_loss: 5.4991 (5.6490) Loss: 5.4991 (5.6490)
-2023-10-05,21:38:18 | INFO | Train Epoch: 1 [ 2461696/25608192 (10%)] Data (t): 0.713 Batch (t): 2.423, 2286.87/s, 571.717/s/gpu LR: 0.000498 Logit Scale: 27.675 Contrastive_loss: 5.5907 (5.6407) Loss: 5.5907 (5.6407)
-2023-10-05,21:42:22 | INFO | Train Epoch: 1 [ 2871296/25608192 (11%)] Data (t): 0.703 Batch (t): 2.436, 2086.87/s, 521.717/s/gpu LR: 0.000498 Logit Scale: 27.839 Contrastive_loss: 5.5498 (5.6294) Loss: 5.5498 (5.6294)
-2023-10-05,21:46:18 | INFO | Train Epoch: 1 [ 3280896/25608192 (13%)] Data (t): 0.644 Batch (t): 2.365, 2270.45/s, 567.612/s/gpu LR: 0.000498 Logit Scale: 28.000 Contrastive_loss: 5.4056 (5.6045) Loss: 5.4056 (5.6045)
-2023-10-05,21:50:16 | INFO | Train Epoch: 1 [ 3690496/25608192 (14%)] Data (t): 0.707 Batch (t): 2.372, 2265.54/s, 566.385/s/gpu LR: 0.000498 Logit Scale: 28.093 Contrastive_loss: 5.1778 (5.5618) Loss: 5.1778 (5.5618)
-slurmstepd: error: *** STEP 183871.0 ON locus-1-21 CANCELLED AT 2023-10-05T21:53:01 ***
-srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
-slurmstepd: error: *** JOB 183871 ON locus-1-21 CANCELLED AT 2023-10-05T21:53:01 ***
+2023-10-13,14:39:21 | INFO | Params:
+2023-10-13,14:39:21 | INFO |   accum_freq: 1
+2023-10-13,14:39:21 | INFO |   aug_cfg: {}
+2023-10-13,14:39:21 | INFO |   batch_size: 1024
+2023-10-13,14:39:21 | INFO |   beta1: 0.9
+2023-10-13,14:39:21 | INFO |   beta2: 0.98
+2023-10-13,14:39:21 | INFO |   checkpoint_path: /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_nofilter_5x_20231013_143911/checkpoints
+2023-10-13,14:39:21 | INFO |   coca_caption_loss_weight: 2.0
+2023-10-13,14:39:21 | INFO |   coca_contrastive_loss_weight: 1.0
+2023-10-13,14:39:21 | INFO |   copy_codebase: False
+2023-10-13,14:39:21 | INFO |   csv_caption_key: title
+2023-10-13,14:39:21 | INFO |   csv_img_key: filepath
+2023-10-13,14:39:21 | INFO |   csv_separator: 	
+2023-10-13,14:39:21 | INFO |   dataset_resampled: True
+2023-10-13,14:39:21 | INFO |   dataset_type: webdataset
+2023-10-13,14:39:21 | INFO |   ddp_static_graph: True
+2023-10-13,14:39:21 | INFO |   debug: False
+2023-10-13,14:39:21 | INFO |   delete_previous_checkpoint: False
+2023-10-13,14:39:21 | INFO |   device: cuda:0
+2023-10-13,14:39:21 | INFO |   dist_backend: nccl
+2023-10-13,14:39:21 | INFO |   dist_url: env://
+2023-10-13,14:39:21 | INFO |   distill: False
+2023-10-13,14:39:21 | INFO |   distill_model: None
+2023-10-13,14:39:21 | INFO |   distill_pretrained: None
+2023-10-13,14:39:21 | INFO |   distributed: True
+2023-10-13,14:39:21 | INFO |   epochs: 5
+2023-10-13,14:39:21 | INFO |   epochs_cooldown: None
+2023-10-13,14:39:21 | INFO |   eps: 1e-06
+2023-10-13,14:39:21 | INFO |   force_custom_text: False
+2023-10-13,14:39:21 | INFO |   force_image_size: None
+2023-10-13,14:39:21 | INFO |   force_patch_dropout: None
+2023-10-13,14:39:21 | INFO |   force_quick_gelu: False
+2023-10-13,14:39:21 | INFO |   gather_with_grad: True
+2023-10-13,14:39:21 | INFO |   grad_checkpointing: True
+2023-10-13,14:39:21 | INFO |   grad_clip_norm: None
+2023-10-13,14:39:21 | INFO |   horovod: False
+2023-10-13,14:39:21 | INFO |   image_mean: None
+2023-10-13,14:39:21 | INFO |   image_std: None
+2023-10-13,14:39:21 | INFO |   imagenet_v2: None
+2023-10-13,14:39:21 | INFO |   imagenet_val: None
+2023-10-13,14:39:21 | INFO |   local_loss: True
+2023-10-13,14:39:21 | INFO |   local_rank: 0
+2023-10-13,14:39:21 | INFO |   lock_image: False
+2023-10-13,14:39:21 | INFO |   lock_image_freeze_bn_stats: False
+2023-10-13,14:39:21 | INFO |   lock_image_unlocked_groups: 0
+2023-10-13,14:39:21 | INFO |   lock_text: False
+2023-10-13,14:39:21 | INFO |   lock_text_freeze_layer_norm: False
+2023-10-13,14:39:21 | INFO |   lock_text_unlocked_layers: 0
+2023-10-13,14:39:21 | INFO |   log_every_n_steps: 100
+2023-10-13,14:39:21 | INFO |   log_level: 20
+2023-10-13,14:39:21 | INFO |   log_local: False
+2023-10-13,14:39:21 | INFO |   log_path: /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_nofilter_5x_20231013_143911/out.log
+2023-10-13,14:39:21 | INFO |   logs: /project_data2/projects/sachingo/datacomp_checkpoints/logs
+2023-10-13,14:39:21 | INFO |   lr: 0.0005
+2023-10-13,14:39:21 | INFO |   lr_cooldown_end: 0.0
+2023-10-13,14:39:21 | INFO |   lr_cooldown_power: 1.0
+2023-10-13,14:39:21 | INFO |   lr_scheduler: cosine
+2023-10-13,14:39:21 | INFO |   model: ViT-B-32
+2023-10-13,14:39:21 | INFO |   name: mediumscale_nofilter_5x_20231013_143911
+2023-10-13,14:39:21 | INFO |   no_set_device_rank: False
+2023-10-13,14:39:21 | INFO |   precision: amp
+2023-10-13,14:39:21 | INFO |   pretrained: 
+2023-10-13,14:39:21 | INFO |   pretrained_image: False
+2023-10-13,14:39:21 | INFO |   rank: 0
+2023-10-13,14:39:21 | INFO |   remote_sync: None
+2023-10-13,14:39:21 | INFO |   remote_sync_frequency: 300
+2023-10-13,14:39:21 | INFO |   remote_sync_protocol: s3
+2023-10-13,14:39:21 | INFO |   report_to: 
+2023-10-13,14:39:21 | INFO |   resume: None
+2023-10-13,14:39:21 | INFO |   save_frequency: 1
+2023-10-13,14:39:21 | INFO |   save_most_recent: False
+2023-10-13,14:39:21 | INFO |   seed: 0
+2023-10-13,14:39:21 | INFO |   skip_scheduler: False
+2023-10-13,14:39:21 | INFO |   tensorboard: False
+2023-10-13,14:39:21 | INFO |   tensorboard_path: 
+2023-10-13,14:39:21 | INFO |   torchscript: False
+2023-10-13,14:39:21 | INFO |   trace: False
+2023-10-13,14:39:21 | INFO |   train_data: /project_data2/datasets/datanet/shards/{00000000..00012895}.tar
+2023-10-13,14:39:21 | INFO |   train_data_upsampling_factors: None
+2023-10-13,14:39:21 | INFO |   train_num_samples: 12800
+2023-10-13,14:39:21 | INFO |   use_bn_sync: False
+2023-10-13,14:39:21 | INFO |   val_data: None
+2023-10-13,14:39:21 | INFO |   val_frequency: 1
+2023-10-13,14:39:21 | INFO |   val_num_samples: None
+2023-10-13,14:39:21 | INFO |   wandb: False
+2023-10-13,14:39:21 | INFO |   wandb_notes: 
+2023-10-13,14:39:21 | INFO |   wandb_project_name: open-clip
+2023-10-13,14:39:21 | INFO |   warmup: 500
+2023-10-13,14:39:21 | INFO |   wd: 0.2
+2023-10-13,14:39:21 | INFO |   workers: 4
+2023-10-13,14:39:21 | INFO |   world_size: 4
+2023-10-13,14:39:21 | INFO |   zeroshot_frequency: 2
+2023-10-13,14:39:21 | INFO | Start epoch 0
+2023-10-13,14:39:32 | INFO | Train Epoch: 0 [ 4096/16384 (25%)] Data (t): 7.158 Batch (t): 11.424, 358.537/s, 89.6343/s/gpu LR: 0.000001 Logit Scale: 14.286 Contrastive_loss: 8.3795 (8.3795) Loss: 8.3795 (8.3795)
+2023-10-13,14:39:34 | INFO | Reducer buckets have been rebuilt in this iteration.
+2023-10-13,14:39:34 | INFO | Reducer buckets have been rebuilt in this iteration.
+2023-10-13,14:39:34 | INFO | Reducer buckets have been rebuilt in this iteration.
+2023-10-13,14:39:35 | INFO | Reducer buckets have been rebuilt in this iteration.
+2023-10-13,14:39:38 | INFO | Train Epoch: 0 [16384/16384 (100%)] Data (t): 0.369 Batch (t): 1.817, 2284.64/s, 571.159/s/gpu LR: 0.000004 Logit Scale: 14.286 Contrastive_loss: 8.3607 (8.3701) Loss: 8.3607 (8.3701)
+2023-10-13,14:39:59 | INFO | Start epoch 1
+2023-10-13,14:40:09 | INFO | Train Epoch: 1 [ 4096/16384 (25%)] Data (t): 8.741 Batch (t): 10.110, 405.158/s, 101.290/s/gpu LR: 0.000005 Logit Scale: 14.286 Contrastive_loss: 8.3427 (8.3427) Loss: 8.3427 (8.3427)
+2023-10-13,14:40:14 | INFO | Train Epoch: 1 [16384/16384 (100%)] Data (t): 0.420 Batch (t): 1.797, 2262.98/s, 565.745/s/gpu LR: 0.000008 Logit Scale: 14.285 Contrastive_loss: 8.3238 (8.3332) Loss: 8.3238 (8.3332)
+2023-10-13,14:40:33 | INFO | Start epoch 2
+2023-10-13,14:40:42 | INFO | Train Epoch: 2 [ 4096/16384 (25%)] Data (t): 7.342 Batch (t): 8.716, 469.915/s, 117.479/s/gpu LR: 0.000009 Logit Scale: 14.285 Contrastive_loss: 8.3176 (8.3176) Loss: 8.3176 (8.3176)
+2023-10-13,14:40:47 | INFO | Train Epoch: 2 [16384/16384 (100%)] Data (t): 0.428 Batch (t): 1.833, 2238.88/s, 559.720/s/gpu LR: 0.000012 Logit Scale: 14.285 Contrastive_loss: 8.3209 (8.3192) Loss: 8.3209 (8.3192)
+2023-10-13,14:41:02 | INFO | Start epoch 3
+2023-10-13,14:41:10 | INFO | Train Epoch: 3 [ 4096/16384 (25%)] Data (t): 6.906 Batch (t): 8.276, 494.939/s, 123.735/s/gpu LR: 0.000013 Logit Scale: 14.285 Contrastive_loss: 8.3247 (8.3247) Loss: 8.3247 (8.3247)
+2023-10-13,14:41:16 | INFO | Train Epoch: 3 [16384/16384 (100%)] Data (t): 0.416 Batch (t): 1.804, 2263.60/s, 565.900/s/gpu LR: 0.000016 Logit Scale: 14.284 Contrastive_loss: 8.3075 (8.3161) Loss: 8.3075 (8.3161)
+2023-10-13,14:41:32 | INFO | Start epoch 4
+2023-10-13,14:41:40 | INFO | Train Epoch: 4 [ 4096/16384 (25%)] Data (t): 6.770 Batch (t): 8.140, 503.174/s, 125.794/s/gpu LR: 0.000017 Logit Scale: 14.284 Contrastive_loss: 8.3191 (8.3191) Loss: 8.3191 (8.3191)
+2023-10-13,14:41:45 | INFO | Train Epoch: 4 [16384/16384 (100%)] Data (t): 0.400 Batch (t): 1.792, 2292.52/s, 573.130/s/gpu LR: 0.000020 Logit Scale: 14.284 Contrastive_loss: 8.3165 (8.3178) Loss: 8.3165 (8.3178)
+Traceback (most recent call last):
+  File "/home/sachingo/datacomp/train.py", line 310, in <module>
+    assert (
+AssertionError: Did not find the checkpoint at /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_nofilter_5x_20231013_143911/checkpoints/epoch_latest.pt
+srun: error: locus-1-29: task 0: Exited with exit code 1

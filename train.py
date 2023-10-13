@@ -330,9 +330,9 @@ if __name__ == "__main__":
             print("Error running training. Exiting.")
 
         final_checkpoint = log_dir / exp_name / "checkpoints" / f"epoch_latest.pt"
-        assert (
-            final_checkpoint.exists()
-        ), f"Did not find the checkpoint at {final_checkpoint}"
+        # assert (
+        #     final_checkpoint.exists()
+        # ), f"Did not find the checkpoint at {final_checkpoint}"
         save_training_artifacts(args, config, final_checkpoint)
 
         print("Done training.")

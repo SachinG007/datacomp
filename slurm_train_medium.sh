@@ -4,7 +4,7 @@
 #SBATCH --job-name=medium_scale_nofilter_5x
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node=4
-#SBATCH --nodelist=locus-1-21
+#SBATCH --nodelist=locus-1-29
 #SBATCH --cpus-per-task=10
 #SBATCH --time=3-12
 #SBATCH --gpus=4
@@ -32,12 +32,12 @@ echo $HOSTNAMES
 
 # Change these as needed!
 
-DATA_PATH="/project_data/datasets/datanet/shards/"
+DATA_PATH="/project_data2/datasets/datanet/shards/"
 # DATA_PATH="/project_data/datasets/datanet/medium_scale_tmars/shards/"
 SCALE="medium_5x"
 SEED=0
 OUTPUT_DIR="/project_data2/projects/sachingo/datacomp_checkpoints/logs/"
-NUM_CHECKPOINTS=25
+NUM_CHECKPOINTS=5
 EXP_NAME="mediumscale_nofilter_5x_$(date +%Y%m%d_%H%M%S)"
 PRECISION="amp"  # We recommend using amp_bfloat16 if supported by your hardware.
 if [ "$SCALE" == "xlarge" ]; then
