@@ -173,6 +173,7 @@ if __name__ == "__main__":
             cache_dir=cache_dir,
             local_dir_use_symlinks=False,
             repo_type="dataset",
+            max_workers=args.processes_count,
         )
 
         if args.scale == "xlarge":
