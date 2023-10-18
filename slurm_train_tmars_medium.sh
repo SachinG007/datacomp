@@ -1,13 +1,11 @@
 #!/bin/bash
-
 # Change these!
 #SBATCH --job-name=medium_scale_tmars_5x
 #SBATCH --nodes 1
 #SBATCH --ntasks-per-node=4
-#SBATCH --nodelist=locus-1-29
 #SBATCH --cpus-per-task=10
 #SBATCH --time=3-12
-#SBATCH --gpus=4
+#SBATCH --gres=gpu:A6000:4
 #SBATCH --mem=60GB
 #SBATCH --mail-type=END
 #SBATCH --mail-user=sachingo@andrew.cmu.edu
@@ -25,19 +23,19 @@ export PYTHONFAULTHANDLER=1
 export CUDA_LAUNCH_BLOCKING=0
 export HOSTNAMES=`scontrol show hostnames "$SLURM_JOB_NODELIST"`
 export MASTER_ADDR=$(scontrol show hostnames "$SLURM_JOB_NODELIST" | head -n 1)
-export MASTER_PORT=12805
+export MASTER_PORT=12817
 export COUNT_NODE=`scontrol show hostnames "$SLURM_JOB_NODELIST" | wc -l`
 echo go $COUNT_NODE
 echo $HOSTNAMES
 
 # Change these as needed!
 
-# DATA_PATH="/project_data/datasets/datanet/medium_scale/shards"
-DATA_PATH="/project_data/datasets/datanet/resharded_masked_vitb_0p281/"
+DATA_PATH="/project_data2/datasets/datanet/shards/"
+# DATA_PATH="/project_data/datasets/datanet/medium_scale_tmars/shards/"
 SCALE="medium_5x"
 SEED=0
 OUTPUT_DIR="/project_data2/projects/sachingo/datacomp_checkpoints/logs/"
-NUM_CHECKPOINTS=25
+NUM_CHECKPOINTS=5
 EXP_NAME="mediumscale_tmars_5x_$(date +%Y%m%d_%H%M%S)"
 PRECISION="amp"  # We recommend using amp_bfloat16 if supported by your hardware.
 if [ "$SCALE" == "xlarge" ]; then
@@ -56,7 +54,7 @@ srun python train.py \
 --precision ${PRECISION} \
 --num_checkpoints ${NUM_CHECKPOINTS} \
 --seed ${SEED} \
---report_to_wandb \
 --accum_freq 1 \
 --save_frequency 1 \
---resume /home/sachingo/datacomp/logs/logs/mediumscale_tmars_5x_20231005_011454/checkpoints/epoch_4.pt
+--filter is_valid \
+--valid_file /project_data/datasets/datanet/is_valids/datacomp_tmars_medium.pt

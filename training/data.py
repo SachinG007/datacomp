@@ -1,3 +1,4 @@
+import json
 import ast
 import json
 import logging
@@ -27,25 +28,37 @@ except ImportError:
 
 def load_valid_file(args):
     print("Loading valid file from ", args.valid_file)
-    if args.valid_file is None:
-        return None
-    else: 
-        return torch.load(args.valid_file)
+    return torch.load(args.valid_file)
+
+def filter_no_caption_or_no_image(sample):
+    has_caption = ('txt' in sample)
+    has_image = ('png' in sample or 'jpg' in sample or 'jpeg' in sample or 'webp' in sample)
+    return has_caption and has_image
+
+
 
 def filter_bad_images(args):
-    if args.valid_file is None:
-        args.valid_file = load_valid_file(args)
-    
-    is_valid = args.valid_file
-    
-    def filter_is_valid(sample):
-        return is_valid[sample["ids"]] == 1
-    
     def no_filter(sample):
         return 1
     
-
     if args.filter == "none": return no_filter
+
+    if args.is_valid_pt is None:
+        args.is_valid_pt = load_valid_file(args)
+    
+    is_valid = args.is_valid_pt
+    
+    def filter_is_valid(sample):
+        # ids=lambda ids: int(ids["key"])
+        # print(sample)
+        if "__key__" in sample:
+            # json_file = json.loads()
+            json_file = json.loads(sample["json"])
+            id_sample = int(json_file['key'])
+            return is_valid[id_sample] == 1
+        else:
+            return 0
+    
     if args.filter == "is_valid": return filter_is_valid
 
 
@@ -194,11 +207,6 @@ def count_samples(dataloader):
         assert len(images) == len(texts)
     return n_elements, n_batches
 
-
-def filter_no_caption_or_no_image(sample):
-    has_caption = ('txt' in sample)
-    has_image = ('png' in sample or 'jpg' in sample or 'jpeg' in sample or 'webp' in sample)
-    return has_caption and has_image
 
 
 def log_and_continue(exn):
@@ -351,8 +359,7 @@ class ResampledShards2(IterableDataset):
 
 def get_wds_dataset(args, preprocess_img, is_train, epoch=0, floor=False, tokenizer=None):
     print("Filter:", args.filter)
-    if args.filter == "is_valid":
-        input_shards = args.train_data if is_train else args.val_data
+    input_shards = args.train_data if is_train else args.val_data
 
     assert input_shards is not None
     resampled = getattr(args, 'dataset_resampled', False) and is_train
@@ -415,10 +422,10 @@ def get_wds_dataset(args, preprocess_img, is_train, epoch=0, floor=False, tokeni
         ])
     pipeline.extend([
         wds.select(filter_no_caption_or_no_image),
+        wds.select(filter_bad_images(args)),
         wds.decode("pilrgb", handler=log_and_continue),
         wds.rename(image="jpg;png;jpeg;webp", text="txt", ids = "json"),
         wds.map_dict(image=preprocess_img, text=lambda text: tokenizer(text)[0], ids=lambda ids: int(ids["key"])),
-        wds.select(filter_bad_images(args)),
         wds.to_tuple("image", "text"),
         wds.batched(args.batch_size, partial=not is_train)
     ])

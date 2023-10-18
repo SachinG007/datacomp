@@ -1,0 +1,42 @@
+go 1
+locus-1-29
+no change     /home/sachingo/miniconda3/condabin/conda
+no change     /home/sachingo/miniconda3/bin/conda
+no change     /home/sachingo/miniconda3/bin/conda-env
+no change     /home/sachingo/miniconda3/bin/activate
+no change     /home/sachingo/miniconda3/bin/deactivate
+no change     /home/sachingo/miniconda3/etc/profile.d/conda.sh
+no change     /home/sachingo/miniconda3/etc/fish/conf.d/conda.fish
+no change     /home/sachingo/miniconda3/shell/condabin/Conda.psm1
+no change     /home/sachingo/miniconda3/shell/condabin/conda-hook.ps1
+no change     /home/sachingo/miniconda3/lib/python3.9/site-packages/xontrib/conda.xsh
+no change     /home/sachingo/miniconda3/etc/profile.d/conda.csh
+no change     /home/sachingo/.bashrc
+No action taken.
+no change     /home/sachingo/miniconda3/condabin/conda
+no change     /home/sachingo/miniconda3/bin/conda
+no change     /home/sachingo/miniconda3/bin/conda-env
+no change     /home/sachingo/miniconda3/bin/activate
+no change     /home/sachingo/miniconda3/bin/deactivate
+no change     /home/sachingo/miniconda3/etc/profile.d/conda.sh
+no change     /home/sachingo/miniconda3/etc/fish/conf.d/conda.fish
+no change     /home/sachingo/miniconda3/shell/condabin/Conda.psm1
+no change     /home/sachingo/miniconda3/shell/condabin/conda-hook.ps1
+no change     /home/sachingo/miniconda3/lib/python3.9/site-packages/xontrib/conda.xsh
+no change     /home/sachingo/miniconda3/etc/profile.d/conda.csh
+no change     /home/sachingo/.bashrc
+No action taken.
+Running training on scale medium_5x
+World size is 4.
+Filter: is_valid
+Loading valid file from  /project_data/datasets/datanet/is_valids/datacomp_clipL14_medium.pt
+ClipLoss: local_loss=True, only_local_loss=0, gather_with_grad=True, cache_labels=True, rank=0, world_size=4, use_horovod=False
+Filter: is_valid
+Loading valid file from  /project_data/datasets/datanet/is_valids/datacomp_clipL14_medium.pt
+ClipLoss: local_loss=True, only_local_loss=0, gather_with_grad=True, cache_labels=True, rank=1, world_size=4, use_horovod=False
+Filter: is_valid
+Loading valid file from  /project_data/datasets/datanet/is_valids/datacomp_clipL14_medium.pt
+ClipLoss: local_loss=True, only_local_loss=0, gather_with_grad=True, cache_labels=True, rank=2, world_size=4, use_horovod=False
+Filter: is_valid
+Loading valid file from  /project_data/datasets/datanet/is_valids/datacomp_clipL14_medium.pt
+ClipLoss: local_loss=True, only_local_loss=0, gather_with_grad=True, cache_labels=True, rank=3, world_size=4, use_horovod=False

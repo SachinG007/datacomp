@@ -1,8 +1,8 @@
 #!/bin/bash
 
 PROVISIONING=SPOT
-MACHINE=a2-ultragpu-4g
-diskname=dummysg5
+MACHINE=a2-highgpu-4g
+diskname=a100gpu1
 # set config
 gcloud config set compute/zone us-central1-a
 
@@ -23,7 +23,7 @@ fi
 
 # Attach Disk
 
-gcloud compute instances attach-disk $diskname --disk=datacompdisk --zone=us-central1-a
+gcloud compute instances attach-disk instance-4 --disk=datacompdisk --zone=us-central1-a
 
 # HTTP Traffic
 gcloud compute instances add-tags $diskname --tags=http-server,https-server
@@ -41,7 +41,8 @@ echo 'RUN after start: sudo mkdir -p /drive; sudo mount /dev/sdb /drive; sudo ch
 # gcloud compute ssh "$diskname" -y
 
 # after start
-# sudo mkdir -p /drive; sudo mount /dev/sdb /drive; sudo chown -R sachingo /drive; cd /drive/datacomp; bash create_env.sh; conda activate datacomp;
+# gcloud compute instances attach-disk datacompgpu4 --disk=datacompdisk --zone=us-central1-f
+# git clone https://github.com/SachinG007/datacomp.git; bash create_env.sh; conda activate datacomp; sudo mkdir -p /drive; sudo mount /dev/sdb /drive; sudo chown -R sachingo /drive; cd; cd datacomp;
 
 # To move disk:
 # gcloud compute disks move ssd-beta --destination-zone=us-central1-b

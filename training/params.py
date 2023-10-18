@@ -459,6 +459,13 @@ def parse_args(args):
         help="Path to valid file",
     )
 
+    parser.add_argument(
+        "--is_valid_pt",
+        type=str,
+        default=None,
+        help="dont pass this arg, internal use",
+    )
+
     args = parser.parse_args(args)
 
     # If some params are not passed, we use the default values based on model name.

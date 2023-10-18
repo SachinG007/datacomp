@@ -34,7 +34,7 @@ SCALE_CONFIGS = {
     "medium_5x": {
         "batch_size": 4096,
         "learning_rate": 5e-4,
-        "train_num_samples": 640_00,
+        "train_num_samples": 640_000_000,
         "warmup": 500,
         "model": "ViT-B-32",
         "beta2": None,

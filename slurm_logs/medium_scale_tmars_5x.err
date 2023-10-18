@@ -1,4 +1,4 @@
-/var/spool/slurmd/job184378/slurm_script: line 23: module: command not found
+/var/spool/slurmd/job185430/slurm_script: line 21: module: command not found
 
 CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
 To initialize your shell, run
@@ -18,16 +18,41 @@ See 'conda init --help' for more information and options.
 IMPORTANT: You may need to close and restart your shell after running 'conda init'.
 
 
-2023-10-09,12:13:25 | INFO | Running in distributed mode with multiple processes. Device: cuda:1.Process (global: 1, local 1), total 4.
-2023-10-09,12:13:25 | INFO | Loaded ViT-B-32 model config.
-2023-10-09,12:13:25 | INFO | Running in distributed mode with multiple processes. Device: cuda:0.Process (global: 0, local 0), total 4.
-2023-10-09,12:13:25 | INFO | Loaded ViT-B-32 model config.
-2023-10-09,12:13:25 | INFO | Running in distributed mode with multiple processes. Device: cuda:3.Process (global: 3, local 3), total 4.
-2023-10-09,12:13:25 | INFO | Loaded ViT-B-32 model config.
-2023-10-09,12:13:25 | INFO | Running in distributed mode with multiple processes. Device: cuda:2.Process (global: 2, local 2), total 4.
-2023-10-09,12:13:25 | INFO | Loaded ViT-B-32 model config.
-2023-10-09,12:13:29 | INFO | Model:
-2023-10-09,12:13:29 | INFO | CLIP(
+[nltk_data] Downloading package punkt to /home/sachingo/nltk_data...
+[nltk_data] Downloading package punkt to /home/sachingo/nltk_data...
+[nltk_data] Downloading package punkt to /home/sachingo/nltk_data...
+[nltk_data] Downloading package punkt to /home/sachingo/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/sachingo/nltk_data...
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/sachingo/nltk_data...
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/sachingo/nltk_data...
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/sachingo/nltk_data...
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+2023-10-14,22:33:10 | INFO | No latest resume checkpoint found in /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_tmars_5x_20231014_223237/checkpoints.
+2023-10-14,22:33:12 | INFO | Running in distributed mode with multiple processes. Device: cuda:0.Process (global: 0, local 0), total 4.
+2023-10-14,22:33:12 | INFO | Loaded ViT-B-32 model config.
+2023-10-14,22:33:12 | INFO | Running in distributed mode with multiple processes. Device: cuda:1.Process (global: 1, local 1), total 4.
+2023-10-14,22:33:12 | INFO | Running in distributed mode with multiple processes. Device: cuda:2.Process (global: 2, local 2), total 4.
+2023-10-14,22:33:12 | INFO | Running in distributed mode with multiple processes. Device: cuda:3.Process (global: 3, local 3), total 4.
+2023-10-14,22:33:12 | INFO | Loaded ViT-B-32 model config.
+2023-10-14,22:33:12 | INFO | Loaded ViT-B-32 model config.
+2023-10-14,22:33:12 | INFO | Loaded ViT-B-32 model config.
+2023-10-14,22:33:14 | INFO | Model:
+2023-10-14,22:33:14 | INFO | CLIP(
   (visual): VisionTransformer(
     (patchnorm_pre_ln): Identity()
     (conv1): Conv2d(3, 768, kernel_size=(32, 32), stride=(32, 32), bias=False)
@@ -382,129 +407,180 @@ IMPORTANT: You may need to close and restart your shell after running 'conda ini
   (token_embedding): Embedding(49408, 512)
   (ln_final): LayerNorm((512,), eps=1e-05, elementwise_affine=True)
 )
-2023-10-09,12:13:29 | INFO | Params:
-2023-10-09,12:13:29 | INFO |   accum_freq: 1
-2023-10-09,12:13:29 | INFO |   aug_cfg: {}
-2023-10-09,12:13:29 | INFO |   batch_size: 1024
-2023-10-09,12:13:29 | INFO |   beta1: 0.9
-2023-10-09,12:13:29 | INFO |   beta2: 0.98
-2023-10-09,12:13:29 | INFO |   checkpoint_path: /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_tmars_5x_20231009_121318/checkpoints
-2023-10-09,12:13:29 | INFO |   coca_caption_loss_weight: 2.0
-2023-10-09,12:13:29 | INFO |   coca_contrastive_loss_weight: 1.0
-2023-10-09,12:13:29 | INFO |   copy_codebase: False
-2023-10-09,12:13:29 | INFO |   csv_caption_key: title
-2023-10-09,12:13:29 | INFO |   csv_img_key: filepath
-2023-10-09,12:13:29 | INFO |   csv_separator: 	
-2023-10-09,12:13:29 | INFO |   dataset_resampled: True
-2023-10-09,12:13:29 | INFO |   dataset_type: webdataset
-2023-10-09,12:13:29 | INFO |   ddp_static_graph: True
-2023-10-09,12:13:29 | INFO |   debug: False
-2023-10-09,12:13:29 | INFO |   delete_previous_checkpoint: False
-2023-10-09,12:13:29 | INFO |   device: cuda:0
-2023-10-09,12:13:29 | INFO |   dist_backend: nccl
-2023-10-09,12:13:29 | INFO |   dist_url: env://
-2023-10-09,12:13:29 | INFO |   distill: False
-2023-10-09,12:13:29 | INFO |   distill_model: None
-2023-10-09,12:13:29 | INFO |   distill_pretrained: None
-2023-10-09,12:13:29 | INFO |   distributed: True
-2023-10-09,12:13:29 | INFO |   epochs: 25
-2023-10-09,12:13:29 | INFO |   epochs_cooldown: None
-2023-10-09,12:13:29 | INFO |   eps: 1e-06
-2023-10-09,12:13:29 | INFO |   force_custom_text: False
-2023-10-09,12:13:29 | INFO |   force_image_size: None
-2023-10-09,12:13:29 | INFO |   force_patch_dropout: None
-2023-10-09,12:13:29 | INFO |   force_quick_gelu: False
-2023-10-09,12:13:29 | INFO |   gather_with_grad: True
-2023-10-09,12:13:29 | INFO |   grad_checkpointing: True
-2023-10-09,12:13:29 | INFO |   grad_clip_norm: None
-2023-10-09,12:13:29 | INFO |   horovod: False
-2023-10-09,12:13:29 | INFO |   image_mean: None
-2023-10-09,12:13:29 | INFO |   image_std: None
-2023-10-09,12:13:29 | INFO |   imagenet_v2: None
-2023-10-09,12:13:29 | INFO |   imagenet_val: None
-2023-10-09,12:13:29 | INFO |   local_loss: True
-2023-10-09,12:13:29 | INFO |   local_rank: 0
-2023-10-09,12:13:29 | INFO |   lock_image: False
-2023-10-09,12:13:29 | INFO |   lock_image_freeze_bn_stats: False
-2023-10-09,12:13:29 | INFO |   lock_image_unlocked_groups: 0
-2023-10-09,12:13:29 | INFO |   lock_text: False
-2023-10-09,12:13:29 | INFO |   lock_text_freeze_layer_norm: False
-2023-10-09,12:13:29 | INFO |   lock_text_unlocked_layers: 0
-2023-10-09,12:13:29 | INFO |   log_every_n_steps: 100
-2023-10-09,12:13:29 | INFO |   log_level: 20
-2023-10-09,12:13:29 | INFO |   log_local: False
-2023-10-09,12:13:29 | INFO |   log_path: /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_tmars_5x_20231009_121318/out.log
-2023-10-09,12:13:29 | INFO |   logs: /project_data2/projects/sachingo/datacomp_checkpoints/logs
-2023-10-09,12:13:29 | INFO |   lr: 0.0005
-2023-10-09,12:13:29 | INFO |   lr_cooldown_end: 0.0
-2023-10-09,12:13:29 | INFO |   lr_cooldown_power: 1.0
-2023-10-09,12:13:29 | INFO |   lr_scheduler: cosine
-2023-10-09,12:13:29 | INFO |   model: ViT-B-32
-2023-10-09,12:13:29 | INFO |   name: mediumscale_tmars_5x_20231009_121318
-2023-10-09,12:13:29 | INFO |   no_set_device_rank: False
-2023-10-09,12:13:29 | INFO |   precision: amp
-2023-10-09,12:13:29 | INFO |   pretrained: 
-2023-10-09,12:13:29 | INFO |   pretrained_image: False
-2023-10-09,12:13:29 | INFO |   rank: 0
-2023-10-09,12:13:29 | INFO |   remote_sync: None
-2023-10-09,12:13:29 | INFO |   remote_sync_frequency: 300
-2023-10-09,12:13:29 | INFO |   remote_sync_protocol: s3
-2023-10-09,12:13:29 | INFO |   report_to: wandb
-2023-10-09,12:13:29 | INFO |   resume: /home/sachingo/datacomp/logs/logs/mediumscale_tmars_5x_20231005_011454/checkpoints/epoch_4.pt
-2023-10-09,12:13:29 | INFO |   save_frequency: 1
-2023-10-09,12:13:29 | INFO |   save_most_recent: False
-2023-10-09,12:13:29 | INFO |   seed: 0
-2023-10-09,12:13:29 | INFO |   skip_scheduler: False
-2023-10-09,12:13:29 | INFO |   tensorboard: False
-2023-10-09,12:13:29 | INFO |   tensorboard_path: 
-2023-10-09,12:13:29 | INFO |   torchscript: False
-2023-10-09,12:13:29 | INFO |   trace: False
-2023-10-09,12:13:29 | INFO |   train_data: /project_data/datasets/datanet/resharded_masked_vitb_0p281/{00000000..00002559}.tar
-2023-10-09,12:13:29 | INFO |   train_data_upsampling_factors: None
-2023-10-09,12:13:29 | INFO |   train_num_samples: 25600000
-2023-10-09,12:13:29 | INFO |   use_bn_sync: False
-2023-10-09,12:13:29 | INFO |   val_data: None
-2023-10-09,12:13:29 | INFO |   val_frequency: 1
-2023-10-09,12:13:29 | INFO |   val_num_samples: None
-2023-10-09,12:13:29 | INFO |   wandb: True
-2023-10-09,12:13:29 | INFO |   wandb_notes: 
-2023-10-09,12:13:29 | INFO |   wandb_project_name: datanet
-2023-10-09,12:13:29 | INFO |   warmup: 500
-2023-10-09,12:13:29 | INFO |   wd: 0.2
-2023-10-09,12:13:29 | INFO |   workers: 4
-2023-10-09,12:13:29 | INFO |   world_size: 4
-2023-10-09,12:13:29 | INFO |   zeroshot_frequency: 2
-2023-10-09,12:13:55 | INFO | => resuming checkpoint '/home/sachingo/datacomp/logs/logs/mediumscale_tmars_5x_20231005_011454/checkpoints/epoch_4.pt' (epoch 4)
-2023-10-09,12:13:55 | INFO | => resuming checkpoint '/home/sachingo/datacomp/logs/logs/mediumscale_tmars_5x_20231005_011454/checkpoints/epoch_4.pt' (epoch 4)
-2023-10-09,12:13:55 | INFO | => resuming checkpoint '/home/sachingo/datacomp/logs/logs/mediumscale_tmars_5x_20231005_011454/checkpoints/epoch_4.pt' (epoch 4)
-2023-10-09,12:13:55 | INFO | => resuming checkpoint '/home/sachingo/datacomp/logs/logs/mediumscale_tmars_5x_20231005_011454/checkpoints/epoch_4.pt' (epoch 4)
-wandb: Currently logged in as: saching007. Use `wandb login --relogin` to force relogin
-wandb: wandb version 0.15.12 is available!  To upgrade, please run:
-wandb:  $ pip install wandb --upgrade
-wandb: Tracking run with wandb version 0.12.21
-wandb: Run data is saved locally in /home/sachingo/datacomp/wandb/run-20231009_121355-mediumscale_tmars_5x_20231009_121318
-wandb: Run `wandb offline` to turn off syncing.
-wandb: Syncing run mediumscale_tmars_5x_20231009_121318
-wandb: ⭐️ View project at https://wandb.ai/saching007/datanet
-wandb: 🚀 View run at https://wandb.ai/saching007/datanet/runs/mediumscale_tmars_5x_20231009_121318
-[34m[1mwandb[0m: [33mWARNING[0m Saving files without folders. If you want to preserve sub directories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
-2023-10-09,12:14:29 | INFO | Start epoch 4
-2023-10-09,12:14:43 | INFO | Train Epoch: 4 [    4096/25608192 (0%)] Data (t): 9.171 Batch (t): 14.390, 284.647/s, 71.1617/s/gpu LR: 0.000470 Logit Scale: 48.458 Contrastive_loss: 1.3730 (1.3730) Loss: 1.3730 (1.3730)
-2023-10-09,12:14:45 | INFO | Reducer buckets have been rebuilt in this iteration.
-2023-10-09,12:14:45 | INFO | Reducer buckets have been rebuilt in this iteration.
-2023-10-09,12:14:45 | INFO | Reducer buckets have been rebuilt in this iteration.
-2023-10-09,12:14:45 | INFO | Reducer buckets have been rebuilt in this iteration.
-2023-10-09,12:17:46 | INFO | Train Epoch: 4 [  413696/25608192 (2%)] Data (t): 0.428 Batch (t): 1.829, 2272.93/s, 568.233/s/gpu LR: 0.000470 Logit Scale: 48.500 Contrastive_loss: 1.6699 (1.5214) Loss: 1.6699 (1.5214)
-2023-10-09,12:20:50 | INFO | Train Epoch: 4 [  823296/25608192 (3%)] Data (t): 0.441 Batch (t): 1.840, 2270.08/s, 567.520/s/gpu LR: 0.000470 Logit Scale: 48.365 Contrastive_loss: 1.6549 (1.5659) Loss: 1.6549 (1.5659)
-2023-10-09,12:23:51 | INFO | Train Epoch: 4 [ 1232896/25608192 (5%)] Data (t): 0.421 Batch (t): 1.808, 2256.60/s, 564.150/s/gpu LR: 0.000469 Logit Scale: 48.448 Contrastive_loss: 1.3771 (1.5187) Loss: 1.3771 (1.5187)
-2023-10-09,12:26:53 | INFO | Train Epoch: 4 [ 1642496/25608192 (6%)] Data (t): 0.430 Batch (t): 1.818, 2272.88/s, 568.220/s/gpu LR: 0.000469 Logit Scale: 48.587 Contrastive_loss: 1.6289 (1.5408) Loss: 1.6289 (1.5408)
-2023-10-09,12:29:54 | INFO | Train Epoch: 4 [ 2052096/25608192 (8%)] Data (t): 0.427 Batch (t): 1.819, 2257.02/s, 564.255/s/gpu LR: 0.000469 Logit Scale: 48.555 Contrastive_loss: 1.8016 (1.5842) Loss: 1.8016 (1.5842)
-2023-10-09,12:32:55 | INFO | Train Epoch: 4 [ 2461696/25608192 (10%)] Data (t): 0.421 Batch (t): 1.808, 2285.83/s, 571.457/s/gpu LR: 0.000469 Logit Scale: 48.708 Contrastive_loss: 1.6066 (1.5874) Loss: 1.6066 (1.5874)
-2023-10-09,12:35:56 | INFO | Train Epoch: 4 [ 2871296/25608192 (11%)] Data (t): 0.421 Batch (t): 1.810, 2164.15/s, 541.038/s/gpu LR: 0.000468 Logit Scale: 48.582 Contrastive_loss: 1.8093 (1.6152) Loss: 1.8093 (1.6152)
-2023-10-09,12:38:57 | INFO | Train Epoch: 4 [ 3280896/25608192 (13%)] Data (t): 0.417 Batch (t): 1.805, 2280.18/s, 570.044/s/gpu LR: 0.000468 Logit Scale: 48.658 Contrastive_loss: 1.8482 (1.6411) Loss: 1.8482 (1.6411)
-2023-10-09,12:41:57 | INFO | Train Epoch: 4 [ 3690496/25608192 (14%)] Data (t): 0.421 Batch (t): 1.805, 2189.61/s, 547.401/s/gpu LR: 0.000468 Logit Scale: 48.695 Contrastive_loss: 1.6979 (1.6467) Loss: 1.6979 (1.6467)
-2023-10-09,12:44:57 | INFO | Train Epoch: 4 [ 4100096/25608192 (16%)] Data (t): 0.420 Batch (t): 1.802, 2297.47/s, 574.368/s/gpu LR: 0.000468 Logit Scale: 48.741 Contrastive_loss: 1.7318 (1.6545) Loss: 1.7318 (1.6545)
-2023-10-09,12:47:58 | INFO | Train Epoch: 4 [ 4509696/25608192 (18%)] Data (t): 0.424 Batch (t): 1.806, 2288.88/s, 572.220/s/gpu LR: 0.000467 Logit Scale: 48.879 Contrastive_loss: 1.3213 (1.6267) Loss: 1.3213 (1.6267)
+2023-10-14,22:33:14 | INFO | Params:
+2023-10-14,22:33:14 | INFO |   accum_freq: 1
+2023-10-14,22:33:14 | INFO |   aug_cfg: {}
+2023-10-14,22:33:14 | INFO |   batch_size: 1024
+2023-10-14,22:33:14 | INFO |   beta1: 0.9
+2023-10-14,22:33:14 | INFO |   beta2: 0.98
+2023-10-14,22:33:14 | INFO |   checkpoint_path: /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_tmars_5x_20231014_223237/checkpoints
+2023-10-14,22:33:14 | INFO |   coca_caption_loss_weight: 2.0
+2023-10-14,22:33:14 | INFO |   coca_contrastive_loss_weight: 1.0
+2023-10-14,22:33:14 | INFO |   copy_codebase: False
+2023-10-14,22:33:14 | INFO |   csv_caption_key: title
+2023-10-14,22:33:14 | INFO |   csv_img_key: filepath
+2023-10-14,22:33:14 | INFO |   csv_separator: 	
+2023-10-14,22:33:14 | INFO |   dataset_resampled: True
+2023-10-14,22:33:14 | INFO |   dataset_type: webdataset
+2023-10-14,22:33:14 | INFO |   ddp_static_graph: True
+2023-10-14,22:33:14 | INFO |   debug: False
+2023-10-14,22:33:14 | INFO |   delete_previous_checkpoint: False
+2023-10-14,22:33:14 | INFO |   device: cuda:0
+2023-10-14,22:33:14 | INFO |   dist_backend: nccl
+2023-10-14,22:33:14 | INFO |   dist_url: env://
+2023-10-14,22:33:14 | INFO |   distill: False
+2023-10-14,22:33:14 | INFO |   distill_model: None
+2023-10-14,22:33:14 | INFO |   distill_pretrained: None
+2023-10-14,22:33:14 | INFO |   distributed: True
+2023-10-14,22:33:14 | INFO |   epochs: 5
+2023-10-14,22:33:14 | INFO |   epochs_cooldown: None
+2023-10-14,22:33:14 | INFO |   eps: 1e-06
+2023-10-14,22:33:14 | INFO |   filter: is_valid
+2023-10-14,22:33:14 | INFO |   force_custom_text: False
+2023-10-14,22:33:14 | INFO |   force_image_size: None
+2023-10-14,22:33:14 | INFO |   force_patch_dropout: None
+2023-10-14,22:33:14 | INFO |   force_quick_gelu: False
+2023-10-14,22:33:14 | INFO |   gather_with_grad: True
+2023-10-14,22:33:14 | INFO |   grad_checkpointing: True
+2023-10-14,22:33:14 | INFO |   grad_clip_norm: None
+2023-10-14,22:33:14 | INFO |   horovod: False
+2023-10-14,22:33:14 | INFO |   image_mean: None
+2023-10-14,22:33:14 | INFO |   image_std: None
+2023-10-14,22:33:14 | INFO |   imagenet_v2: None
+2023-10-14,22:33:14 | INFO |   imagenet_val: None
+2023-10-14,22:33:14 | INFO |   is_valid_pt: None
+2023-10-14,22:33:14 | INFO |   local_loss: True
+2023-10-14,22:33:14 | INFO |   local_rank: 0
+2023-10-14,22:33:14 | INFO |   lock_image: False
+2023-10-14,22:33:14 | INFO |   lock_image_freeze_bn_stats: False
+2023-10-14,22:33:14 | INFO |   lock_image_unlocked_groups: 0
+2023-10-14,22:33:14 | INFO |   lock_text: False
+2023-10-14,22:33:14 | INFO |   lock_text_freeze_layer_norm: False
+2023-10-14,22:33:14 | INFO |   lock_text_unlocked_layers: 0
+2023-10-14,22:33:14 | INFO |   log_every_n_steps: 100
+2023-10-14,22:33:14 | INFO |   log_level: 20
+2023-10-14,22:33:14 | INFO |   log_local: False
+2023-10-14,22:33:14 | INFO |   log_path: /project_data2/projects/sachingo/datacomp_checkpoints/logs/mediumscale_tmars_5x_20231014_223237/out.log
+2023-10-14,22:33:14 | INFO |   logs: /project_data2/projects/sachingo/datacomp_checkpoints/logs
+2023-10-14,22:33:14 | INFO |   lr: 0.0005
+2023-10-14,22:33:14 | INFO |   lr_cooldown_end: 0.0
+2023-10-14,22:33:14 | INFO |   lr_cooldown_power: 1.0
+2023-10-14,22:33:14 | INFO |   lr_scheduler: cosine
+2023-10-14,22:33:14 | INFO |   model: ViT-B-32
+2023-10-14,22:33:14 | INFO |   name: mediumscale_tmars_5x_20231014_223237
+2023-10-14,22:33:14 | INFO |   no_set_device_rank: False
+2023-10-14,22:33:14 | INFO |   num_saves_per_epoch: 5
+2023-10-14,22:33:14 | INFO |   only_local_loss: 0
+2023-10-14,22:33:14 | INFO |   precision: amp
+2023-10-14,22:33:14 | INFO |   pretrained: 
+2023-10-14,22:33:14 | INFO |   pretrained_image: False
+2023-10-14,22:33:14 | INFO |   rank: 0
+2023-10-14,22:33:14 | INFO |   remote_sync: None
+2023-10-14,22:33:14 | INFO |   remote_sync_frequency: 300
+2023-10-14,22:33:14 | INFO |   remote_sync_protocol: s3
+2023-10-14,22:33:14 | INFO |   report_to: 
+2023-10-14,22:33:14 | INFO |   resume: None
+2023-10-14,22:33:14 | INFO |   save_frequency: 1
+2023-10-14,22:33:14 | INFO |   save_most_recent: False
+2023-10-14,22:33:14 | INFO |   seed: 0
+2023-10-14,22:33:14 | INFO |   siglip: False
+2023-10-14,22:33:14 | INFO |   skip_scheduler: False
+2023-10-14,22:33:14 | INFO |   tensorboard: False
+2023-10-14,22:33:14 | INFO |   tensorboard_path: 
+2023-10-14,22:33:14 | INFO |   torchcompile: False
+2023-10-14,22:33:14 | INFO |   torchscript: False
+2023-10-14,22:33:14 | INFO |   trace: False
+2023-10-14,22:33:14 | INFO |   train_data: /project_data2/datasets/datanet/shards/{00000000..00012895}.tar
+2023-10-14,22:33:14 | INFO |   train_data_upsampling_factors: None
+2023-10-14,22:33:14 | INFO |   train_num_samples: 128000000
+2023-10-14,22:33:14 | INFO |   use_bn_sync: False
+2023-10-14,22:33:14 | INFO |   use_bnb_linear: None
+2023-10-14,22:33:14 | INFO |   val_data: None
+2023-10-14,22:33:14 | INFO |   val_frequency: 1
+2023-10-14,22:33:14 | INFO |   val_num_samples: None
+2023-10-14,22:33:14 | INFO |   valid_file: /project_data/datasets/datanet/is_valids/datacomp_tmars_medium.pt
+2023-10-14,22:33:14 | INFO |   wandb: False
+2023-10-14,22:33:14 | INFO |   wandb_notes: 
+2023-10-14,22:33:14 | INFO |   wandb_project_name: open-clip
+2023-10-14,22:33:14 | INFO |   warmup: 500
+2023-10-14,22:33:14 | INFO |   wd: 0.2
+2023-10-14,22:33:14 | INFO |   workers: 4
+2023-10-14,22:33:14 | INFO |   world_size: 4
+2023-10-14,22:33:14 | INFO |   zeroshot_frequency: 2
+2023-10-14,22:33:21 | INFO | Start epoch 0
+2023-10-14,22:34:25 | INFO | Train Epoch: 0 [     4096/128008192 (0%)] Data (t): 57.794 Batch (t): 63.817, 64.1840/s, 16.0460/s/gpu LR: 0.000001 Logit Scale: 14.286 Contrastive_loss: 8.3828 (8.3828) Loss: 8.3828 (8.3828)
+2023-10-14,22:34:54 | INFO | Reducer buckets have been rebuilt in this iteration.
+2023-10-14,22:34:54 | INFO | Reducer buckets have been rebuilt in this iteration.
+2023-10-14,22:34:54 | INFO | Reducer buckets have been rebuilt in this iteration.
+2023-10-14,22:34:54 | INFO | Reducer buckets have been rebuilt in this iteration.
+2023-10-14,22:45:06 | INFO | Train Epoch: 0 [   413696/128008192 (0%)] Data (t): 1.707 Batch (t): 6.416, 2322.96/s, 580.739/s/gpu LR: 0.000101 Logit Scale: 14.268 Contrastive_loss: 8.1513 (8.2671) Loss: 8.1513 (8.2671)
+2023-10-14,22:56:45 | INFO | Train Epoch: 0 [   823296/128008192 (1%)] Data (t): 1.053 Batch (t): 6.991, 2288.84/s, 572.210/s/gpu LR: 0.000201 Logit Scale: 14.234 Contrastive_loss: 8.0624 (8.1989) Loss: 8.0624 (8.1989)
+2023-10-14,23:07:49 | INFO | Train Epoch: 0 [  1232896/128008192 (1%)] Data (t): 0.424 Batch (t): 6.640, 2158.36/s, 539.589/s/gpu LR: 0.000301 Logit Scale: 14.199 Contrastive_loss: 7.9670 (8.1409) Loss: 7.9670 (8.1409)
+2023-10-14,23:19:12 | INFO | Train Epoch: 0 [  1642496/128008192 (1%)] Data (t): 0.428 Batch (t): 6.822, 2318.11/s, 579.528/s/gpu LR: 0.000401 Logit Scale: 14.169 Contrastive_loss: 7.7734 (8.0674) Loss: 7.7734 (8.0674)
+2023-10-14,23:29:51 | INFO | Train Epoch: 0 [  2052096/128008192 (2%)] Data (t): 0.426 Batch (t): 6.391, 2238.73/s, 559.683/s/gpu LR: 0.000500 Logit Scale: 14.142 Contrastive_loss: 7.7379 (8.0125) Loss: 7.7379 (8.0125)
+2023-10-14,23:30:18 | WARNING | Handling webdataset error (ReadError('invalid header', <_io.BufferedReader name='/project_data2/datasets/datanet/shards/00009794.tar'>, '/project_data2/datasets/datanet/shards/00009794.tar')). Ignoring.
+2023-10-14,23:40:55 | INFO | Train Epoch: 0 [  2461696/128008192 (2%)] Data (t): 0.643 Batch (t): 6.639, 2255.60/s, 563.900/s/gpu LR: 0.000500 Logit Scale: 14.145 Contrastive_loss: 7.6167 (7.9559) Loss: 7.6167 (7.9559)
+2023-10-14,23:51:52 | INFO | Train Epoch: 0 [  2871296/128008192 (2%)] Data (t): 0.420 Batch (t): 6.571, 2288.48/s, 572.120/s/gpu LR: 0.000500 Logit Scale: 14.184 Contrastive_loss: 7.5751 (7.9083) Loss: 7.5751 (7.9083)
+2023-10-15,00:03:09 | INFO | Train Epoch: 0 [  3280896/128008192 (3%)] Data (t): 1.215 Batch (t): 6.770, 2229.21/s, 557.302/s/gpu LR: 0.000500 Logit Scale: 14.245 Contrastive_loss: 7.4572 (7.8582) Loss: 7.4572 (7.8582)
+2023-10-15,00:14:54 | INFO | Train Epoch: 0 [  3690496/128008192 (3%)] Data (t): 1.138 Batch (t): 7.056, 2330.51/s, 582.628/s/gpu LR: 0.000500 Logit Scale: 14.332 Contrastive_loss: 7.3257 (7.8049) Loss: 7.3257 (7.8049)
+2023-10-15,00:25:03 | INFO | Train Epoch: 0 [  4100096/128008192 (3%)] Data (t): 3.677 Batch (t): 6.085, 2376.19/s, 594.047/s/gpu LR: 0.000500 Logit Scale: 14.455 Contrastive_loss: 7.2638 (7.7558) Loss: 7.2638 (7.7558)
+2023-10-15,00:35:32 | INFO | Train Epoch: 0 [  4509696/128008192 (4%)] Data (t): 3.202 Batch (t): 6.294, 358.478/s, 89.6196/s/gpu LR: 0.000500 Logit Scale: 14.588 Contrastive_loss: 7.4095 (7.7269) Loss: 7.4095 (7.7269)
+2023-10-15,00:46:05 | INFO | Train Epoch: 0 [  4919296/128008192 (4%)] Data (t): 3.868 Batch (t): 6.330, 2305.86/s, 576.464/s/gpu LR: 0.000500 Logit Scale: 14.753 Contrastive_loss: 7.1039 (7.6790) Loss: 7.1039 (7.6790)
+2023-10-15,00:56:38 | INFO | Train Epoch: 0 [  5328896/128008192 (4%)] Data (t): 3.877 Batch (t): 6.328, 223.665/s, 55.9162/s/gpu LR: 0.000500 Logit Scale: 14.938 Contrastive_loss: 7.1912 (7.6441) Loss: 7.1912 (7.6441)
+2023-10-15,01:07:08 | INFO | Train Epoch: 0 [  5738496/128008192 (4%)] Data (t): 4.711 Batch (t): 6.305, 2269.08/s, 567.270/s/gpu LR: 0.000500 Logit Scale: 15.150 Contrastive_loss: 7.0629 (7.6054) Loss: 7.0629 (7.6054)
+2023-10-15,01:17:49 | INFO | Train Epoch: 0 [  6148096/128008192 (5%)] Data (t): 0.523 Batch (t): 6.406, 2247.31/s, 561.826/s/gpu LR: 0.000500 Logit Scale: 15.360 Contrastive_loss: 6.9593 (7.5650) Loss: 6.9593 (7.5650)
+2023-10-15,01:28:15 | INFO | Train Epoch: 0 [  6557696/128008192 (5%)] Data (t): 0.365 Batch (t): 6.259, 147.484/s, 36.8711/s/gpu LR: 0.000500 Logit Scale: 15.603 Contrastive_loss: 6.9699 (7.5300) Loss: 6.9699 (7.5300)
+2023-10-15,01:38:24 | INFO | Train Epoch: 0 [  6967296/128008192 (5%)] Data (t): 2.212 Batch (t): 6.094, 2321.26/s, 580.316/s/gpu LR: 0.000500 Logit Scale: 15.883 Contrastive_loss: 7.0057 (7.5009) Loss: 7.0057 (7.5009)
+2023-10-15,01:49:23 | INFO | Train Epoch: 0 [  7376896/128008192 (6%)] Data (t): 3.634 Batch (t): 6.590, 2450.40/s, 612.599/s/gpu LR: 0.000500 Logit Scale: 16.169 Contrastive_loss: 6.8589 (7.4671) Loss: 6.8589 (7.4671)
+2023-10-15,01:59:47 | INFO | Train Epoch: 0 [  7786496/128008192 (6%)] Data (t): 4.791 Batch (t): 6.234, 2267.28/s, 566.820/s/gpu LR: 0.000500 Logit Scale: 16.457 Contrastive_loss: 6.7786 (7.4327) Loss: 6.7786 (7.4327)
+2023-10-15,02:10:27 | INFO | Train Epoch: 0 [  8196096/128008192 (6%)] Data (t): 1.784 Batch (t): 6.406, 2245.49/s, 561.372/s/gpu LR: 0.000500 Logit Scale: 16.726 Contrastive_loss: 6.0317 (7.3659) Loss: 6.0317 (7.3659)
+2023-10-15,02:22:01 | INFO | Train Epoch: 0 [  8605696/128008192 (7%)] Data (t): 4.433 Batch (t): 6.942, 226.456/s, 56.6139/s/gpu LR: 0.000500 Logit Scale: 16.993 Contrastive_loss: 6.6451 (7.3332) Loss: 6.6451 (7.3332)
+2023-10-15,02:34:05 | INFO | Train Epoch: 0 [  9015296/128008192 (7%)] Data (t): 5.532 Batch (t): 7.233, 2288.64/s, 572.160/s/gpu LR: 0.000500 Logit Scale: 17.296 Contrastive_loss: 6.5270 (7.2981) Loss: 6.5270 (7.2981)
+2023-10-15,02:45:11 | INFO | Train Epoch: 0 [  9424896/128008192 (7%)] Data (t): 3.792 Batch (t): 6.666, 2213.09/s, 553.273/s/gpu LR: 0.000500 Logit Scale: 17.562 Contrastive_loss: 6.7304 (7.2745) Loss: 6.7304 (7.2745)
+2023-10-15,02:55:40 | INFO | Train Epoch: 0 [  9834496/128008192 (8%)] Data (t): 0.348 Batch (t): 6.292, 2330.68/s, 582.670/s/gpu LR: 0.000500 Logit Scale: 17.873 Contrastive_loss: 6.4882 (7.2430) Loss: 6.4882 (7.2430)
+2023-10-15,03:01:27 | WARNING | Handling webdataset error (ReadError('invalid header', <_io.BufferedReader name='/project_data2/datasets/datanet/shards/00009807.tar'>, '/project_data2/datasets/datanet/shards/00009807.tar')). Ignoring.
+2023-10-15,03:06:49 | INFO | Train Epoch: 0 [ 10244096/128008192 (8%)] Data (t): 3.753 Batch (t): 6.684, 265.658/s, 66.4146/s/gpu LR: 0.000500 Logit Scale: 18.162 Contrastive_loss: 6.5862 (7.2178) Loss: 6.5862 (7.2178)
+2023-10-15,03:17:22 | INFO | Train Epoch: 0 [ 10653696/128008192 (8%)] Data (t): 3.461 Batch (t): 6.335, 2257.69/s, 564.423/s/gpu LR: 0.000500 Logit Scale: 18.467 Contrastive_loss: 6.5001 (7.1912) Loss: 6.5001 (7.1912)
+2023-10-15,03:27:52 | INFO | Train Epoch: 0 [ 11063296/128008192 (9%)] Data (t): 3.710 Batch (t): 6.293, 2302.19/s, 575.546/s/gpu LR: 0.000500 Logit Scale: 18.768 Contrastive_loss: 6.5006 (7.1665) Loss: 6.5006 (7.1665)
+2023-10-15,03:38:28 | INFO | Train Epoch: 0 [ 11472896/128008192 (9%)] Data (t): 4.336 Batch (t): 6.367, 2383.48/s, 595.870/s/gpu LR: 0.000500 Logit Scale: 19.027 Contrastive_loss: 6.3630 (7.1388) Loss: 6.3630 (7.1388)
+2023-10-15,03:49:01 | INFO | Train Epoch: 0 [ 11882496/128008192 (9%)] Data (t): 0.343 Batch (t): 6.330, 518.424/s, 129.606/s/gpu LR: 0.000500 Logit Scale: 19.269 Contrastive_loss: 6.3991 (7.1142) Loss: 6.3991 (7.1142)
+2023-10-15,03:59:46 | INFO | Train Epoch: 0 [ 12292096/128008192 (10%)] Data (t): 1.935 Batch (t): 6.451, 435.323/s, 108.831/s/gpu LR: 0.000500 Logit Scale: 19.524 Contrastive_loss: 6.5055 (7.0945) Loss: 6.5055 (7.0945)
+2023-10-15,04:10:12 | INFO | Train Epoch: 0 [ 12701696/128008192 (10%)] Data (t): 2.090 Batch (t): 6.255, 230.065/s, 57.5163/s/gpu LR: 0.000500 Logit Scale: 19.801 Contrastive_loss: 6.3004 (7.0697) Loss: 6.3004 (7.0697)
+2023-10-15,04:20:41 | INFO | Train Epoch: 0 [ 13111296/128008192 (10%)] Data (t): 0.370 Batch (t): 6.288, 516.258/s, 129.065/s/gpu LR: 0.000500 Logit Scale: 20.065 Contrastive_loss: 6.2605 (7.0452) Loss: 6.2605 (7.0452)
+2023-10-15,04:31:14 | INFO | Train Epoch: 0 [ 13520896/128008192 (11%)] Data (t): 0.361 Batch (t): 6.336, 340.009/s, 85.0022/s/gpu LR: 0.000500 Logit Scale: 20.312 Contrastive_loss: 6.2523 (7.0219) Loss: 6.2523 (7.0219)
+2023-10-15,04:41:39 | INFO | Train Epoch: 0 [ 13930496/128008192 (11%)] Data (t): 0.365 Batch (t): 6.244, 196.893/s, 49.2234/s/gpu LR: 0.000500 Logit Scale: 20.571 Contrastive_loss: 6.2339 (6.9994) Loss: 6.2339 (6.9994)
+2023-10-15,04:51:43 | INFO | Train Epoch: 0 [ 14340096/128008192 (11%)] Data (t): 0.342 Batch (t): 6.042, 1521.56/s, 380.391/s/gpu LR: 0.000500 Logit Scale: 20.783 Contrastive_loss: 6.2416 (6.9783) Loss: 6.2416 (6.9783)
+2023-10-15,05:02:24 | INFO | Train Epoch: 0 [ 14749696/128008192 (12%)] Data (t): 4.165 Batch (t): 6.413, 2331.60/s, 582.901/s/gpu LR: 0.000500 Logit Scale: 21.016 Contrastive_loss: 6.2422 (6.9584) Loss: 6.2422 (6.9584)
+Traceback (most recent call last):
+  File "/home/sachingo/datacomp/train.py", line 328, in <module>
+    success = main(main_args)
+  File "/home/sachingo/datacomp/training/main.py", line 427, in main
+    train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist_model, args, tb_writer=writer)
+  File "/home/sachingo/datacomp/training/train.py", line 102, in train_one_epoch
+    model_out = model(images, texts)
+  File "/home/sachingo/miniconda3/envs/datacomp/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sachingo/miniconda3/envs/datacomp/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 1040, in forward
+    output = self._run_ddp_forward(*inputs, **kwargs)
+  File "/home/sachingo/miniconda3/envs/datacomp/lib/python3.10/site-packages/torch/nn/parallel/distributed.py", line 1000, in _run_ddp_forward
+    return module_to_run(*inputs[0], **kwargs[0])
+  File "/home/sachingo/miniconda3/envs/datacomp/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/sachingo/datacomp/open_clip/model.py", line 255, in forward
+    text_features = self.encode_text(text, normalize=True) if text is not None else None
+  File "/home/sachingo/datacomp/open_clip/model.py", line 246, in encode_text
+    x = x[torch.arange(x.shape[0]), text.argmax(dim=-1)] @ self.text_projection
+  File "/home/sachingo/miniconda3/envs/datacomp/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1252, in __getattr__
+    def __getattr__(self, name: str) -> Union[Tensor, 'Module']:
+  File "/home/sachingo/miniconda3/envs/datacomp/lib/python3.10/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 145461) is killed by signal: Killed. 
+slurmstepd: error: Detected 1 oom-kill event(s) in step 185430.0 cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
+srun: error: locus-1-21: task 2: Out Of Memory
+srun: First task exited 60s ago
+srun: step:185430.0 tasks 0-1,3: running
+srun: step:185430.0 task 2: exited abnormally
+srun: Terminating job step 185430.0
 srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
-slurmstepd: error: *** STEP 184378.0 ON locus-1-29 CANCELLED AT 2023-10-09T12:50:29 ***
-slurmstepd: error: *** JOB 184378 ON locus-1-29 CANCELLED AT 2023-10-09T12:50:29 ***
+slurmstepd: error: *** STEP 185430.0 ON locus-1-21 CANCELLED AT 2023-10-15T05:09:39 ***
+slurmstepd: error: Detected 1 oom-kill event(s) in step 185430.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
