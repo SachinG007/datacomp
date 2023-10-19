@@ -23,7 +23,7 @@ from huggingface_hub import (
     upload_file,
 )
 from requests.structures import CaseInsensitiveDict
-
+import random
 from eval_utils.main import evaluate_model
 from scale_configs import available_scales, get_scale_config
 
@@ -286,13 +286,13 @@ if __name__ == "__main__":
     if args.output_dir is None:
         args.output_dir = args.train_output_dir
     args.output_dir = Path(args.output_dir)
-
+    rand_int = random.randint(1, 10000)
     if args.use_model is not None:
         args.train_output_dir = args.output_dir
         # Generate barebones info.pkl
         model_arch, model_checkpoint = args.use_model.split(maxsplit=1)
         Path.mkdir(args.output_dir, parents=True, exist_ok=True)
-        with open(args.train_output_dir / "info.pkl", "wb") as f:
+        with open(args.train_output_dir / f"info_{rand_int}.pkl", "wb") as f:
             pickle.dump(
                 {"scale_config": {"model": model_arch}, "checkpoint": model_checkpoint},
                 f,
@@ -316,7 +316,7 @@ if __name__ == "__main__":
         ), "Please specify your huggingface repo name with --hf_repo_name for a valid submission."
 
     # Read training information
-    train_info_filename = args.train_output_dir / "info.pkl"
+    train_info_filename = args.train_output_dir / f"info_{rand_int}.pkl"
     train_info = pickle.load(open(train_info_filename, "rb"))
 
     epoch = int(model_checkpoint[-4])
@@ -334,7 +334,7 @@ if __name__ == "__main__":
 
     # Check for cached results
     results = {}
-    cached_train_info_filename = args.output_dir / "info.pkl"
+    cached_train_info_filename = args.output_dir / f"info_{rand_int}.pkl"
     if args.output_dir.exists() and cached_train_info_filename.exists():
         # If the output directory already exists, the training information should match.
         cached_train_info = pickle.load(open(cached_train_info_filename, "rb"))
