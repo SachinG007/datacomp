@@ -19,7 +19,7 @@ for file in $(ls $folder_path/checkpoints | grep '\.pt$' | sort -n -k2 -t_ -); d
     
     pids+=($!)
     count=$((count+1))
-    if [ $count -eq 1 ]; then
+    if [ $count -eq 8 ]; then
         wait "${pids[@]}"
         
         # Reset counter and PIDs
