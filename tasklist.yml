@@ -152,19 +152,6 @@ cars:
   random_score: 0.005160
   tags: []
 
-
-# SUN397
-sun397:
-  name: SUN397
-  size: 108754
-  time: 923
-  num_classes: 397
-  random_score: 0.004645
-  tags:
-    - vtab_natural
-
-# Retrieval datasets
-
 # Flickr30k
 retrieval/flickr_1k_test_image_text_retrieval:
   name: Flickr
