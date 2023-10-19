@@ -320,8 +320,13 @@ if __name__ == "__main__":
     train_info = pickle.load(open(train_info_filename, "rb"))
 
     epoch = int(model_checkpoint[-4])
-    print(f"epoch : {epoch}")
-    results_filename = args.output_dir / f"eval_results_epoch_{epoch}.jsonl"
+    match = re.search(r'step_(\d+)_epoch', model_checkpoint)
+    if match:
+        step = int(match.group(1))
+    else:
+        step = -1
+    print(f"epoch : {epoch}, Step:{step}")
+    results_filename = args.output_dir / f"eval_results_epoch_{epoch}_step_{step}.jsonl"
 
     # Get list of datasets
     with open(os.path.join(os.path.dirname(__file__), "tasklist.yml")) as f:
