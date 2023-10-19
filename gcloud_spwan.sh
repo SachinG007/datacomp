@@ -2,7 +2,7 @@
 
 PROVISIONING=SPOT
 MACHINE=a2-highgpu-4g
-diskname=a100gpu1
+diskname=datacompgpucentral1f_2
 # set config
 gcloud config set compute/zone us-central1-a
 
@@ -23,7 +23,7 @@ fi
 
 # Attach Disk
 
-gcloud compute instances attach-disk instance-4 --disk=datacompdisk --zone=us-central1-a
+gcloud compute instances attach-disk datacompgpucentral1f3 --disk=datacompdisk2 --zone=us-central1-f --mode ro
 
 # HTTP Traffic
 gcloud compute instances add-tags $diskname --tags=http-server,https-server
@@ -41,9 +41,9 @@ echo 'RUN after start: sudo mkdir -p /drive; sudo mount /dev/sdb /drive; sudo ch
 # gcloud compute ssh "$diskname" -y
 
 # after start
-# gcloud compute instances attach-disk datacompgpu4 --disk=datacompdisk --zone=us-central1-f
-# git clone https://github.com/SachinG007/datacomp.git; bash create_env.sh; conda activate datacomp; sudo mkdir -p /drive; sudo mount /dev/sdb /drive; sudo chown -R sachingo /drive; cd; cd datacomp;
-
+# gcloud compute instances attach-disk datacompgpu4 --disk=datacompdiskuscentral1f --zone=us-central1-f
+# git clone https://github.com/SachinG007/datacomp.git; cd datacomp; bash create_env.sh; conda activate datacomp; sudo mkdir -p /drive; sudo mount /dev/sdb /drive; cd; cd datacomp;
+# pip uninstall nvidia_cublas_cu11 -Y
 # To move disk:
 # gcloud compute disks move ssd-beta --destination-zone=us-central1-b
 

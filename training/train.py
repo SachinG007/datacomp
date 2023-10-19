@@ -261,7 +261,7 @@ def train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist
 
             torch.save(
                 checkpoint_dict,
-                os.path.join(args.checkpoint_path, save_path),
+                save_path,
             )
     # end for
 
