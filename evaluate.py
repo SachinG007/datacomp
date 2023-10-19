@@ -320,7 +320,7 @@ if __name__ == "__main__":
     train_info = pickle.load(open(train_info_filename, "rb"))
 
     # epoch = int(model_checkpoint[-4])
-    match = re.search(r'_epoch_(\d+)\.pt', ckpt_path)
+    match = re.search(r'_epoch_(\d+)\.pt', model_checkpoint)
     if match:
         epoch = int(match.group(1))
     else:
