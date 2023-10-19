@@ -319,7 +319,12 @@ if __name__ == "__main__":
     train_info_filename = args.train_output_dir / f"info_{rand_int}.pkl"
     train_info = pickle.load(open(train_info_filename, "rb"))
 
-    epoch = int(model_checkpoint[-4])
+    # epoch = int(model_checkpoint[-4])
+    match = re.search(r'_epoch_(\d+)\.pt', ckpt_path)
+    if match:
+        epoch = int(match.group(1))
+    else:
+        epoch = -1
     match = re.search(r'step_(\d+)_epoch', model_checkpoint)
     if match:
         step = int(match.group(1))
