@@ -336,9 +336,16 @@ def main(args):
             # resuming a train checkpoint w/ epoch and optimizer state
             start_epoch = checkpoint["epoch"]
             sd = checkpoint["state_dict"]
-            if not args.distributed and next(iter(sd.items()))[0].startswith('module'):
-                sd = {k[len('module.'):]: v for k, v in sd.items()}
-            model.load_state_dict(sd)
+            from collections import OrderedDict
+            new_state_dict = OrderedDict()
+            for k, v in sd.items():
+                name = k if k.startswith('module.') else 'module.'+k
+                new_state_dict[name] = v
+            
+            # sd = new_state_dict
+            if not args.distributed and next(iter(new_state_dict.items()))[0].startswith('module'):
+                new_state_dict = {k[len('module.'):]: v for k, v in new_state_dict.items()}
+            model.load_state_dict(new_state_dict)
             if optimizer is not None:
                 optimizer.load_state_dict(checkpoint["optimizer"])
             if scaler is not None and 'scaler' in checkpoint:

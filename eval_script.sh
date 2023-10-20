@@ -15,7 +15,7 @@ for file in $(ls $folder_path/checkpoints | grep '\.pt$' | sort -n -k2 -t_ -); d
     echo $ckpt_path
     
     # Run the evaluation script
-    CUDA_VISIBLE_DEVICES=$count python evaluate.py --train_output_dir $folder_path --use_model \"ViT-B-32 $ckpt_path\" --data_dir /home/sachingo/
+    CUDA_VISIBLE_DEVICES=$count python evaluate.py --train_output_dir $folder_path --use_model \"ViT-B-32 $ckpt_path\" --data_dir /home/sachingo/ &
     
     pids+=($!)
     count=$((count+1))
