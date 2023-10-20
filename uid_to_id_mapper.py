@@ -36,7 +36,8 @@ for hex in hex_uids:
 
     is_valid[true_index] = 1
     current_pointer_in_sorted_uids_in_lexicographic_order += 1
-    print("Current pointer is " + str(current_pointer_in_sorted_uids_in_lexicographic_order))
+    if current_pointer_in_sorted_uids_in_lexicographic_order%1_000_000==0:
+        print("Current pointer is " + str(current_pointer_in_sorted_uids_in_lexicographic_order))
 
 # save is_valid at same path as uids but with _is_valid appended
 # np.save(uid_path[:-4] + "_is_valid.npy", is_valid)
