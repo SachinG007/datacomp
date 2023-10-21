@@ -11,6 +11,7 @@ import sys
 uid_path = sys.argv[1]
 
 uids = np.load(uid_path)
+# hex = "0361f756acabd235d7d252919001d3d4"
 # hex = format(uid[0], '016x') + format(uid[1], '016x')
 hex_uids = np.array([format(uid[0], '016x') + format(uid[1], '016x') for uid in uids])
 # this must be a list of uids in lexicographic sorted order
@@ -24,13 +25,14 @@ hex_uids.sort()
 is_valid = np.zeros(130000000)
 
 current_pointer_in_sorted_uids_in_lexicographic_order = 0
+
 for hex in hex_uids:
     #print(hex)
     # find the index of this hex in sorted_uids_in_lexicographic_order
     # increase the current_pointer_in_sorted_uids_in_lexicographic_order until you find the hex
-    while sorted_uids_in_lexicographic_order[current_pointer_in_sorted_uids_in_lexicographic_order] != hex:
+    while sorted_uids_in_lexicographic_order[current_pointer_in_sorted_uids_in_lexicographic_order] != hex:current_pointer_in_sorted_uids_in_lexicographic_order += 1
         #print("waiting ", current_pointer_in_sorted_uids_in_lexicographic_order)
-        current_pointer_in_sorted_uids_in_lexicographic_order += 1
+        
     # now you have the index
     true_index = sorted_indices_for_uids_in_lexicographic_order[current_pointer_in_sorted_uids_in_lexicographic_order]
 
