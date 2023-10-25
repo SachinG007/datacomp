@@ -5,20 +5,10 @@ from pathlib import Path
 import numpy as np
 from scipy.interpolate import make_interp_spline
 from scipy.optimize import curve_fit
+def func(x, a, b):
 
-def func_d(x, a, b):
-    d = 0.67144996
-    return a*((x**b) - (x-1)**b)/((x)**d)
-
-def func_normal(x, a, b):
-    x_1 = x-1
-    return a*((x**b) - (x_1)**b)
-
-# def func(x, a, b):
-
-#     c=0.00
-#     return a*(x**b) + c
-    # return a*np.log(x) + b
+    c=0.00
+    return a*(x**b) + c
     # return a/(x ** c) + b
 
 def _warmup_lr(base_lr, warmup_length, step):
@@ -36,7 +26,7 @@ def cosine_lr(step, base_lr, warmup_length, steps):
 #take a list of folder paths like Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_60p_to_bottom/") 
 folder_path_list = [
                     Path("/project_data2/projects/sachingo/utility_project/mediumscale_nofilter"),
-                    Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_top30p_10prandom"),
+                    # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_top30p_10prandom"),
                     # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_30p_to_40p/"),
                     # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_40p_to_50p/"),
                     # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_50p_to_60p/"),
@@ -48,7 +38,7 @@ folder_path_list = [
 #make a label_list which is basically last part of the name of folders, extract the last part of the name
 label_list = [str(folder_path).split("/")[-1] for folder_path in folder_path_list]
 label_list[-1]   = "whole data random sampling"
-print(label_list)
+# print(label_list)
 all_results = []
 x_values_list = []
 y_values_list = []
@@ -58,9 +48,11 @@ utility_list = []
 utility_by_lr_list = []
 lr_values_list = []
 utility_by_error_list = []
-y_values_original_list = []
+f_k_list = []
 
-
+def pretty_print_list(list_to_print):
+    #print eleemts onlyupto 4 decimal places
+    print([round(elem, 4) for elem in list_to_print])
 
 for k in range(len(folder_path_list)):
     #run the below code for each k
@@ -97,56 +89,44 @@ for k in range(len(folder_path_list)):
 for k in range(len(folder_path_list)):
     result_dict = all_results[k]
     x_values = list(result_dict.keys())
-    # print(x_values)
+
     lr_values = [cosine_lr(x_values[i],5e-4,500,128000000/4096) for i in range(len(x_values))]
     x_values = [x_values[i]*4096/1_000_000 for i in range(len(x_values))]
     y_values = list(result_dict.values())
+    
+    x_values = list(x_values)
     x_values = x_values[2::2]
-    
-    y_values = y_values[1:]
-    #take mean of every 2 values
-    y_values = [(y_values[i]+y_values[i+1])/2 for i in range(0,len(y_values),2)]
-    
-    x_values = x_values[:-2]
-    y_values = y_values[:-2]
-    delta_y_values = [y_values[i] - y_values[i - 1] for i in range(1, len(y_values))]
-    
-    x_values = [i for i in range(1, len(x_values)+1)]
-
-    if k!=0:
-        func = func_d
-    else:
-        func = func_normal
-
-    params, _ = curve_fit(func, x_values[1:], delta_y_values)
-    # print(x_values)
-    print("Estimated params after normalizing by repeatings", params)
-    delta_y_values_smooth = func(np.array(x_values), *params)
-    import pdb;pdb.set_trace()
-    #get values as cumulative sum
-    y_values_smooth = np.cumsum(delta_y_values_smooth)
-    y_values_original = y_values
-    y_values = y_values_smooth
-    
+    y_values = y_values[2::2]
 
     # Compute change in accuracy (Delta accuracy)
     delta_y_values = [y_values[i] - y_values[i - 1] for i in range(1, len(y_values))]
-    delta_x_values = [x_values[i] - x_values[i - 1] for i in range(1, len(x_values))]
-    utility_by_error = [delta_y_values[i]/(0.1-y_values[i]) for i in range(len(delta_y_values))]
-    utility = [delta_y_values[i]/delta_x_values[i] for i in range(len(delta_y_values))]
-    utility = [max(0, x) for x in utility]
-    utility_by_lr = [2*5e-4*utility[i]/(lr_values[i]+lr_values[i+1]) for i in range(len(delta_y_values))]
-    #append all the lists to the global list
+    
+    # power = 0.74517607
+    # a = 0.0048833
+    params, _ = curve_fit(func, x_values, y_values)
+    a, power = params
+    print(params)
+    
+    estimated_values = [a*x_values[i]**power for i in range(len(x_values))]
+
+    delta_y_values = [estimated_values[i] - estimated_values[i - 1] for i in range(1, len(estimated_values))]
+
+    n_factor = [x_values[i]**power - x_values[i-1]**power for i in range(1, len(estimated_values))]
+    
+    pretty_print_list(n_factor)
+
+    f_k = [delta/(a*n_factor[i]) for i, delta in enumerate(delta_y_values)]
+    pretty_print_list(f_k)
+
     x_values_list.append(x_values)
     y_values_list.append(y_values)
     delta_y_values_list.append(delta_y_values)
-    delta_x_values_list.append(delta_x_values)
-    utility_list.append(utility)
-    utility_by_lr_list.append(utility_by_lr)
-    lr_values_list.append(lr_values)
-    utility_by_error_list.append(utility_by_error)
-    y_values_original_list.append(y_values_original)
-
+    # delta_x_values_list.append(delta_x_values)
+    # utility_list.append(utility)
+    # utility_by_lr_list.append(utility_by_lr)
+    # lr_values_list.append(lr_values)
+    # utility_by_error_list.append(utility_by_error)
+    f_k_list.append(f_k)
 
 # Plotting
 plt.figure(figsize=(25, 5))
@@ -155,14 +135,15 @@ marker_list = ['o','x','^','s','*','+','D','v','p','h']
 #make a color list
 color_list = ['b','g','r','c','m','y','k','w']
 
-plt.subplot(1, 5, 1)
-for k in range(len(folder_path_list)):
-    plt.plot(x_values_list[k], y_values_list[k], label=label_list[k], color=color_list[k])
-    plt.scatter(x_values_list[k], y_values_original_list[k], marker=marker_list[k], color=color_list[k])
-plt.title('Accuracy vs Number of Samples')
-plt.xlabel('Number of Samples')
-plt.ylabel('Accuracy')
-plt.legend()
+# plt.subplot(1, 5, 1)
+# for k in range(len(folder_path_list)):
+#     plt.plot(x_values_list[k], y_values_list[k], label=label_list[k], marker=marker_list[k])
+# # plt.plot(x_values, y_values, marker='o')
+# # plt.plot(x_values2, y_values2, marker='x')
+# plt.title('Accuracy vs Number of Samples')
+# plt.xlabel('Number of Samples')
+# plt.ylabel('Accuracy')
+# plt.legend()
 
 # plt.subplot(1, 5, 2)
 # for k in range(len(folder_path_list)):
@@ -171,6 +152,7 @@ plt.legend()
 # plt.xlabel('Number of Samples')
 # plt.ylabel('Utility')
 # plt.legend()
+
 # plt.subplot(1, 5, 3)
 # for k in range(len(folder_path_list)):
 #     # Smoothing the curve
@@ -189,16 +171,17 @@ plt.legend()
 # plt.ylabel('Smoothened Utility')
 # plt.legend()
 
-# plt.subplot(1, 5, 4)
-# for k in range(len(folder_path_list)):
-#     # plt.plot(x_values_list[k][1:-3], utility_by_lr_list[k][:-3], label=label_list[k], marker=marker_list[k])
-#     plt.plot(x_values_list[k][1:-1], utility_by_error_list[k][:-1], label=label_list[k], marker=marker_list[k])
-# # plt.plot(x_values[1:-3], utility_by_lr[:-3], marker='x')
-# # plt.plot(x_values2[1:-3], utility_by_lr2[:-3], marker='x')
-# plt.title('Utility by error vs Number of Samples')
-# plt.xlabel('Number of Samples')
-# plt.ylabel('Utility by lr')
-# plt.legend()
+plt.subplot(1, 5, 4)
+for k in range(len(folder_path_list)):
+    # plt.plot(x_values_list[k][1:-3], utility_by_lr_list[k][:-3], label=label_list[k], marker=marker_list[k])
+    plt.plot(x_values_list[k], f_k_list[k], label=label_list[k], marker=marker_list[k])
+# plt.plot(x_values[1:-3], utility_by_lr[:-3], marker='x')
+# plt.plot(x_values2[1:-3], utility_by_lr2[:-3], marker='x')
+plt.title('f(k) vs Number of Samples')
+plt.xlabel('Number of Samples')
+plt.ylabel('f(k)')
+#plot legend outside the plot
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
 
 # plt.subplot(1, 5, 5)
 # for k in range(len(folder_path_list)):
@@ -211,5 +194,4 @@ plt.legend()
 # plt.legend()
 
 
-# plt.savefig('all_utilities_log.png')
-plt.savefig('all_utilities_power.png')
+plt.savefig('all_utilities_fk.png')
