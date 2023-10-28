@@ -1,4 +1,4 @@
-datalist = (0.2 0.3 0.1 0.2 0.4 0.3 0.1 0.2 0.1 0.3)
+datalist=(0.2 0.3 0.1 0.2 0.3 0.1 0.2 0.4 0.1 0.3)
 
 
 exp_name=clipbucket_curriculum_128M
@@ -20,5 +20,4 @@ do
     
     # move all the checkpoints to a folder stepwise if they have the term "step"
     mv /home/pratyus2/logs/clipbucket_top10p/*step* /home/pratyus2/logs/clipbucket_top10p/intermediate/
-    
 done
