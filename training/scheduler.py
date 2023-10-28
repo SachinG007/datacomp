@@ -52,11 +52,14 @@ def cosine_lr(optimizer, base_lr, warmup_length, steps, resume_gold_ckpt_step = 
                 lr = 0.5 * (1 + np.cos(np.pi * e / es)) * base_lr
 
             else:
+                e_init = resume_gold_ckpt_step - warmup_length
+                es_init = steps//2 - warmup_length
+                init_lr = 0.5 * (1 + np.cos(np.pi * e_init / es_init)) * base_lr
                 e_eff = resume_gold_ckpt_step + warmup_length - warmup_length
                 es_eff = steps - warmup_length
-                gold_base_lr =  0.5 * (1 + np.cos(np.pi * e_eff / es_eff)) * base_lr
+                gold_base_lr =  0.5 * (1 + np.cos(np.pi * e_eff / es_eff)) * base_lr - init_lr
                 if step - resume_gold_ckpt_step < warmup_length:
-                    lr  = _warmup_lr(gold_base_lr, warmup_length, step - resume_gold_ckpt_step)
+                    lr  = _warmup_lr(gold_base_lr, warmup_length, step - resume_gold_ckpt_step) + init_lr
                 else:
                     e = step - warmup_length
                     es = steps - warmup_length 
