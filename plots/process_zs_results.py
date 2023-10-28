@@ -39,12 +39,12 @@ folder_path_list = [
                     # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_top10p"),
                     # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_10p_to_20p"),
                     # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_top30p_10prandom"),
-                    # Path("/home/sachingo/datacomp/logs/logs/mediumscale_nofilter_5x/"),
-                    # Path("/project_data2/projects/sachingo/utility_project/mediumscale_clipL14_5x"),
-                    Path("/project_data2/projects/sachingo/utility_project/mediumscale_dfn_5x"),
-                    Path("/home/sachingo/datacomp/logs/logs/mediumscale_tmars_5x/"),
-                    Path("/project_data2/projects/sachingo/utility_project/mediumscale_clipL14_top40p_5x/"),
+                    Path("/home/sachingo/datacomp/logs/logs/mediumscale_nofilter_5x_sac/"),
                     Path("/project_data2/projects/sachingo/utility_project/mediumscale_laion_5x/"),
+                    Path("/project_data2/projects/sachingo/utility_project/mediumscale_clipL14_top30_5x/"),
+                    Path("/project_data2/projects/sachingo/utility_project/mediumscale_clipL14_top40p_5x/"),
+                    Path("/home/sachingo/datacomp/logs/logs/mediumscale_tmars_5x/"),
+                    Path("/project_data2/projects/sachingo/utility_project/mediumscale_dfn_5x"),
                     # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_30p_to_40p/"),
                     # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_40p_to_50p/"),
                     # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_50p_to_60p/"),
@@ -76,7 +76,7 @@ for k in range(len(folder_path_list)):
     result_dict = {}
     for jsonl_file in folder_path.glob("*.jsonl"):
         # Extract step number from file name
-        if k==-1:
+        if k<1:
             match = re.search(r'step_(\d+)\.jsonl', str(jsonl_file))
             if match:
                 step_number = int(match.group(1))            
@@ -124,14 +124,13 @@ for k in range(len(folder_path_list)):
                     assert total_entries == 18, f"total entries is not 18, {jsonl_file}"
                     avg_score = avg_score/total_entries
                     result_dict[epoch_number] = avg_score
-
                         # if data.get("key") == "imagenet1k":
                         #     main_metric = data["metrics"]["main_metric"]
                         #     result_dict[epoch_number] = main_metric
                         #     break
 
     # if k==3:
-    #     import pdb;pdb.set_trace()
+    
     result_dict = {k: v for k, v in sorted(result_dict.items())}
     pruned_result_dict = result_dict
     # pruned_keys = []

@@ -40,14 +40,29 @@ def const_lr_cooldown(optimizer, base_lr, warmup_length, steps, cooldown_steps, 
     return _lr_adjuster
 
 
-def cosine_lr(optimizer, base_lr, warmup_length, steps):
+def cosine_lr(optimizer, base_lr, warmup_length, steps, resume_gold_ckpt_step = 0):
     def _lr_adjuster(step):
         if step < warmup_length:
             lr = _warmup_lr(base_lr, warmup_length, step)
         else:
-            e = step - warmup_length
-            es = steps - warmup_length
-            lr = 0.5 * (1 + np.cos(np.pi * e / es)) * base_lr
+
+            if resume_gold_ckpt_step == 0:
+                e = step - warmup_length
+                es = steps - warmup_length
+                lr = 0.5 * (1 + np.cos(np.pi * e / es)) * base_lr
+
+            else:
+                e_eff = resume_gold_ckpt_step + warmup_length - warmup_length
+                es_eff = steps - warmup_length
+                gold_base_lr =  0.5 * (1 + np.cos(np.pi * e_eff / es_eff)) * base_lr
+                if step - resume_gold_ckpt_step < warmup_length:
+                    lr  = _warmup_lr(gold_base_lr, warmup_length, step - resume_gold_ckpt_step)
+                else:
+                    e = step - warmup_length
+                    es = steps - warmup_length 
+                    lr = 0.5 * (1 + np.cos(np.pi * e / es)) * base_lr
+
         assign_learning_rate(optimizer, lr)
         return lr
     return _lr_adjuster
+

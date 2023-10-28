@@ -183,6 +183,12 @@ if __name__ == "__main__":
         default=0,
         help="Only to be used in the case of curriculum learning",
     )
+    parser.add_argument(
+        "--start_step",
+        type=int,
+        default=0,
+        help="If you want to specify start step",
+    )
     parser.add_argument("--seed", type=int, default=0, help="Random seed.")
     parser.add_argument(
         "--report_to_wandb",
@@ -311,6 +317,8 @@ if __name__ == "__main__":
         f"{args.filter}",
         "--valid-file",
         f"{args.valid_file}",
+        "--start-step",
+        f"{args.start_step}",
     ]
     main_args.append("--dataset-resampled")
     if args.report_to_wandb:

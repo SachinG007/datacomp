@@ -364,8 +364,13 @@ def main(args):
     scheduler = None
     if 'train' in data and optimizer is not None:
         total_steps = (data["train"].dataloader.num_batches // args.accum_freq) * args.epochs
+        if args.start_step:
+            start_step = start_epoch * (data["train"].dataloader.num_batches // args.accum_freq)
+            logging.info(f'Setting start step to {start_step}')
+        else:
+            start_step = 0
         if args.lr_scheduler == "cosine":
-            scheduler = cosine_lr(optimizer, args.lr, args.warmup, total_steps)
+            scheduler = cosine_lr(optimizer, args.lr, args.warmup, total_steps, resume_gold_ckpt_step=start_step)
         elif args.lr_scheduler == "const":
             scheduler = const_lr(optimizer, args.lr, args.warmup, total_steps)
         elif args.lr_scheduler == "const-cooldown":

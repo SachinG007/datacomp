@@ -2,7 +2,7 @@ datalist=(0.2 0.3 0.1 0.2 0.3 0.1 0.2 0.4 0.1 0.3 0.2 0.4 0.1 0.3 0.2 0.4 0.5 0.
 
 
 exp_name=clipbucket_curriculum_128M_5x
-mkdir /home/pratyus2/logs/$exp_name/intermediate
+mkdir -p /home/pratyus2/logs/$exp_name/intermediate
 
 for i in "${datalist[@]}"
 do
