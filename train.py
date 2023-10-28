@@ -177,6 +177,12 @@ if __name__ == "__main__":
         default=5,
         help="Number of times we save checkpoints during training.",
     )
+    parser.add_argument(
+        "--curriculum",
+        type=int,
+        default=0,
+        help="Only to be used in the case of curriculum learning",
+    )
     parser.add_argument("--seed", type=int, default=0, help="Random seed.")
     parser.add_argument(
         "--report_to_wandb",
@@ -281,6 +287,8 @@ if __name__ == "__main__":
         f"{per_gpu_batch_size}",
         "--epochs",
         f"{args.num_checkpoints}",
+        "--curriculum",
+        f"{args.curriculum}",
         "--lr",
         f"{learning_rate}",
         "--logs",

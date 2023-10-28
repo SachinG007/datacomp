@@ -1,6 +1,7 @@
-echo "running "
-torchrun --master_port=12332 --nproc_per_node 8 train.py --scale medium --data_dir /drive2/datacomp/shards/ --output_dir logs --exp_name clipbucket_30p_to_40p --filter is_valid --valid_file datacomp_clipL14_medium_0.3_to_0.4.pt --workers 10 --num_saves_per_epoch 20
-echo "running "
-torchrun --master_port=12332 --nproc_per_node 8 train.py --scale medium --data_dir /drive2/datacomp/shards/ --output_dir logs --exp_name clipbucket_50p_to_60p --filter is_valid --valid_file datacomp_clipL14_medium_0.5_to_0.6.pt --workers 10 --num_saves_per_epoch 20
-echo "running "
-torchrun --master_port=12332 --nproc_per_node 8 train.py --scale medium --data_dir /drive2/datacomp/shards/ --output_dir logs --exp_name clipbucket_60p_to_bottom --filter is_valid --valid_file datacomp_clipL14_medium_0.6_to_bottom.pt --workers 10 --num_saves_per_epoch 20
+echo "running 1"
+torchrun --master_port=12332 --nproc_per_node 8 train.py --scale medium --data_dir /drive/datacomp/shards/ --output_dir logs --exp_name clipbucket_top30p_10prandom --filter is_valid --valid_file /drive/datacomp/is_valids/datacomp_clipL14_medium_0.3rand_10p.pt --workers 10 --num_saves_per_epoch 2 --num_checkpoints 10
+torchrun --master_port=12332 --nproc_per_node 8 train.py --scale medium --data_dir /drive/datacomp/shards/ --output_dir logs --exp_name clipbucket_30p_to_40p --filter is_valid --valid_file /drive/datacomp/is_valids/datacomp_clipL14_medium_0.3_to_0.4.pt --workers 10 --num_saves_per_epoch 2 --num_checkpoints 10
+echo "running 2"
+torchrun --master_port=12382 --nproc_per_node 8 train.py --scale medium --data_dir /drive/datacomp/shards/ --output_dir logs --exp_name clipbucket_50p_to_60p --filter is_valid --valid_file /drive/datacomp/is_valids/datacomp_clipL14_medium_0.5_to_0.6.pt --workers 10 --num_saves_per_epoch 2 --num_checkpoints 10
+echo "running 3"
+torchrun --master_port=11382 --nproc_per_node 8 train.py --scale medium --data_dir /drive/datacomp/shards/ --output_dir logs --exp_name clipbucket_40p_to_50p --filter is_valid --valid_file /drive/datacomp/is_valids/datacomp_clipL14_medium_0.4_to_0.5.pt --workers 10 --num_saves_per_epoch 2 --num_checkpoints 10
