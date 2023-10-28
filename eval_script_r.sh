@@ -7,7 +7,7 @@ pids=()
 count=0
 # ckpt_folder_path="$folder_path/checkpoints/"
 # for file in $(ls $folder_path/checkpoints | grep '\.pt$' | sort -n -k2 -t_ -); do
-for file in $(ls $folder_path/checkpoints | grep -E '^epoch_[0-9]+\.pt$'); do
+for file in $(ls $folder_path/checkpoints | grep -E '^epoch_[0-9]+\.pt$' | sort -n -r -k2 -t_ -); do
     
     ckpt_path="$folder_path/checkpoints/$file"
     echo "folder path is below"

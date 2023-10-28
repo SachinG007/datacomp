@@ -247,7 +247,7 @@ def train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist
             batch_time_m.reset()
             data_time_m.reset()
 
-        if is_master(args) and (i_accum % save_i_accum == 0 or batch_count == num_batches_per_epoch):
+        if is_master(args) and (i_accum % save_i_accum == 0 or batch_count == num_batches_per_epoch) and (args.num_saves_per_epoch>1):
             save_path = os.path.join(args.checkpoint_path, f"model_step_{step}_epoch_{epoch}.pt")
             checkpoint_dict = {
                 "epoch": epoch,

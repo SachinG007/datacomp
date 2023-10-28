@@ -467,6 +467,10 @@ def main(args):
                 torch.save(checkpoint_dict, tmp_save_path)
                 os.replace(tmp_save_path, latest_save_path)
 
+
+        if args.curriculum:
+            break
+
     if args.wandb and is_master(args):
         wandb.finish()
 

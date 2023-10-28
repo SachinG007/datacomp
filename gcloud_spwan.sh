@@ -2,7 +2,7 @@
 
 PROVISIONING=SPOT
 MACHINE=a2-highgpu-4g
-diskname=gpu5
+diskname=gpu14
 # set config
 gcloud config set compute/zone us-central1-a
 
@@ -20,10 +20,12 @@ else
     gcloud beta compute instances create $diskname --provisioning-model=$PROVISIONING --image-family=pytorch-latest-gpu --image-project=deeplearning-platform-release --machine-type=$MACHINE --instance-termination-action=STOP --boot-disk-size 200
 fi
 
+# gcloud beta compute instances create gpu --provisioning-model=SPOT --image-family=pytorch-latest-gpu --image-project=deeplearning-platform-release --machine-type=a2-highgpu-4g --instance-termination-action=STOP --boot-disk-size 200
 
 # Attach Disk
 
-gcloud compute instances attach-disk gpu6 --disk=datacompgpuultra16 --zone=asia-northeast3-b --mode ro
+gcloud compute instances attach-disk vminstance --disk=extraboot --zone=asia-northeast3-b --mode=ro
+gcloud compute instances attach-disk instance-1 --disk=datacompssdcentral1a --zone=us-central1-a
 
 # HTTP Traffic
 gcloud compute instances add-tags $diskname --tags=http-server,https-server
@@ -50,3 +52,6 @@ echo 'RUN after start: sudo mkdir -p /drive; sudo mount /dev/sdb /drive; sudo ch
 # sudo apt-get purge nvidia*
 # sudo apt autoiremove
 # sudo /opt/deeplearning/install-driver.sh
+
+#detach the disk of a vm from the same vm
+gcloud compute instances detach-disk gpu14 --disk=extraboot
