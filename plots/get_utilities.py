@@ -4,8 +4,8 @@
 # Estimated params after normalizing by repeatings [0.04672413 3.74046299]
 # clipbucket_10p_to_20p
 # Estimated params after normalizing by repeatings [0.05743187 3.16078721]
-# clipbucket_top30p_10prandom
-# Estimated params after normalizing by repeatings [0.05165699 3.49290572]
+# clipbucket_20p_to_30p
+# Estimated params after normalizing by repeatings [0.04756999 3.53742806]
 # clipbucket_30p_to_40p
 # Estimated params after normalizing by repeatings [0.03595843 3.20321982]
 # clipbucket_40p_to_50p
@@ -18,7 +18,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-params_list = [ [0.02400279 , 1.        ], [0.04672413 , 3.74046299], [0.05743187 , 3.16078721], [0.05165699 , 3.49290572], [0.03595843 , 3.20321982], [0.02315386 , 3.25426389], [0.01451045,  2.75617584], [0.0250887 , 3.25373911] ]
+params_list = [ [0.02400279 , 1.        ], [0.04672413 , 3.74046299], [0.05743187 , 3.16078721], [0.04756999 , 3.53742806], [0.03595843 , 3.20321982], [0.02315386 , 3.25426389], [0.01451045,  2.75617584], [0.0250887 , 3.25373911] ]
 
 
 def a_at_every_epoch(a, half_life, max_epochs=100):
@@ -63,6 +63,7 @@ for index in top_10_indices:
     list_scores[list_number] += all_utilities[index]
 #print the dict
 print(list_scores)
+print(top_10_indices)
 import pdb; pdb.set_trace()
 
 
