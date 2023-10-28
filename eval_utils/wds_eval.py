@@ -25,18 +25,18 @@ def create_model(model_arch, model_path):
 
 
 def create_webdataset(
-    task, transform, data_root=None, dataset_len=None, batch_size=64, num_workers=4
+    task, transform, data_root=None, dataset_len=None, batch_size=64, num_workers=4, split = "test"
 ):
-    data_folder = f"wds_{task.replace('/','-')}_test"
+    data_folder = f"wds_{task.replace('/','-')}"
     if data_root is None:
-        data_root = f"https://huggingface.co/datasets/djghosh/{data_folder}/tree/main"
+        data_root = f"https://huggingface.co/datasets/clip-benchmark/{data_folder}/tree/main"
     else:
         data_root = os.path.join(data_root, data_folder)
     dataset = build_dataset(
         dataset_name=f"wds/{task}",
         root=data_root,
         transform=transform,
-        split="test",
+        split=split,
         download=False,
     )
     if dataset_len:
@@ -60,6 +60,7 @@ def evaluate_webdataset(
     num_workers=4,
     return_preds=False,
     return_topk=False,
+    zeroshot = False,
 ):
     """Evaluate CLIP model on classification task."""
 
@@ -78,13 +79,22 @@ def evaluate_webdataset(
     ), "Dataset does not support classification"
 
     # Evaluate
-    classifier = zsc.zero_shot_classifier(
-        model,
-        open_clip.get_tokenizer(model_arch),
-        classnames,
-        zeroshot_templates,
-        device,
-    )
+    if zeroshot:
+        classifier = zsc.zero_shot_classifier(
+            model,
+            open_clip.get_tokenizer(model_arch),
+            classnames,
+            zeroshot_templates,
+            device,
+        )
+    else:
+        classifier = torch.rand(512, len(classnames)).to(device)
+        from eval_utils.linear_probe_helper import lbfgs
+        cache_path = ("/").join(model_path.split("/")[:-1]) + "/" + model_path.split("/")[:-1].replace(".pt", "__cache")
+        classifier = lbfgs(task, transform, model, classifier, cache_dir = f"{cache_path}", batch_size=64)
+        classifier = classifier.weight.t()
+
+    
     logits, target = zsc.run_classification(
         model, classifier, dataloader, device, amp=False
     )

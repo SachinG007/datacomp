@@ -177,6 +177,14 @@ if __name__ == "__main__":
         help="Competition track.",
     )
     parser.add_argument(
+        "--zeroshot",
+        type=int,
+        required=False,
+        choices=[0, 1],
+        default=1,
+        help="Zeroshot v/s Linear Probing",
+    )
+    parser.add_argument(
         "--train_output_dir",
         required=True,
         help="Path to output directory from training.",
@@ -316,7 +324,10 @@ if __name__ == "__main__":
         ), "Please specify your huggingface repo name with --hf_repo_name for a valid submission."
 
     # Read training information
-    train_info_filename = args.train_output_dir / f"info_{rand_int}.pkl"
+    if args.use_model is not None:
+        train_info_filename = args.train_output_dir / f"info_{rand_int}.pkl"
+    else:
+        train_info_filename = args.train_output_dir / "info.pkl"
     train_info = pickle.load(open(train_info_filename, "rb"))
 
     # epoch = int(model_checkpoint[-4])
@@ -398,6 +409,7 @@ if __name__ == "__main__":
                 args.data_dir,
                 tasks[task_key].get("size"),
                 batch_size=args.batch_size,
+                zeroshot=args.zeroshot,
             )
             metrics["main_metric"] = metrics.get(
                 tasks[task_key].get("main_metric", "acc1")
