@@ -1,10 +1,12 @@
-# ImageNet 1k
-imagenet1k:
-  name: ImageNet 1k
-  size: 50000
-  time: 136
-  num_classes: 1000
-  random_score: 0.001000
+# CIFAR-10
+cifar10:
+  name: CIFAR-10
+  size: 10000
+  time: 18
+  num_classes: 10
+  random_score: 0.100000
+  tags: []
+
 
 # Caltech-101
 vtab/caltech101:
@@ -17,14 +19,15 @@ vtab/caltech101:
   tags:
     - vtab_natural
 
-# CIFAR-10
-cifar10:
-  name: CIFAR-10
-  size: 10000
-  time: 18
-  num_classes: 10
-  random_score: 0.100000
-  tags: []
+
+# ImageNet 1k
+imagenet1k:
+  name: ImageNet 1k
+  size: 50000
+  time: 136
+  num_classes: 1000
+  random_score: 0.001000
+
 
 # CIFAR-100
 vtab/cifar100:
@@ -65,6 +68,7 @@ imagenetv2:
   num_classes: 1000
   random_score: 0.001000
   tags: []
+
 
 # ImageNet-A
 imagenet-a:
