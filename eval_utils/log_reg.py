@@ -13,11 +13,12 @@ class LogisticRegression:
         def forward(self, x):
             return self.linear(x)
     
-    def __init__(self, random_state=None, warm_start=False, max_iter=1000, C=1.0):
+    def __init__(self, random_state=None, warm_start=False, max_iter=1000, weight_decay = 0, lr = 1e-3):
         torch.manual_seed(random_state if random_state is not None else 42)
         self.warm_start = warm_start
         self.max_iter = max_iter
-        self.C = C
+        self.weight_decay = weight_decay
+        self.lr = lr
         self.model = None
         self.optimizer = None
         self.criterion = nn.CrossEntropyLoss()
@@ -28,17 +29,8 @@ class LogisticRegression:
             output_dim = Y.max() + 1
             self.model = self._LogisticModel(input_dim, output_dim).cuda()
         
-        # self.optimizer = optim.SGD(self.model.parameters(), lr=0.01, weight_decay=1/self.C)
-        self.optimizer = optim.Adam(self.model.parameters(), lr=0.1, weight_decay=1/self.C)
+        self.optimizer = optim.Adam(self.model.parameters(), lr=self.lr, weight_decay=self.weight_decay)
         
-        # for epoch in range(self.max_iter):
-        #     outputs = self.model(X)
-        #     loss = self.criterion(outputs.squeeze(), Y.long())
-            
-        #     self.optimizer.zero_grad()
-        #     loss.backward()
-        #     self.optimizer.step()
-
         pbar = tqdm(range(self.max_iter))
         for epoch in pbar:
             outputs = self.model(X)

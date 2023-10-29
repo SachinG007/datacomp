@@ -92,27 +92,28 @@ def test_log_reg_warm_starting(train_features,
                                test_features,
                                train_labels,
                                test_labels,
-                               num_cs=10,
-                               start_c=-1,
-                               end_c=2,
                                max_iter=200,
                                random_state=0):
-    import ipdb; ipdb.set_trace()
-    Cs = np.logspace(start_c, end_c, num_cs)
-    clf = LogisticRegression(random_state=random_state,
-                             warm_start=True,
-                             max_iter=max_iter)
     
-    best_acc = -1.0
-    for i, C in zip(range(len(Cs)), Cs):
-        clf.C = C
-        clf.fit(torch.from_numpy(train_features).cuda(), torch.from_numpy(train_labels).cuda())
-        test_acc = clf.score(torch.from_numpy(test_features).cuda(), torch.from_numpy(test_labels).cuda())
-        print(f"i : {i} c: {C} Val Acc : {0} Test Acc : {test_acc}")
-        if test_acc > best_acc:
-            best_acc = test_acc
 
-    return clf.model.linear
+    lr_list = [0.1, 0.01]
+    weight_decay_list = [0, 0.01, 0.0001]
+    
+    clf_best = None
+    best_acc = -1.0
+    for lr in lr_list:
+        for weight_decay in weight_decay_list:
+            clf = LogisticRegression(random_state=random_state,
+                                    warm_start=True,
+                                    max_iter=max_iter, lr = lr, weight_decay = weight_decay)
+            clf.fit(torch.from_numpy(train_features).cuda(), torch.from_numpy(train_labels).cuda())
+            test_acc = clf.score(torch.from_numpy(test_features).cuda(), torch.from_numpy(test_labels).cuda())
+            print(f"i : {i} lr: {lr} | wd : {weight_decay} | Test Acc : {test_acc}")
+            if test_acc > best_acc:
+                best_acc = test_acc
+                clf_best = clf
+
+    return clf_best.model.linear
 
 def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = ".", batch_size = 64):
     model = clip_encoder
@@ -157,7 +158,6 @@ def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = ".", b
     train_features, train_labels = feature_dataset_train.data['features'], feature_dataset_train.data['labels']
     test_features, test_labels = feature_dataset_val.data['features'], feature_dataset_val.data['labels']
 
-    import ipdb; ipdb.set_trace()
     head = test_log_reg_warm_starting(
         train_features, test_features, train_labels, test_labels)
     
