@@ -97,7 +97,7 @@ def evaluate_webdataset(
             cache_path = cache_path.replace("/extraboot", "/home/pratyus2")
 
             if task != "imagenet1k":
-                classifier = torch.load(f"{cache_path}/head.pt")
+                classifier = torch.load(f"{cache_path}/{task}/head.pt")
             else:
                 classifier = lbfgs(task, transform, model, classifier, cache_dir = cache_path, batch_size=batch_size,
                             num_workers = num_workers)
