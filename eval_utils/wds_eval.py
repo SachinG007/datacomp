@@ -91,8 +91,15 @@ def evaluate_webdataset(
         classifier = torch.rand(512, len(classnames)).to(device)
         from eval_utils.linear_probe_helper import lbfgs
         cache_path = None
-        # cache_path = ("/").join(model_path.split("/")[:-1]) + "/" + model_path.split("/")[-1].replace(".pt", "__cache")
-        classifier = lbfgs(task, transform, model, classifier, cache_dir = cache_path, batch_size=batch_size)
+        if "imagenet" in task or "objectnet" in task:
+            cache_path = ("/").join(model_path.split("/")[:-1]) + "/" + model_path.split("/")[-1].replace(".pt", "__cache")
+            #replace "/extraboot" with "/home/pratyus2"
+            cache_path = cache_path.replace("/extraboot", "/home/pratyus2")
+
+            if task != "imagenet1k"
+                classifier = torch.load(f"{cache_path}/head.pt")
+            else:
+                classifier = lbfgs(task, transform, model, classifier, cache_dir = cache_path, batch_size=batch_size)
         classifier = classifier.weight.t()
 
     

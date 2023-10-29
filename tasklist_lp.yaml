@@ -59,7 +59,6 @@ imagenet_sketch:
   num_classes: 1000
   random_score: 0.001000
   tags: []
-  train: imagenet1k
 
 # ImageNet v2
 imagenetv2:
@@ -69,7 +68,6 @@ imagenetv2:
   num_classes: 1000
   random_score: 0.001000
   tags: []
-  train: imagenet1k
 
 
 # ImageNet-A
@@ -80,7 +78,6 @@ imagenet-a:
   num_classes: 200
   random_score: 0.008056
   tags: []
-  train: imagenet1k
 
 # ImageNet-O
 imagenet-o:
@@ -90,7 +87,6 @@ imagenet-o:
   num_classes: 200
   random_score: 0.006047
   tags: []
-  train: imagenet1k
 
 # ImageNet-R
 imagenet-r:
@@ -100,7 +96,6 @@ imagenet-r:
   num_classes: 200
   random_score: 0.006163
   tags: []
-  train: imagenet1k
 
 
 # ObjectNet
@@ -111,7 +106,6 @@ objectnet:
   num_classes: 113
   random_score: 0.009481
   tags: []
-  train: imagenet1k
 
 # Oxford Flowers-102
 vtab/flowers:
@@ -165,22 +159,22 @@ cars:
   tags: []
 
 # Flickr30k
-retrieval/flickr_1k_test_image_text_retrieval:
-  name: Flickr
-  size: 1000
-  main_metric: mean_recall@1
-  time: 20
-  tags:
-    - retrieval
+# retrieval/flickr_1k_test_image_text_retrieval:
+#   name: Flickr
+#   size: 1000
+#   main_metric: mean_recall@1
+#   time: 20
+#   tags:
+#     - retrieval
 
-# MSCOCO
-retrieval/mscoco_2014_5k_test_image_text_retrieval:
-  name: MSCOCO
-  size: 5000
-  main_metric: mean_recall@1
-  time: 23
-  tags:
-    - retrieval
+# # MSCOCO
+# retrieval/mscoco_2014_5k_test_image_text_retrieval:
+#   name: MSCOCO
+#   size: 5000
+#   main_metric: mean_recall@1
+#   time: 23
+#   tags:
+#     - retrieval
 
 # WinoGAViL
 # misc/winogavil:

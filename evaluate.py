@@ -406,6 +406,11 @@ if __name__ == "__main__":
             )
         else:
             print(f"Evaluating on {task_name}")
+            # if there is a key names train in tasks[task_key], load it else pass it as None
+            if "train" in tasks[task_key]:
+                train_dataset = tasks[task_key]["train"]
+            else:
+                train_dataset = None
             metrics = evaluate_model(
                 task_key,
                 train_info,
@@ -413,6 +418,7 @@ if __name__ == "__main__":
                 tasks[task_key].get("size"),
                 batch_size=args.batch_size,
                 zeroshot=args.zeroshot,
+                train_dataset=train_dataset,
             )
             metrics["main_metric"] = metrics.get(
                 tasks[task_key].get("main_metric", "acc1")
