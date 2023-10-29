@@ -157,7 +157,6 @@ def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = ".", b
     train_features, train_labels = feature_dataset_train.data['features'], feature_dataset_train.data['labels']
     test_features, test_labels = feature_dataset_val.data['features'], feature_dataset_val.data['labels']
 
-    import ipdb; ipdb.set_trace()
     head = test_log_reg_warm_starting(
         train_features, test_features, train_labels, test_labels)
     
