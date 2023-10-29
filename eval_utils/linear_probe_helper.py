@@ -56,6 +56,7 @@ def get_features(is_train, image_encoder, dataset, dataloader, device, cache_dir
     if cache_dir is not None:
         cache_dir = f'{cache_dir}/{dname}/{split}'
         cached_files = glob.glob(f'{cache_dir}/*')
+        
     if cache_dir is not None and len(cached_files) > 0:
         print(f'Getting features from {cache_dir}')
         data = {}
@@ -92,7 +93,7 @@ def test_log_reg_warm_starting(train_features,
                                test_features,
                                train_labels,
                                test_labels,
-                               max_iter=200,
+                               max_iter=500,
                                random_state=0):
     
 
