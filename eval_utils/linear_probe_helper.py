@@ -108,7 +108,7 @@ def test_log_reg_warm_starting(train_features,
                                     max_iter=max_iter, lr = lr, weight_decay = weight_decay)
             clf.fit(torch.from_numpy(train_features).cuda(), torch.from_numpy(train_labels).cuda())
             test_acc = clf.score(torch.from_numpy(test_features).cuda(), torch.from_numpy(test_labels).cuda())
-            print(f"i : {i} lr: {lr} | wd : {weight_decay} | Test Acc : {test_acc}")
+            print(f"lr: {lr} | wd : {weight_decay} | Test Acc : {test_acc}")
             if test_acc > best_acc:
                 best_acc = test_acc
                 clf_best = clf
@@ -161,6 +161,6 @@ def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = ".", b
     head = test_log_reg_warm_starting(
         train_features, test_features, train_labels, test_labels)
     
-    torch.save(head, f"{cache_dir}/{task}/head.pt")
+    # torch.save(head, f"{cache_dir}/{task}/head.pt")
     return head
     
