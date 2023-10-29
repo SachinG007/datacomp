@@ -116,13 +116,13 @@ def test_log_reg_warm_starting(train_features,
 
     return clf_best.model.linear
 
-def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = ".", batch_size = 64):
+def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = ".", batch_size = 64, num_workers = 4):
     model = clip_encoder
 
     # Load data
     from eval_utils.wds_eval import create_webdataset
     dataset, dataloader = create_webdataset(
-        task, transform, data_root = None, dataset_len = None, batch_size = batch_size, num_workers = 4, split = "train"
+        task, transform, data_root = None, dataset_len = None, batch_size = batch_size, num_workers = 64, split = "train"
     )
 
     feature_dataset_train = FeatureDataset(is_train=True,

@@ -57,7 +57,7 @@ def evaluate_webdataset(
     data_root=None,
     dataset_len=None,
     batch_size=64,
-    num_workers=64,
+    num_workers=4,
     return_preds=False,
     return_topk=False,
     zeroshot = False,
@@ -99,7 +99,8 @@ def evaluate_webdataset(
             if task != "imagenet1k":
                 classifier = torch.load(f"{cache_path}/head.pt")
             else:
-                classifier = lbfgs(task, transform, model, classifier, cache_dir = cache_path, batch_size=batch_size)
+                classifier = lbfgs(task, transform, model, classifier, cache_dir = cache_path, batch_size=batch_size,
+                            num_workers = num_workers)
         classifier = classifier.weight.t()
 
     
