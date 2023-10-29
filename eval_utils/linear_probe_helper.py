@@ -114,27 +114,27 @@ def test_log_reg_warm_starting(train_features,
 
     return clf.model.linear
 
-def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = "."):
+def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = ".", batch_size = batch_size):
     model = clip_encoder
 
     # Load data
     from eval_utils.wds_eval import create_webdataset
     dataset, dataloader = create_webdataset(
-        task, transform, data_root = None, dataset_len = None, batch_size = 640, num_workers = 4, split = "train"
+        task, transform, data_root = None, dataset_len = None, batch_size = batch_size, num_workers = 4, split = "train"
     )
 
-    # feature_dataset_train = FeatureDataset(is_train=True,
-    #                                  image_encoder=model,
-    #                                  dataset=dataset, dataloader = dataloader,
-    #                                  device=classification_head.device,
-    #                                  cache_dir=cache_dir,
-    #                                  dname = task)
+    feature_dataset_train = FeatureDataset(is_train=True,
+                                     image_encoder=model,
+                                     dataset=dataset, dataloader = dataloader,
+                                     device=classification_head.device,
+                                     cache_dir=cache_dir,
+                                     dname = task)
 
     
 
 
     dataset, dataloader = create_webdataset(
-        task, transform, data_root = None, dataset_len = None, batch_size = 640, num_workers = 4, split = "test"
+        task, transform, data_root = None, dataset_len = None, batch_size = batch_size, num_workers = 4, split = "test"
     )
     
     feature_dataset_val = FeatureDataset(is_train=False,
@@ -144,7 +144,6 @@ def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = "."):
                                         cache_dir=cache_dir,
                                         dname = task)
 
-    feature_dataset_train  = feature_dataset_val
 
     model = model.cuda()
     classification_head = classification_head.cuda()
