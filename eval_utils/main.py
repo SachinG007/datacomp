@@ -11,7 +11,7 @@ from .wilds_eval import evaluate_wilds_dataset
 from .wino_eval import evaluate_winogavil_dataset
 
 
-def evaluate_model(task_key, train_info, data_root, dataset_size, batch_size=64, zeroshot=zeroshot):
+def evaluate_model(task_key, train_info, data_root, dataset_size, batch_size=64, zeroshot=1):
     if task_key.startswith("retrieval/"):
         metrics = evaluate_retrieval_dataset(
             task_key,

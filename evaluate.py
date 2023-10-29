@@ -342,7 +342,10 @@ if __name__ == "__main__":
     else:
         step = -1
     print(f"epoch : {epoch}, Step:{step}")
-    results_filename = args.output_dir / f"eval_results_epoch_{epoch}_step_{step}.jsonl"
+    if args.zeroshot == 1:
+        results_filename = args.output_dir / f"eval_results_epoch_{epoch}_step_{step}.jsonl"
+    else:
+        results_filename = args.output_dir / f"eval_results_epoch_{epoch}_step_{step}_linear.jsonl"
 
     # Get list of datasets
     with open(os.path.join(os.path.dirname(__file__), "tasklist.yml")) as f:
