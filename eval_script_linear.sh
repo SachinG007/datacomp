@@ -17,7 +17,7 @@ for file in $(ls $folder_path/checkpoints | grep -E '^epoch_[0-9]+\.pt$'); do
     echo $ckpt_path
     
     # Run the evaluation script
-    CUDA_VISIBLE_DEVICES=$count python evaluate.py --train_output_dir $folder_path --use_model "ViT-B-32 $ckpt_path" --zeroshot 0 &
+    CUDA_VISIBLE_DEVICES=$count python evaluate.py --train_output_dir $folder_path --use_model "ViT-B-32 $ckpt_path" --zeroshot 0 --tasklist tasklist_lp.yaml&
     
     pids+=($!)
     count=$((count+1))

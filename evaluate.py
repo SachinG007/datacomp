@@ -176,6 +176,15 @@ if __name__ == "__main__":
         choices=["filtering", "byod"],
         help="Competition track.",
     )
+    #add tasklist
+    parser.add_argument(
+        "--tasklist",
+        type=str,
+        required=False,
+        default = "tasklist.yml",
+        help="Tasklist to evaluate on.",
+    )
+
     parser.add_argument(
         "--zeroshot",
         type=int,
@@ -348,7 +357,7 @@ if __name__ == "__main__":
         results_filename = args.output_dir / f"eval_results_epoch_{epoch}_step_{step}_linear.jsonl"
 
     # Get list of datasets
-    with open(os.path.join(os.path.dirname(__file__), "tasklist.yml")) as f:
+    with open(os.path.join(os.path.dirname(__file__), args.tasklist)) as f:
         tasks = yaml.safe_load(f)
 
     # Check for cached results
