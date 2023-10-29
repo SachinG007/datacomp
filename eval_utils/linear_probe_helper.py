@@ -114,7 +114,7 @@ def test_log_reg_warm_starting(train_features,
 
     return clf.model.linear
 
-def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = ".", batch_size = batch_size):
+def lbfgs(task, transform, clip_encoder, classification_head, cache_dir = ".", batch_size = 64):
     model = clip_encoder
 
     # Load data
