@@ -90,7 +90,7 @@ def evaluate_webdataset(
     else:
         classifier = torch.rand(512, len(classnames)).to(device)
         from eval_utils.linear_probe_helper import lbfgs
-        cache_path = ("/").join(model_path.split("/")[:-1]) + "/" + model_path.split("/")[:-1].replace(".pt", "__cache")
+        cache_path = ("/").join(model_path.split("/")[:-1]) + "/" + model_path.split("/")[-1].replace(".pt", "__cache")
         classifier = lbfgs(task, transform, model, classifier, cache_dir = f"{cache_path}", batch_size=64)
         classifier = classifier.weight.t()
 
