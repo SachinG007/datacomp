@@ -66,13 +66,13 @@ def get_features(is_train, image_encoder, dataset, dataloader, device, cache_dir
     else:
         print(f'Did not find cached features at {cache_dir}. Building from scratch.')
         data = get_features_helper(image_encoder, dataloader, device)
-        # if cache_dir is None:
-        #     print('Not caching because no cache directory was passed.')
-        # else:
-        #     os.makedirs(cache_dir, exist_ok=True)
-        #     print(f'Caching data at {cache_dir}')
-        #     for name, val in data.items():
-        #         torch.save(val, f'{cache_dir}/{name}.pt')
+        if cache_dir is None:
+            print('Not caching because no cache directory was passed.')
+        else:
+            os.makedirs(cache_dir, exist_ok=True)
+            print(f'Caching data at {cache_dir}')
+            for name, val in data.items():
+                torch.save(val, f'{cache_dir}/{name}.pt')
     return data
 
 

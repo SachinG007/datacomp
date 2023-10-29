@@ -57,7 +57,7 @@ def evaluate_webdataset(
     data_root=None,
     dataset_len=None,
     batch_size=64,
-    num_workers=4,
+    num_workers=64,
     return_preds=False,
     return_topk=False,
     zeroshot = False,
