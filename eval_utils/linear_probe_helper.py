@@ -97,7 +97,7 @@ def test_log_reg_warm_starting(train_features,
                                random_state=0):
     
 
-    lr_list = [0.1, 0.01]
+    lr_list = [0.1, 0.01, 0.001]
     weight_decay_list = [0, 0.01, 0.0001]
     
     clf_best = None
