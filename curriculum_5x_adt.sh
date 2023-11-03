@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -A path_epochs_dict
 
-paths_list=("/drive2/datacomp_L14_0.5_to_0.6::/drive2/datacomp_L14_0.4_to_0.5::/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.4_to_0.5::/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1")
-epochs_list=(24 34 42 48 50)
+paths_list=("/drive2/datacomp_L14_0.5_to_0.6::/drive2/datacomp_L14_0.4_to_0.5::/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.4_to_0.5::/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1")
+epochs_list=(18 33 41 50)
 length=${#paths_list[@]}
 
 exp_name=clipbucket_curriculum_adt_128M_5x
