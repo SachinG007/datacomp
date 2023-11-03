@@ -85,7 +85,8 @@ def train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist
     end = time.time()
     for i, batch in enumerate(dataloader):
         i_accum = i // args.accum_freq
-        step = num_batches_per_epoch * epoch + i_accum
+        args.current_step += i_accum
+        step = args.current_step
 
         if not args.skip_scheduler:
             scheduler(step)
@@ -214,22 +215,12 @@ def train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist
             samples_per_second = args.accum_freq * args.batch_size * args.world_size / batch_time_m.val
             samples_per_second_per_gpu = args.accum_freq * args.batch_size / batch_time_m.val
             #print the step in optimizer state dict
-            import pdb; pdb.set_trace()
-            for param_group in optimizer.state_dict()['param_groups']:
-                for p in param_group['params']:
-                    if 'step' in optimizer.state[p]:
-                        import pdb; pdb.set_trace()
-                        opt_step = optimizer.state[p]['step']
-                        break
-
-                
 
             logging.info(
                 f"Train Epoch: {epoch} [{num_samples:>{sample_digits}}/{samples_per_epoch} ({percent_complete:.0f}%)] "
                 f"Data (t): {data_time_m.avg:.3f} "
                 f"Batch (t): {batch_time_m.avg:.3f}, {samples_per_second:#g}/s, {samples_per_second_per_gpu:#g}/s/gpu "
                 f"LR: {optimizer.param_groups[0]['lr']:5f} "
-                f"OPitmizer Step :{opt_step}"
                 f"Logit Scale: {logit_scale_scalar:.3f} " + loss_log
             )
 

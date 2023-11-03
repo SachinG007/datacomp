@@ -330,11 +330,14 @@ def main(args):
 
     # optionally resume from a checkpoint
     start_epoch = 0
+    args.current_step = 0
     if args.resume is not None:
         checkpoint = pt_load(args.resume, map_location='cpu')
         if 'epoch' in checkpoint:
             # resuming a train checkpoint w/ epoch and optimizer state
             start_epoch = checkpoint["epoch"]
+            if "step" in checkpoint:
+                args.current_step = checkpoint["step"]
             sd = checkpoint["state_dict"]
             from collections import OrderedDict
             new_state_dict = OrderedDict()
@@ -451,6 +454,7 @@ def main(args):
                 "name": args.name,
                 "state_dict": original_model.state_dict(),
                 "optimizer": optimizer.state_dict(),
+                "step": args.current_step,
             }
             if scaler is not None:
                 checkpoint_dict["scaler"] = scaler.state_dict()
