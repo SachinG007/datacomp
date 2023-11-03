@@ -189,6 +189,9 @@ if __name__ == "__main__":
         default=0,
         help="If you want to specify start step",
     )
+    parser.add_argument(
+        "--curriculum_epoch", type=int, default=0, help="If you want the curriculum to end after these many epochs"
+    )
     parser.add_argument("--seed", type=int, default=0, help="Random seed.")
     parser.add_argument(
         "--report_to_wandb",
@@ -319,6 +322,8 @@ if __name__ == "__main__":
         f"{args.valid_file}",
         "--start-step",
         f"{args.start_step}",
+        "--curriculum-epoch",
+        f"{args.curriculum_epoch}",
     ]
     main_args.append("--dataset-resampled")
     if args.report_to_wandb:

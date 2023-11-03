@@ -4,17 +4,28 @@ import re
 from pathlib import Path
 import numpy as np
 from scipy.interpolate import make_interp_spline
-from scipy.optimize import curve_fit
+from scipy.optimize import differential_evolution, curve_fit
 
-def func_d(x, a, b):
-    # d = 0.67144996
-    # d = 0.47144996
-    half_life = 10 
-    # b = 0.9
-    # base = (1/np.exp(1))
+# Define the function you provided
+def func_d(x, a, b, half_life):
     base = 0.5
-    x_ = x * base**(x/half_life)
-    return a*(x_**b)
+    x_1 = x - 1
+    a_ = a * base**(x_1/half_life)
+    return a_ * (x**b - x_1**b)
+
+# Define a loss function to minimize
+def loss(params, x, y):
+    return np.sum((y - func(x, *params))**2)
+
+# def func_d(x, a, b):
+#     # d = 0.67144996
+#     # d = 0.47144996
+#     half_life = 10 
+#     # b = 0.9
+#     # base = (1/np.exp(1))
+#     base = 0.5
+#     x_ = x * base**(x/half_life)
+#     return a*(x_**b)
 
 def func_normal(x, a, b):
     # b = 0.9
@@ -127,7 +138,12 @@ for k in range(len(folder_path_list)):
         func = func_normal
 
     # params, _ = curve_fit(func, x_values, delta_y_values)
-    params, _ = curve_fit(func, appended_x_values, appended_y_values)
+    x_data, y_data = appended_x_values, appended_y_values
+    result = differential_evolution(loss, args=(x_data, y_data))
+    initial_guess = result.x
+    params, covariance = curve_fit(func, x_data, y_data, p0=initial_guess)
+
+    # params, _ = curve_fit(func, appended_x_values, appended_y_values)
     # print(x_values)
     print("Estimated params after normalizing by repeatings", params)
     y_values_smooth = func(np.array(x_values), *params)

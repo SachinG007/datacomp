@@ -2,7 +2,7 @@ import numpy as np
 import os
 # first load all_uids_npy
 
-root = "/project_data/datasets/datanet/metadata/"
+root = "/project_data/datasets/datanet/all_uids"
 
 sorted_indices_for_uids_in_lexicographic_order =  np.load(os.path.join(root, "sorted_indices_for_uids_in_lexicographic_order.npy"))
 sorted_uids_in_lexicographic_order = np.load(os.path.join(root, "sorted_uids_in_lexicographic_order.npy"))
@@ -26,7 +26,7 @@ is_valid = np.zeros(130000000)
 
 current_pointer_in_sorted_uids_in_lexicographic_order = 0
 
-for hex in hex_uids:
+for hex in uids:
     #print(hex)
     # find the index of this hex in sorted_uids_in_lexicographic_order
     # increase the current_pointer_in_sorted_uids_in_lexicographic_order until you find the hex

@@ -24,8 +24,8 @@ fi
 
 # Attach Disk
 
-gcloud compute instances attach-disk vminstance --disk=extraboot --zone=asia-northeast3-b --mode=ro
-gcloud compute instances attach-disk instance-1 --disk=datacompssdcentral1a --zone=us-central1-a
+gcloud compute instances attach-disk gpu25 --disk=datacompssd --zone=asia-northeast3-b --mode=ro;
+gcloud compute instances attach-disk gpu25 --disk=reshardssd2 --zone=asia-northeast3-b --mode=ro
 
 # HTTP Traffic
 gcloud compute instances add-tags $diskname --tags=http-server,https-server
@@ -54,4 +54,4 @@ echo 'RUN after start: sudo mkdir -p /drive; sudo mount /dev/sdb /drive; sudo ch
 # sudo /opt/deeplearning/install-driver.sh
 
 #detach the disk of a vm from the same vm
-gcloud compute instances detach-disk gpu14 --disk=extraboot
+gcloud compute instances detach-disk gpu24 --disk=extraboot

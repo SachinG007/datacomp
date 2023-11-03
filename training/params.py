@@ -135,6 +135,9 @@ def parse_args(args):
         "--start-step", type=int, default=0, help="If you want to specify the starting step"
     )
     parser.add_argument(
+        "--curriculum-epoch", type=int, default=0, help="If you want the curriculum to end after these many epochs"
+    )
+    parser.add_argument(
         "--epochs-cooldown", type=int, default=None,
         help="When scheduler w/ cooldown used, perform cooldown from total_epochs - cooldown_epochs onwards."
     )

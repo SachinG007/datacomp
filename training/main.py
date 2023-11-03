@@ -473,7 +473,7 @@ def main(args):
                 os.replace(tmp_save_path, latest_save_path)
 
 
-        if args.curriculum:
+        if args.curriculum and (epoch+1) == args.curriculum_epoch:
             break
 
     if args.wandb and is_master(args):

@@ -7,10 +7,11 @@ from scipy.interpolate import make_interp_spline
 from scipy.optimize import differential_evolution, curve_fit
 
 # Define the function you provided
-def func_d(x, a, b, half_life):
-    base = 0.5
+def func_d(x, a, half_life):
+    b = 0.9
+    # base = 0.5
+    base = (1/np.exp(1))
     x_1 = x - 1
-    b=0.9
     a_ = a * base**(x_1/half_life)
     return a_ * (x**b - x_1**b)
 
@@ -52,7 +53,7 @@ def func_dd(x, a, half_life):#, b):
     a_ = a * base**(x_1/half_life)
     return a_*((x_**b) - (x_1)**b)
 
-def func_normal(x, a, b, half_life):
+def func_normal(x, a, b):
     b = 0.9
     # c = 10
     x_1 = (x - 1)
@@ -82,7 +83,7 @@ folder_path_list = [
                     Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_40p_to_50p/"),
                     Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_50p_to_60p/"),
                     # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_60p_to_bottom_rand10p/"),
-                    Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_60p_to_bottom/"),
+                    # Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/clipbucket_60p_to_bottom/"),
                     Path("/project_data2/projects/sachingo/utility_project/clip_bucket_training/wrong_runs/clipbucket_30p_to_40p/"),
                     ]
 
@@ -167,12 +168,6 @@ for k in range(len(folder_path_list)):
     else:
         func = func_normal
     # initial_guess = [1e-7, 10]
-    x_data, y_data = np.array(x_values),  np.array(delta_y_values)
-    bounds = [(0, 5), (0, 5), (0, 10)]  # Example bounds, adjust as necessary
-
-    # result = differential_evolution(loss, bounds, args=(x_data, y_data))
-    # initial_guess = result.x
-
     params, _ = curve_fit(func, x_values, delta_y_values)#, p0=initial_guess)
     # params = [1, 0.1]
     # print(x_values)
@@ -215,11 +210,9 @@ plt.xlabel('Number of Samples')
 plt.ylabel('Accuracy')
 plt.legend()
 
-plt.savefig('all_utilities_pm.png')
+plt.savefig('all_utilities_sg.png')
 
 data_util_decrease_factor_2_list = data_util_decrease_factor_2()
 #print the list elements separated by comma
 # for j in range(len(data_util_decrease_factor_2_list)):
 #     print(data_util_decrease_factor_2_list[j], end=", ")
-
-# 0.02400279 + 0.04672413 + 0.05743187 + 0.04756999 + 0.03595843 + 0.02315386 + 0.01451045
