@@ -135,7 +135,7 @@ def parse_args(args):
         "--start-step", type=int, default=0, help="If you want to specify the starting step"
     )
     parser.add_argument(
-        "--total-steps", type=int, default=0, help="Override total steps for learning rate scheduler."
+        "--total-steps", type=int, default=0, help="Override total steps"
     )
     parser.add_argument(
         "--epochs-cooldown", type=int, default=None,
