@@ -290,7 +290,7 @@ if __name__ == "__main__":
         "--train-data",
         f"{train_data}",
         "--train-num-samples",
-        train_num_samples_modified,
+        f"{train_num_samples_modified}",
         "--warmup",
         f"{warmup}",
         "--dataset-type",
