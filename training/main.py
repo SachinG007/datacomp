@@ -364,6 +364,8 @@ def main(args):
     scheduler = None
     if 'train' in data and optimizer is not None:
         total_steps = (data["train"].dataloader.num_batches // args.accum_freq) * args.epochs
+        if args.curriculum and args.total_steps > 0:
+            total_steps = args.total_steps
         if args.start_step:
             start_step = start_epoch * (data["train"].dataloader.num_batches // args.accum_freq)
             logging.info(f'Setting start step to {start_step}')
@@ -473,7 +475,7 @@ def main(args):
                 os.replace(tmp_save_path, latest_save_path)
 
 
-        if args.curriculum and (epoch+1) == args.curriculum_epoch:
+        if args.curriculum:
             break
 
     if args.wandb and is_master(args):

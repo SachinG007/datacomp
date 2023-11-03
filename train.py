@@ -190,7 +190,10 @@ if __name__ == "__main__":
         help="If you want to specify start step",
     )
     parser.add_argument(
-        "--curriculum_epoch", type=int, default=0, help="If you want the curriculum to end after these many epochs"
+        "--total_steps", type=int, default=0, help="Override total steps"
+    )
+    parser.add_argument(
+        "--train_num_samples", type=int, default=0, help="If you want the curriculum to end after these many epochs"
     )
     parser.add_argument("--seed", type=int, default=0, help="Random seed.")
     parser.add_argument(
@@ -263,6 +266,8 @@ if __name__ == "__main__":
     model = config["model"]
     beta2 = config["beta2"]
     train_num_samples = config["train_num_samples"]
+    if args.curriculum and args.train_num_samples > 0:
+        train_num_samples = args.train_num_samples
     train_data, weights = get_input_shards(data_dir, args.data_weights)
 
     exp_name = args.exp_name if args.exp_name else f"{args.scale}_scale"
@@ -270,6 +275,10 @@ if __name__ == "__main__":
     log_dir = args.output_dir
 
     per_gpu_batch_size = global_batch_size // (world_size * args.accum_freq)
+
+    train_num_samples_modified = train_num_samples // args.num_checkpoints
+    if args.curriculum and args.train_num_samples > 0:
+        train_num_samples_modified = train_num_samples
 
     main_args = [
         "--save-frequency",
@@ -281,7 +290,7 @@ if __name__ == "__main__":
         "--train-data",
         f"{train_data}",
         "--train-num-samples",
-        f"{train_num_samples // args.num_checkpoints}",
+        train_num_samples_modified,
         "--warmup",
         f"{warmup}",
         "--dataset-type",
@@ -322,8 +331,8 @@ if __name__ == "__main__":
         f"{args.valid_file}",
         "--start-step",
         f"{args.start_step}",
-        "--curriculum-epoch",
-        f"{args.curriculum_epoch}",
+        "--total-steps",
+        f"{args.total_steps}",
     ]
     main_args.append("--dataset-resampled")
     if args.report_to_wandb:
