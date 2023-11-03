@@ -334,6 +334,7 @@ if __name__ == "__main__":
         "--total-steps",
         f"{args.total_steps}",
     ]
+    print(main_args)
     main_args.append("--dataset-resampled")
     if args.report_to_wandb:
         main_args.extend(
