@@ -433,6 +433,7 @@ def get_wds_dataset(args, preprocess_img, is_train, epoch=0, floor=False, tokeni
     dataset = wds.DataPipeline(*pipeline)
 
     if is_train:
+        import pdb;pdb.set_trace()
         if not resampled:
             num_shards = num_shards or len(expand_urls(input_shards)[0])
             assert num_shards >= args.workers * args.world_size, 'number of shards must be >= total workers'
