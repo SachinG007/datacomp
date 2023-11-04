@@ -83,10 +83,11 @@ def train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist
     batch_time_m = AverageMeter()
     data_time_m = AverageMeter()
     end = time.time()
+    init_epoch_step = args.current_step
     for i, batch in enumerate(dataloader):
         i_accum = i // args.accum_freq
-        args.current_step += i_accum
-        step = args.current_step
+        
+        step = init_epoch_step + i_accum
 
         if not args.skip_scheduler:
             scheduler(step)
@@ -267,6 +268,7 @@ def train_one_epoch(model, data, loss, epoch, optimizer, scaler, scheduler, dist
                 checkpoint_dict,
                 save_path,
             )
+    args.current_step = step
     # end for
 
 
