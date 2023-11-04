@@ -211,7 +211,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--log_every_n_steps",
         type=int,
-        default=10,
+        default=100,
         help="Log every n steps to tensorboard/console/wandb.",
     )
     parser.add_argument(
