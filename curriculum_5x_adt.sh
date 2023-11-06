@@ -26,11 +26,13 @@
 
 declare -A path_epochs_dict
 
-paths_list=("/drive2/datacomp_L14_0.5_to_0.6::/drive2/datacomp_L14_0.4_to_0.5::/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.4_to_0.5::/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1")
-epochs_list=(18 15 8 9)
+# paths_list=("/drive2/datacomp_L14_0.5_to_0.6::/drive2/datacomp_L14_0.4_to_0.5::/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.4_to_0.5::/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1")
+paths_list=("/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.4_to_0.5::/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1" "/drive2/datacomp_L14_0.5_to_0.6::/drive2/datacomp_L14_0.4_to_0.5::/drive2/datacomp_L14_0.3_to_0.4::/drive2/datacomp_L14_0.1_to_0.2::/drive2/datacomp_L14_0.2_to_0.3::/drive2/datacomp_L14_0.0_to_0.1")
+# epochs_list=(18 15 8 9)
+epochs_list=(9 8 15 18)
 length=${#paths_list[@]}
 
-exp_name=clipbucket_curriculum_adt_128M_5x
+exp_name=clipbucket_curriculum_adt_rev_128M_5x
 mkdir -p /home/pratyus2/logs/$exp_name/intermediate
 # Loop through the lists and print the elements
 for ((i = 0; i < length; i++)); do
