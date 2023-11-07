@@ -63,6 +63,14 @@ SCALE_CONFIGS = {
         "model": "ViT-B-32",
         "beta2": None,
     },
+    "tmars_32": {
+        "batch_size": 4096,
+        "learning_rate": 5e-4,
+        "train_num_samples": 32_000_000,
+        "warmup": 500,
+        "model": "ViT-B-32",
+        "beta2": None,
+    },
     "medium_5x_tmars": {
         "batch_size": 4096,
         "learning_rate": 5e-4,
